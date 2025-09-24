@@ -1,0 +1,17 @@
+<script>
+  //Pide al usuario dos valores con prompt(). Guárdalos en texto1 y texto2 (sin convertir).
+  let texto1 = prompt("Introduce un número");
+  let texto2 = prompt("Introduce número decimal");
+
+  //Muestra en consola el resultado de la “suma” texto1 + texto2 (concatenación).
+  console.log("Los numeros introducidos son " + texto1 + " y " + texto2);
+
+  //Convierte ambos a número (elige parseInt, parseFloat o Number) y guarda en numero1 y numero2. Elijo parseFloat porque es un numero decimal
+  let numero1 = Number(texto1);
+  let numero2 = parseFloat(texto2);
+  //Muestra en consola la suma numérica real de numero1 + numero2.
+  let suma = numero1 + numero2;
+  console.log("La suma es " + suma);
+  //Otra forma de mostrar la suma
+  console.log("La suma es " + (numero1 + numero2));
+</script>
