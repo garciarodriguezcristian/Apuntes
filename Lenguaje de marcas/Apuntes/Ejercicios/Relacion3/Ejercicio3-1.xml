@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pokemon [
+<!-- Introduzco "nivel? porque el ELEMENT "nivel
+puede aparecer una o ninguna vez, puede no aparecer
+nivel o si aparece solo tiene uno, no puede tener
+dos niveles-->
     <!ELEMENT pokemon (nombre,tipos,nivel?)>
     <!ELEMENT nombre (#PCDATA)>
     <!ELEMENT tipos (tipo+)>
