@@ -1,0 +1,11 @@
+<!-- Hago el DTD externo y defino las reglas a seguir
+en el .xml. 
+La liga es la raiz, y tiene que tener más de un entrenador (+),
+cada entrenador varios pokemons (+)
+y cada pokemon puede tener 1 o mas "tipo" (+)-->
+<!ELEMENT liga (entrenador+)>
+<!ELEMENT entrenador (nombre,pokemon+)>
+<!ELEMENT pokemon (nombre,tipo+,nivel)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT tipo (#PCDATA)>
+<!ELEMENT nivel (#PCDATA)>

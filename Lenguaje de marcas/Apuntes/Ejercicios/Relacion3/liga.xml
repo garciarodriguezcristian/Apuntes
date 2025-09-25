@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Ejercicio 3 — Liga Pokémon con DTD externa-->
+
+<!-- Defino el DTD con <!DOCTYPE liga SYSTEM " nombre_del_archivo.dtd ".
+Dentro del archivo "liga.dtd" están todos los "<!ELEMENT", siendo la raiz "liga"-->
+<!DOCTYPE liga SYSTEM "liga.dtd">
+
+<!--Defino el .xml siguiendo las reglas del DTD externo.
+* Escribe liga.xml con al menos 2 entrenadores.
+* Cada entrenador debe tener mínimo 2 Pokémon.
+* Escribe también liga.dtd con las reglas.-->
+<liga>
+    <entrenador>
+        <nombre>Ash Ketchum</nombre>
+        <pokemon>
+            <nombre>Bulbasur</nombre>
+            <tipo>Planta</tipo>
+            <tipo>Veneno</tipo>
+            <nivel>24</nivel>
+        </pokemon>
+        <pokemon>
+            <nombre>Pikachu</nombre>
+            <tipo>Electrico</tipo>
+            <nivel>15</nivel>
+        </pokemon>
+    </entrenador>
+    <entrenador>
+        <nombre>Misty</nombre>
+        <pokemon>
+            <nombre>Charmander</nombre>
+            <tipo>Fuego</tipo>
+            <nivel>17</nivel>
+        </pokemon>
+        <pokemon>
+            <nombre>Squirtle</nombre>
+            <tipo>Agua</tipo>
+            <nivel>54</nivel>
+        </pokemon>
+    </entrenador>
+</liga>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Ejercico 2.- Equipo Pokémon (cardinalidades)
+- Creo el DTD con las reglas que tiene que seguir el .xml.
+La raiz es equipo, tiene que tener 1 o más pokemons por eso
+la canalidad (+) pokemon+. Cada pokemon tiene nombre, tipo y nivel.
+como cada pokemon puede tener un tipo o más defino tipo+-->
+<!DOCTYPE equipo [
+    <!ELEMENT equipo (pokemon+)>
+    <!ELEMENT pokemon (nombre,tipo+,nivel)>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT tipo (#PCDATA)>
+    <!ELEMENT nivel (#PCDATA)>
+]>
+<!--Desarrollo el xml con las reglas de DTD definidas arriba-->
+<equipo>
+    <pokemon>
+        <nombre>Bulbasur</nombre>
+        <tipo>Planta</tipo>
+        <tipo>Veneno</tipo>
+        <nivel>1</nivel>
+    </pokemon>
+    <pokemon>
+        <nombre>Charmander</nombre>
+        <tipo>Fuego</tipo>
+        <nivel>1</nivel>
+    </pokemon>
+    <pokemon>
+        <nombre>Butterfree</nombre>
+        <tipo>Bicho</tipo>
+        <tipo>Volador</tipo>
+        <nivel>7</nivel>
+    </pokemon>
+</equipo>
