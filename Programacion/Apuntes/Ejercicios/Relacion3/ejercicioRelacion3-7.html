@@ -1,0 +1,26 @@
+<script>
+    //Simular una calculadora simple:
+
+    //Pide dos números y una operación (+, -, *, /) e imprime el resultado correspondiente.
+    let numero1 = parseFloat(prompt("Introduce el primer número"))
+    let numero2 = parseFloat(prompt("Introduce el segundo número"))
+    let operacion = prompt("Elige una de las siguentes operaciones:+, -, * o / ")
+
+    //Declaro las variables con las operaciones de cada tipo
+    let suma = numero1 + numero2
+    let resta = numero1 - numero2
+    let multiplicacion = numero1 * numero2
+    let division = numero1 / numero2
+
+    //Pongo los condicionales para ver si se cumple cada respuesta del usuario.
+    // else if para evaluar si las siguientes condiciones a if son verdaderas
+    if (operacion == "+") {
+        console.log(suma)
+    } else if (operacion == "-") {
+        console.log(resta)
+    } else if (operacion == "*") {
+        console.log(multiplicacion)
+    } else if (operacion == "/") {
+        console.log(division)
+    }
+</script>

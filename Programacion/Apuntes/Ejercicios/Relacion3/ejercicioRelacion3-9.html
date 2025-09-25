@@ -1,0 +1,28 @@
+<script>
+    //Sumar los dígitos de un número de dos cifras:
+
+
+    //Pido un número de dos cifras
+    let numero = parseInt(prompt("Introduce un número de 2 cifras"))
+
+    //calculo el digito de la decena. Al ser de dos cifras divido el número entre 10
+    //y con parseInt lo paso a numero entero
+    //Ejemplo: 34/10 = 3.4, con parseInt se convierte en entero, 3.
+    let decena = parseInt(numero / 10)
+
+    //Calculo el digito de la unidad
+    //Hago el modulo% de 10, al ser de 2 cifras daria de resultado la unidad del número
+    //Ejemplo: 67 ⨽ 10 = 6 y resto 7, nos da el digito de la unidad 
+    let unidades = parseInt(numero % 10)
+
+    //Sumo los dos digitos
+    let suma = decena + unidades
+
+    //Introduzco la condicion, si es menor de 10 es de una cifra
+    // si no, imprimo la suma de los digitos
+    if (numero < 10) {
+        alert(" Error! El número " + numero + " no tiene 2 cifras")
+    } else {
+        console.log(" La suma de los dos digitos es: ",suma)
+    }
+</script>

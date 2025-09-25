@@ -1,0 +1,24 @@
+<script>
+    // Pido un año
+    let anio = prompt(" Introduce un año ")
+
+    //1.Un año es bisiesto si es divisible por 4.
+    //2.Pero si además es divisible por 100, entonces no es bisiesto.
+    //3.Sin embargo, si es divisible por 400, entonces sí es bisiesto.
+    //En cualquier otro caso → no bisiesto
+
+    //Introduzco las variables necesarias
+    //Modulos para saber si el año es divisible por 4, 100 y 400.
+    let divisible4 = anio % 4 == 0
+    let divisible100 = anio % 100 == 0
+    let divisible400 = anio % 400 == 0
+    // Introduzco || para que evaluar si una de las dos se cumple.
+    //(Es divisible por 4 y NO divisible por 100.) || es divisible por 400
+    // Pongo !divisible100 para decir que NO es divisible100
+    let esBisiesto = ((divisible4 && !divisible100) || divisible400)
+    if (esBisiesto) {
+        console.log("El año introducido es bisiesto")
+    } else {
+        console.log("EL año introducido NO es bisiesto");
+    };
+</script>
