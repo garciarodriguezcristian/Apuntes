@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pokemon [
+    <!ELEMENT pokemon (nombre,tipos,nivel)>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT tipos (tipo+)>
+    <!ELEMENT tipo (#PCDATA)>
+    <!ELEMENT nivel (#PCDATA)>
+]>
+<pokemon>
+    <nombre>Bulbasur</nombre>
+    <tipos>
+        <tipo>Planta</tipo>
+        <tipo>Veneno</tipo>
+    </tipos>
+    <nivel>1</nivel>
+</pokemon>
