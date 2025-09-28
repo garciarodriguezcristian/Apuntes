@@ -1,0 +1,24 @@
+<script>
+    //Calculadora de impuestos progresivos:
+    let salario = prompt(" Introduce tu salario anual")
+    //Declaro las variables sin valor, porque segun lo que pase con if y else if tendran un valor u otro
+    let porcentajeImpuesto
+    let pago
+
+    //Introduzco las condiciones necesarias para obtener los valores para calcular todo
+    //Introduzco los if y else para darle a "porcentajeIpuesto" segun el salario
+    if (salario < 10000) {
+        porcentajeImpuesto = 0       
+    } else if (salario >= 10000 && salario < 20000) {
+        porcentajeImpuesto = 10        
+    } else if (salario >= 20000 && salario < 40000) {
+        porcentajeImpuesto = 20       
+    } else {
+        porcentajeImpuesto = 30       
+    }
+    //Una vez que tengo los valores de todas las variables, le doy a "pago" el valor de la operacion que necesito.
+    //Le doy a "pago" el valor de las operaciones aqui y no arriba en la linea 6 porque si las pusiera arriba, el codigo haría
+    //la operacion de (porcentajeImpuesto * salario / 100) sin los valores calculados y porcentajeImpuesto todavia no tendria valor asignado en la linea 6
+    pago = (porcentajeImpuesto * salario / 100)
+    console.log(" Tienes que pagar "+pago+"€ de impuestos");    
+</script>

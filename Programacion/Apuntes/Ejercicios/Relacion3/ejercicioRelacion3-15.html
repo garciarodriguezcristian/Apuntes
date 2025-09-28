@@ -1,0 +1,14 @@
+<script>
+    let angulo = prompt("Introduce el valor de un ángulo")
+    if (angulo < 90) {
+        console.log("Un ángulo de " + angulo + "ºC, es un ángulo agudo")
+    } else if (angulo == 90) {
+        console.log("Un ángulo de " + angulo + "ºC, es un ángulo recto");
+    } else if (angulo > 90 && angulo < 180) {
+        console.log("Un ángulo de " + angulo + "ºC, es un ángulo obtuso")
+    } else if (angulo == 180) {
+        console.log("Un ángulo de " + angulo + "ºC, es un ángulo llano")
+    } else {
+        console.log("Un ángulo de " + angulo + "ºC, es un ángulo cóncavo");
+    }        
+</script>
