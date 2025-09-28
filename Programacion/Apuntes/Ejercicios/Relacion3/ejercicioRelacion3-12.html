@@ -1,0 +1,14 @@
+<script>
+
+    let cara1 = Number(prompt(" Introduce la primera cara"))
+    let cara2 = Number(prompt(" Introduce la segunda cara"))
+    let cara3 = Number(prompt(" Introduce la tercera cara"))
+
+    if (cara1 == cara2 && cara2 == cara3) {
+        console.log("El triángulo es equilatero")
+    } else if (cara1 == cara2 || cara1 == cara3 || cara2 == cara3) {
+    console.log("El triangulo es isosceles");
+    } else {
+        console.log("El triangulo es escaleno");
+    }
+    </script>

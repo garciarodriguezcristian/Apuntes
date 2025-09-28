@@ -5,22 +5,27 @@
     let numero1 = parseFloat(prompt("Introduce el primer número"))
     let numero2 = parseFloat(prompt("Introduce el segundo número"))
     let operacion = prompt("Elige una de las siguentes operaciones:+, -, * o / ")
-
-    //Declaro las variables con las operaciones de cada tipo
-    let suma = numero1 + numero2
+    let resultado
+    //Declaro las variables con las operaciones de cada tipo 
     let resta = numero1 - numero2
     let multiplicacion = numero1 * numero2
     let division = numero1 / numero2
 
     //Pongo los condicionales para ver si se cumple cada respuesta del usuario.
     // else if para evaluar si las siguientes condiciones a if son verdaderas
-    if (operacion == "+") {
-        console.log(suma)
+    if (operacion == "+") { 
+        resultado = numero1 + numero2
+        console.log(" La suma de " + numero1 + " y " + numero2 + " es " + resultado)
     } else if (operacion == "-") {
         console.log(resta)
     } else if (operacion == "*") {
         console.log(multiplicacion)
     } else if (operacion == "/") {
-        console.log(division)
-    }
+        if (numero2 == 0) {
+            alert(" No se puede hacer la división entre 0")
+        } else {
+            console.log(division)
+        }
+    } else (console.log( "No has introducido una operacion correcta: +, -, * o / "))
+    
 </script>

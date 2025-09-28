@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<calendario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ejercicio3.xsd">
+    <evento id="1">
+        <titulo>Conferencia</titulo>
+        <fecha>2025-10-10</fecha>
+        <hora>18:00:00</hora>
+        <ubicacion>Facultad Ciencias Economicas</ubicacion>
+        <codigoPostal>18004</codigoPostal>
+    </evento>
+    <evento id="2">
+        <titulo>Concierto</titulo>
+        <fecha>2025-10-12</fecha>
+        <hora>00:30:00</hora>
+        <ubicacion>Cortijo del Conde</ubicacion>
+        <codigoPostal>18234</codigoPostal>
+    </evento>
+    <evento id="3">
+        <titulo>Reunión de trabajo</titulo>
+        <fecha>2025-10-30</fecha>
+        <hora>18:35:00</hora>
+        <ubicacion>Granada</ubicacion>
+        <codigoPostal>18008</codigoPostal>
+    </evento>
+</calendario>
