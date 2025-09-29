@@ -1,0 +1,14 @@
+<script>
+    let promedioAcademico = parseFloat(prompt(" Introduce tu promedio de notas"))
+
+    if (promedioAcademico >= 8) {
+        let ingresoAnual = parseFloat(prompt(" Introduce tus ingresos familiares en el año"))
+        if (ingresoAnual < 20000) {
+            console.log(" Recibes beca completa")
+        } else {
+            console.log(" Recibes beca parcial");
+        }
+    } else {
+        console.log(" No recibe beca ")
+    }
+</script>

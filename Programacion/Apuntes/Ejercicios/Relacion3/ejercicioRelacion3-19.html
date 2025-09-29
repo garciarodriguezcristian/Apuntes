@@ -1,0 +1,20 @@
+<script>
+    let tiempoEstacionado = parseFloat(prompt("Introduce las horas que has estado eatacionado"))
+    let precioHora = 0
+    let coste = 0
+
+    if (tiempoEstacionado <= 2) {
+        precioHora = 5
+        coste = tiempoEstacionado * precioHora
+    } else if (tiempoEstacionado <= 5) {
+        precioHora = 4
+        coste = tiempoEstacionado * precioHora
+    } else {
+        let costeCincoHoras = 5 * 4
+        let horaExtra = tiempoEstacionado - 5
+        precioHora = 3
+        coste = costeCincoHoras + (horaExtra * precioHora)
+    } console.log(" El coste de tu estacionamiento es " + coste + "€");
+
+
+</script>
