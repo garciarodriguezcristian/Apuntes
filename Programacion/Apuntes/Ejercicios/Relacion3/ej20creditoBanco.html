@@ -1,0 +1,15 @@
+<script>
+    let puntuacionCredito = prompt(" Introduce la puntuación del crédito")
+    let tiempoCredito = prompt(" ¿Cuántos años ha estado el crédito en el banco?")
+
+    if (puntuacionCredito < 650 || tiempoCredito < 2) {
+        console.log(" Crédito rechazado ")
+    }
+    if (puntuacionCredito > 650) {
+        if (tiempoCredito >= 2 && tiempoCredito <= 5) {
+            console.log("Se te concede un crédito Estandar")
+        } else {
+            console.log("Se te concede un crédito Premium")
+        }
+    }
+</script>
