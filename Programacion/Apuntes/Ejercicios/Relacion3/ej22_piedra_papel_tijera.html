@@ -1,0 +1,25 @@
+<script>
+    let jugador1 = prompt("Jugador 1: Elige Piedra, Papel o Tijera").toLowerCase()
+    let jugador2 = prompt("Jugador 2: Elige Piedra, Papel o Tijera").toLowerCase()
+
+    let resultado = ""
+
+    if (
+        (jugador1 !== "piedra" && jugador1 !== "papel" && jugador1 !== "tijera") ||
+        (jugador2 !== "piedra" && jugador2 !== "papel" && jugador2 !== "tijera")) {
+        console.log("Entrada no valida, solo se permite Piedra, Papel o Tijera")
+
+    } else if (
+        (jugador1 == "piedra" && jugador2 == "tijera") ||
+        (jugador1 == "papel" && jugador2 == "piedra") ||
+        (jugador1 == "tijera" && jugador2 == "papel")
+    ) {
+        resultado = "Gana jugador 1!"
+
+    } else if (jugador1 == jugador2) {
+        resultado = " Empate"
+    } else {
+        resultado = " Gana jugador 2!"
+    }   console.log(resultado);
+    
+</script>
