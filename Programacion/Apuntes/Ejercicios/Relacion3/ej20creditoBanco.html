@@ -2,14 +2,22 @@
     let puntuacionCredito = prompt(" Introduce la puntuación del crédito")
     let tiempoCredito = prompt(" ¿Cuántos años ha estado el crédito en el banco?")
 
-    if (puntuacionCredito < 650 || tiempoCredito < 2) {
-        console.log(" Crédito rechazado ")
+    let mensaje = ""
+
+    //Declaro las constantes en MAYUSCULA, valores que no son fijos
+    const PUNTUACIONLIMITE = 650
+    const ANIOSPREMIUM = 5
+    const ANIOSESTANDAR = 2
+
+    if (puntuacionCredito < PUNTUACIONLIMITE || tiempoCredito < ANIOSESTANDAR) {
+        mensaje= " Crédito rechazado "
     }
-    if (puntuacionCredito > 650) {
-        if (tiempoCredito >= 2 && tiempoCredito <= 5) {
-            console.log("Se te concede un crédito Estandar")
+    if (puntuacionCredito > PUNTUACIONLIMITE) {
+        if (tiempoCredito >= ANIOSESTANDAR && tiempoCredito <= ANIOSPREMIUM) {
+            mensaje= "Se te concede un crédito Estandar"
         } else {
-            console.log("Se te concede un crédito Premium")
-        }
+            mensaje= "Se te concede un crédito Premium"
+        } console.log(mensaje);
+        
     }
 </script>
