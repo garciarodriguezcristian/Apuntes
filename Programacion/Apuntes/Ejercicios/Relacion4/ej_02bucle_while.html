@@ -1,8 +1,9 @@
 <script>
-    let numeroUsuario = prompt(" Introduce un número del 1 al 10")
-    let numeroSecreto = 10
+    let numeroSecreto = prompt(" Introduce el número secreto")
+    let numeroUsuario = prompt("Averigua el número")
 
     while (numeroUsuario != numeroSecreto) {
+        console.log("Número incorrecto")
         numeroUsuario = prompt("Intenta de nuevo")
     }
     console.log("¡Correcto! Has adivinado el número")
