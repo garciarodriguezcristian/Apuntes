@@ -1,0 +1,26 @@
+<script>
+let salario = prompt("Introduzca su salario anual:");
+salario = Number(salario);
+
+let impuesto = 0;
+let salarioOriginal = salario; // guardamos el valor inicial
+
+if (salario > 40000) {
+    impuesto += (salario - 40000) * 0.3; // tramo >40.000 al 30%
+    salario = 40000;
+}
+if (salario > 20000) {
+    impuesto += (salario - 20000) * 0.2; // tramo 20.001 - 40.000 al 20%
+    salario = 20000;
+}
+if (salario > 10000) {
+    impuesto += (salario - 10000) * 0.1; // tramo 10.001 - 20.000 al 10%
+    salario = 10000;
+}
+
+// Tipo efectivo = impuesto total dividido entre salario original
+let tipoEfectivo = (impuesto / salarioOriginal) * 100;
+
+console.log("Impuestos a pagar: " + impuesto + " €");
+console.log("Tipo efectivo: " + tipoEfectivo.toFixed(2) + " %");
+</script>
