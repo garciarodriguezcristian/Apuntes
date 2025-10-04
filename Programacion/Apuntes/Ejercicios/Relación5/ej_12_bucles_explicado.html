@@ -1,0 +1,19 @@
+<script>
+    let numero1 = parseInt(prompt(" Introduce un numero entero"))
+    //Creo la variable siguiente porque queremos el siguiente número
+    //Si no la creo y el numero del usuario es par, al entrar al bucle
+    // y comprobar que es divisible por 2, se sale del bucle y me muestra ese número y no el siguiente
+    let siguiente = numero1 + 1
+
+    while (siguiente % 2 != 0) {
+        siguiente += 1
+    }
+        //Si numero1 es 12 por ejemplo, " let siguiente"
+        // antes del bucle vale 13. 13 entra en el bucle, como no es divisible por 2 (que es la condición
+        // para permanecer en el bucle), el bucle (que es lo que esta dentro de los corchetes) sigue y pasa a
+        // siguiente += 1, que lo que dice es que siguiente va a valer para la siguiente iteración = 13 + 1. 
+        // Esto da 14, entra de nuevo en while, 14 es divisible por 2 por lo que el parentesis es false
+        // y se sale del bucle en ese momento haciendo el console log
+        
+    console.log(siguiente);
+</script>

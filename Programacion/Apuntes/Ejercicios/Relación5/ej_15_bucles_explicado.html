@@ -1,0 +1,16 @@
+<script>
+    let numero = parseInt(prompt(" Introduce un número"))
+    let siguiente = numero + 1
+
+    //Tengo que mostrar el siguiente número míltiplo de 2 y 3.
+    //while "número" no sea divisible por 2 y 3, tampoco será multiplo de 2 y 3.
+    //Voy sumandole +1 al número hasta que de uno que se se divisible por los 2.
+    while (siguiente % 2 != 0 || siguiente % 3 != 0) {
+        //Se hace con OR|| porque con una condición que se cumpla ya es TRUE y al ser TRUE
+        //sigue en el bucle. Solo se sale del bucle cuando es FALSE y para que OR|| de FALSE,
+        // las dos condiciones "condicion1 || condicion2" tienen que ser FALSE, es decir
+        // "se divide entre 2 || se divide en 3". Solo cuando pasa eso sale del bucle
+        siguiente += 1
+    }
+    console.log(siguiente);
+</script>
