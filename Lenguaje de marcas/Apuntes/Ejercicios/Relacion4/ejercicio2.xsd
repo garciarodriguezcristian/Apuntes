@@ -13,10 +13,7 @@
                                         <xs:element name="email">
                                             <xs:simpleType>
                                                 <xs:restriction base="xs:string">
-                                                    <!--Preguntar
-                                                    si el regex(expresion regular) del mail nos lo
-                                                    dan o hay que saberlo-->
-                                                    <xs:pattern value="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}"/>
+                                                    <xs:pattern value="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}" />
                                                 </xs:restriction>
                                             </xs:simpleType>
                                         </xs:element>
