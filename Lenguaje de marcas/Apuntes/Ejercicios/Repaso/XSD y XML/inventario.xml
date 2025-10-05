@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<inventario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="inventario.xsd">
+
+    <producto id="1">
+        <nombre>Producto1</nombre>
+        <categoria>Ordenador</categoria>
+        <precio>1999.00</precio>
+        <stock>300</stock>
+        <proveedor>
+            <nombre>Proveedor1</nombre>
+            <telefono>900-812-900</telefono>
+            <pais>Estados Unidos</pais>
+        </proveedor>
+        <proveedor>
+            <nombre>Proveedor2</nombre>
+            <telefono>900-812-900</telefono>
+            <pais>Estados Unidos</pais>
+        </proveedor>
+    </producto>
+
+    <producto id="2">
+        <nombre>Producto1</nombre>
+        <categoria>Ordenador</categoria>
+        <precio>1999.00</precio>
+        <stock>300</stock>
+        <proveedor>
+            <nombre>Proveedor1</nombre>
+            <telefono>900-812-900</telefono>
+            <pais>Estados Unidos</pais>
+        </proveedor>
+        <proveedor>
+            <nombre>Proveedor2</nombre>
+            <telefono>900-812-900</telefono>
+            <pais>Estados Unidos</pais>
+        </proveedor>
+    </producto>
+</inventario>
