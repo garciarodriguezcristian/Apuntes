@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<agencia xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ej_05_agencia_viajes.xsd">
+
+    <paquete codigo="PKT-0000">
+        <destino>Las Palmas</destino>
+        <precio>300.50</precio>
+        <fechaInicio>2025-04-10</fechaInicio>
+        <fechaFin>2025-04-20</fechaFin>
+        <tipo>Relax</tipo>
+        <cliente>
+            <nombre>Elisabeth</nombre>
+            <dni>75573283N</dni>
+            <edad>26</edad>
+            <email>correo@stem.com</email>
+        </cliente>
+    </paquete>
+    <paquete codigo="PKT-1245">
+        <destino>Congo</destino>
+        <precio>300.50</precio>
+        <fechaInicio>2025-04-10</fechaInicio>
+        <fechaFin>2025-12-30</fechaFin>
+        <tipo>Aventura</tipo>
+        <cliente>
+            <nombre>Elisabeth</nombre>
+            <dni>75573283N</dni>
+            <edad>26</edad>
+            <email>correo@stem.com</email>
+        </cliente>
+    </paquete>
+
+</agencia>
