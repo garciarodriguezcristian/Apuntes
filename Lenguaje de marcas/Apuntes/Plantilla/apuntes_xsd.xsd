@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!--APUNTES
+    PARA EL EXAMEN (XSD)-->
+
+    <!--Estructura base-->
+    <?xml version="1.0" encoding="UTF-8"?>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="nodo raiz">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="nombre" type="xs:string" />
+                    <xs:element name="edad" type="xs:integer" />
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>
+    <!-- Elemento complejo-->
+
+    <xs:element name="nodo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="elemento1" type="xs:string" />
+                <xs:element name="elemento2" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Elemento simple-->
+
+    <xs:element name="email">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!--Elemento con mas elementos dentro (algunos con restricciones) -->
+
+    <xs:element name="nodo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="elemento1" type="xs:string" />
+                <xs:element name="elemento2">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="elemento3">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="\d{3}-\d{3}-\d{3}" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Atributo obligatorio para el nodo raíz (en este caso con restricciones, si no son necesarias se cierra
+    con />) en el caso de biblioteca seria para el elemento LIBRO-->
+
+    <xs:attribute name="codigo" use="required">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="A\d{3}" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+
+    <!-- Elemnto string con restriccion de patron-->
+
+    <xs:element name="elemento1">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <!-- Email simple: usuario@dominio.tld -->
+                <xs:pattern value="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!--Elemento número entero con restricción de número máximo y número mínimo-->
+
+    <xs:element name="elemento1">
+        <xs:simpleType>
+            <xs:restriction base="xs:integer">
+                <xs:minInclusive value="1900" />
+                <xs:maxInclusive value="2025" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!--Elemento con restricción string y usando listas -->
+
+    <xs:element name="elemento1">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="valor1" />
+                <xs:enumeration value="Valor2" />
+                <xs:enumeration value="Valor3" />
+                <xs:enumeration value="Valor4" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!--Elemento con restricción de número decimal usando número máximo y número mínimo -->
+
+    <xs:element name="elemento1" maxOccurs="5" minOccurs="1">
+        <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+                <xs:minInclusive value="0.0" />
+                <xs:maxInclusive value="10.0" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+</xs:schema>
