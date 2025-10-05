@@ -20,11 +20,13 @@
             <notaMedia>9,8</notaMedia>
         </alumno>
     </clase>
-    <alumno>
-        <nombre>victor</nombre>
-        <edad>26</edad>
-        <notaMedia>8</notaMedia>
-    </alumno>
+    <clase>
+        <alumno>
+            <nombre>victor</nombre>
+            <edad>26</edad>
+            <notaMedia>8</notaMedia>
+        </alumno>
+    </clase>
     <clase>
         <alumno>
             <nombre>david</nombre>

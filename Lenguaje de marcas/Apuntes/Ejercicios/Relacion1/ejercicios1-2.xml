@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <alumnos>
-    
+
     <alumno>
         <nombre>Cristian</nombre>
         <apellido>Garcia</apellido>
@@ -12,7 +12,5 @@
         <apellido>Zafra</apellido>
         <edad>32</edad>
         <email>ezg@ugr.com</email>
-
     </alumno>
-
 </alumnos>
