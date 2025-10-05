@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE biblioteca [
+    <!ELEMENT biblioteca (seccion+)>
+    <!ELEMENT seccion (nombre,libro+)>
+    <!ELEMENT libro (nombre,autor,anio?)>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT autor (#PCDATA)>
+    <!ELEMENT anio (#PCDATA)>
+]>
+<biblioteca>
+    <seccion>
+        <nombre>Seccion1</nombre>
+        <libro>
+            <nombre>libro1</nombre>
+            <autor>Autor1</autor>
+            <anio>2010</anio>
+        </libro>
+        <libro>
+            <nombre>libro2</nombre>
+            <autor>Autor2</autor>
+            <anio>2009</anio>
+        </libro>
+        <libro>
+            <nombre>libro1</nombre>
+            <autor>Autor1</autor>
+            <anio>2010</anio>
+        </libro>
+    </seccion>
+    <seccion>
+        <nombre>Seccion2</nombre>
+        <libro>
+            <nombre>libro1</nombre>
+            <autor>Autor1</autor>
+            <anio>2010</anio>
+        </libro>
+        <libro>
+            <nombre>libro2</nombre>
+            <autor>Autor2</autor>
+            <anio>2009</anio>
+        </libro>
+        <libro>
+            <nombre>libro1</nombre>
+            <autor>Autor1</autor>
+            <anio>2010</anio>
+        </libro>
+    </seccion>
+</biblioteca>

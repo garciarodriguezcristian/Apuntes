@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tienda SYSTEM "tienda.dtd">
+<tienda>
+    <nombre>tienda1</nombre>
+    <pokemon>
+        <nombre>Pokemon1</nombre>
+        <tipo>fuego</tipo>
+        <tipo>veneno</tipo>
+        <precio>50</precio>
+    </pokemon>
+    <pokemon>
+        <nombre>Pokemon2</nombre>
+        <tipo>agua</tipo>
+        <tipo>planta</tipo>
+        <precio>100</precio>
+    </pokemon>
+    <pokemon>
+        <nombre>Pokemon1</nombre>
+        <tipo>fuego</tipo>
+        <tipo>veneno</tipo>
+        <precio>50</precio>
+    </pokemon>
+</tienda>
