@@ -30,13 +30,13 @@
             //hasta llegar a otro primo. Si numeroComprobar era 14 (no primo), el programa actualiza el contador y el numero hasta llegar a
             //17 que si es primo, entonces numeroComprobar == contador pero != numeroInicial. Por eso en este caso si imprime este console.log
             } else {
-                console.log(" El siguiente número primo después de " + numeroInicial + " es " + numero)
+                console.log(" El siguiente número primo después de " + numeroInicial + " es " + numeroComprobar)
             }
             esPrimo = true
 
         } else {
-            console.log("El número " + numero + " no es primo, voy a buscar el siguiente");
-            numero++
+            console.log("El número " + numeroComprobar + " no es primo, voy a buscar el siguiente");
+            numeroComprobar++
             contador = 2
         }
     } 
