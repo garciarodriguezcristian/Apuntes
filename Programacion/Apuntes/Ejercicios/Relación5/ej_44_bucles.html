@@ -1,0 +1,27 @@
+<script>
+
+    //Solicitar un número entero. Sumar todos los dígitos del número.
+
+    //Tengo que contar las cifras del numero
+    // Si el numero es 3567 tiene 4 cifras 
+
+    let numero = prompt("Introduce un número. Vamos a sumar todos sus digitos")
+    let contador = numero.length //.length para contar los digitos.
+    let digitoProducto = ""
+    let producto = 1
+
+    for (let i = 0; i < contador; i++) {
+        //Uso charAt(i) para que cada iteracion me diga el digito de esa posicion
+        // Se empieza a contar desde 0, i=0 -> 3, i=1 -> 5, etc
+        digitoProducto = Number(numero.charAt(i)) 
+        
+        //Con cada vuelta del bucle multiplico el siguiente digito convertido en numero. Para el ejemplo 3567 seria:
+        producto *= digitoProducto 
+        //Producto *= 1 * 3(charAt(0) = 3
+        //Producto *= 3 * 5(charAt(1) = 15
+        //Producto *= 15 * 6(charAt(2) = 90
+        //Producto *= 90 * 7(charAt(3) = 630
+    }
+    console.log(" La multiplicación de los digitos del numero " + numero + " es " + producto);
+
+</script>
