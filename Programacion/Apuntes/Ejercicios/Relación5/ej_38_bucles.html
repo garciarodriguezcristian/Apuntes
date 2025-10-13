@@ -1,0 +1,20 @@
+<script>
+
+    // Solicitar un número entero. Solicitar otro número por pantalla hasta que este se corresponda con el primer número introducido.
+
+
+
+    let numeroSecreto = prompt("Introduce un numero SECRETO, que el siguiente usuario tendrá que adivinar")
+    numeroSecreto = Number(numeroSecreto)
+
+    let numeroSecreto2 = prompt("¡Adivina el número! Introduce el número que creas que es el SECRETO")
+    numeroSecreto2 = Number(numeroSecreto2)
+
+    while (numeroSecreto != numeroSecreto2) {
+        numeroSecreto2 = prompt("¡Que lastima! Intentalo de nuevo")
+        
+    }
+    console.log("Has acertado, enhorabuena")
+    alert(" Has acertado, enhorabuena!")
+
+</script>

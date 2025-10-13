@@ -1,0 +1,30 @@
+<script>
+    //23. Solicitar un número entero. Dibujar una pirámide con tantas filas como indique el número.
+    //Ejemplo:
+
+    //*****
+    // ****
+    //  ***
+    //   **
+    //    *
+
+    //Lo que aumenta con cada fila que son los espacios se mete en el primer for anidado, y lo que disminuye
+    // en el segundo.
+    let filas = prompt("Introduce un número entero")
+    let asteriscos = ""
+    let espacios = ""
+
+    for (i = 0; i < filas; i++) { //El primer for "total" se va a hacer las veces que indica "filas"
+        espacios = ""
+        asteriscos = ""
+
+        for (k = 0; k < i; k++) { //El segundo for saca los espacios de cada fila                                 //
+            espacios += " "       // 1ª i = 0
+
+        } for (j = 0; j < filas - i; j++) {
+            asteriscos += "*"
+        } console.log(espacios + asteriscos);
+    }
+
+
+</script>

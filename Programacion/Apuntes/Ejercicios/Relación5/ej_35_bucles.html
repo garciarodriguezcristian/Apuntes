@@ -1,0 +1,43 @@
+<script>
+    //     35.-
+
+    // Solicitar un número entero. Calcular si el número introducido es primo o no, y si no lo es, calcular el siguiente número primo.
+
+
+
+    let numeroComprobar = prompt("Introduce un número entero")
+    let contador = 2
+    let esPrimo = false //Booleano
+    let numeroInicial = numeroComprobar //Guardo el valor inicial del usuario para poder hacer dos console.log diferentes si es primo
+
+//Lo resuelvo con un booleano y para que empiece el bucle doy a esPrimo = False para que mientras no(!)esPrimo sea True y empiece el bucle
+//Una vez en los bucles actualizao el valor de esPrimo segun el resultado
+    while (!esPrimo) {
+        while (numeroComprobar % contador != 0) {
+            contador++
+        }
+
+//Si numeroComprobar == contador es primo y el programa entra en este primer if. Es decir, el while ha ido comprobando divisores desde el 2
+// y ha llegado al mismo numero del usuario por lo que es primo.
+        if (numeroComprobar == contador) {
+
+            //Este if anidado es para mostrar un mensaje u otro, si el numeroInicial == numeroComprobar quiere decir que
+            //el numeroComprobar que nos dio el usuario era primo directamente.
+            if (numeroComprobar == numeroInicial) {
+                console.log(" El número " + numeroComprobar + " es primo")
+
+            //Si numeroComprobar == contador pero != numeroInicial quiere decir que el numeroComprobar ha ido cambiando en el bucle
+            //hasta llegar a otro primo. Si numeroComprobar era 14 (no primo), el programa actualiza el contador y el numero hasta llegar a
+            //17 que si es primo, entonces numeroComprobar == contador pero != numeroInicial. Por eso en este caso si imprime este console.log
+            } else {
+                console.log(" El siguiente número primo después de " + numeroInicial + " es " + numero)
+            }
+            esPrimo = true
+
+        } else {
+            console.log("El número " + numero + " no es primo, voy a buscar el siguiente");
+            numero++
+            contador = 2
+        }
+    } 
+</script>

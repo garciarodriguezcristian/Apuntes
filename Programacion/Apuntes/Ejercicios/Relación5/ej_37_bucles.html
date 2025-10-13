@@ -1,0 +1,19 @@
+<script>
+
+    // Solicitar una palabra. Solicitar otra palabra hasta que la segunda palabra coincida con la palabra inicial.
+
+
+    let palabraSecreta = prompt("Introduce una palabra SECRETA, que el siguiente usuario tendrá que adivinar")
+    let secretaMayuscula = palabraSecreta.toUpperCase()
+    
+    let palabraUsuario = prompt("¡Adivina la palabra! Introduce la palabra que creas que es la palabra SECRETA")
+    let usuarioMayuscula = palabraUsuario.toUpperCase()
+    
+    while (secretaMayuscula != usuarioMayuscula) {
+        usuarioMayuscula = prompt("¡Que lastima! Intentalo de nuevo")
+        usuarioMayuscula = usuarioMayuscula.toUpperCase()
+    }
+    console.log("Has acertado, enhorabuena")
+    alert(" Has acertado, enhorabuena!")
+
+</script>

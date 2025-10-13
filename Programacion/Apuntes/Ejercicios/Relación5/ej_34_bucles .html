@@ -1,0 +1,22 @@
+<script>
+    // Solicitar un número entero. Calcular si el número es primo o no.
+    // Esto significa que no tenga ningún divisor aparte de sí mismo y el 1.
+
+    let numero = prompt("Introduce un número entero")
+    let contador = 2
+    let resultado = " El numero" + numero
+
+    while (numero % contador != 0) {
+        contador++
+    }
+    if (numero == contador) {
+        resultado += " es primo"
+    } else {
+        resultado += " no es primo"
+    } 
+    console.log(resultado);
+
+
+
+
+</script>

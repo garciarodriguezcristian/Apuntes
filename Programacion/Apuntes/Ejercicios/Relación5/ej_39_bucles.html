@@ -1,0 +1,26 @@
+<script>
+
+    // Solicitar un número entero. Solicitar otro número por pantalla hasta que este se corresponda con el primer número introducido.
+    // Indicar si el número buscado es mayor o menor que el introducido.
+
+
+
+    let numeroAAdivinar = prompt("Introduce un numero SECRETO que el siguiente usuario tendrá que adivinar")
+    numeroAAdivinar = Number(numeroAAdivinar)
+
+    let numeroUsuario = prompt("¡Adivina el número! Introduce el número que creas que es el SECRETO")
+    numeroUsuario = Number(numeroUsuario)
+
+    let resultado = " No has acertado..., prueba con un número "
+
+    while (numeroAAdivinar != numeroUsuario) {
+        if (numeroAAdivinar > numeroUsuario) {
+            numeroUsuario = prompt(resultado + "mayor")
+        } else {
+            numeroUsuario = prompt(resultado + "menor")
+        }
+    }
+    console.log("Has acertado, enhorabuena")
+    alert(" Has acertado. Enhorabuena!")
+
+</script>

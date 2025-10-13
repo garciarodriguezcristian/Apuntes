@@ -1,0 +1,27 @@
+<script>
+
+    //Solicitar un número entero. Sumar todos los dígitos del número.
+
+    //Tengo que contar las cifras del numero
+    // Si el numero es 3567 tiene 4 cifras 
+
+    let numero = prompt("Introduce un número. Vamos a sumar todos sus digitos")
+    let contador = numero.length //.length para contar los digitos.
+    let digitoSuma = ""
+    let sumatoria = 0
+
+    for (let i = 0; i < contador; i++) {
+        //Uso charAt(i) para que cada iteracion me diga el digito de esa posicion
+        // Se empieza a contar desde 0, i=0 -> 3, i=1 -> 5, etc
+        digitoSuma = Number(numero.charAt(i)) 
+        
+        //Con cada vuelta del bucle sumo el siguiente digito convertido en numero. Para el ejemplo 3567 seria:
+        sumatoria += digitoSuma 
+        //Sumatoria += 0 + 3(charAt(0) = 3
+        //Sumatoria += 3 + 5(charAt(1) = 8
+        //Sumatoria += 8 + 6(charAt(2) = 14
+        //Sumatoria += 14 + 7(charAt(3) = 21
+    }
+    console.log(" La suma de los digitos del numero " + numero + " es " + sumatoria);
+
+</script>
