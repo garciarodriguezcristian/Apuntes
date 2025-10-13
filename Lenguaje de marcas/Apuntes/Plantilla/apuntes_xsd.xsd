@@ -3,7 +3,8 @@
     <!--APUNTES
     PARA EL EXAMEN (XSD)-->
 
-    <!--Estructura base-->
+    <!--Estructura
+    base-->
     <?xml version="1.0" encoding="UTF-8"?>
     <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
         <xs:element name="nodo raiz">
@@ -26,7 +27,8 @@
         </xs:complexType>
     </xs:element>
 
-    <!--Elemento simple-->
+    <!--Elemento
+    simple-->
 
     <xs:element name="email">
         <xs:simpleType>
@@ -36,7 +38,8 @@
         </xs:simpleType>
     </xs:element>
 
-    <!--Elemento con mas elementos dentro (algunos con restricciones) -->
+    <!--Elemento
+    con mas elementos dentro (algunos con restricciones) -->
 
     <xs:element name="nodo">
         <xs:complexType>
@@ -60,7 +63,8 @@
         </xs:complexType>
     </xs:element>
 
-    <!--Atributo obligatorio para el nodo raíz (en este caso con restricciones, si no son necesarias se cierra
+    <!--Atributo
+    obligatorio para el nodo raíz (en este caso con restricciones, si no son necesarias se cierra
     con />) en el caso de biblioteca seria para el elemento LIBRO-->
 
     <xs:attribute name="codigo" use="required">
@@ -82,7 +86,8 @@
         </xs:simpleType>
     </xs:element>
 
-    <!--Elemento número entero con restricción de número máximo y número mínimo-->
+    <!--Elemento
+    número entero con restricción de número máximo y número mínimo-->
 
     <xs:element name="elemento1">
         <xs:simpleType>
@@ -93,7 +98,8 @@
         </xs:simpleType>
     </xs:element>
 
-    <!--Elemento con restricción string y usando listas -->
+    <!--Elemento
+    con restricción string y usando listas -->
 
     <xs:element name="elemento1">
         <xs:simpleType>
@@ -106,7 +112,8 @@
         </xs:simpleType>
     </xs:element>
 
-    <!--Elemento con restricción de número decimal usando número máximo y número mínimo -->
+    <!--Elemento
+    con restricción de número decimal usando número máximo y número mínimo -->
 
     <xs:element name="elemento1" maxOccurs="5" minOccurs="1">
         <xs:simpleType>
@@ -116,5 +123,13 @@
             </xs:restriction>
         </xs:simpleType>
     </xs:element>
+    <!-- Regex para nombre y apellido con tildes -->
+    <xs:pattern value="[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+( [A-ZÁÉÍÓÚÑ][a-záéíóúñ]+)*" />
 
+    <!-- Regex para email -->
+    <xs:pattern value="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}" />
+    <!-- El +,*,? afectan a todo lo que hay antes -->
+
+<!-- Patron para código EV-\d{3}     -->
+<xs:pattern value="EV-\d{3}" />
 </xs:schema>
