@@ -1,0 +1,51 @@
+<script>
+    //     4. Calculadora de combustible
+
+    // Crea un programa que pida una cantidad de litros inicial, un precio por litro y un consumo cada 100 km, 
+    // y vaya calculando el precio de cada viaje (pidiendo los kilómetros) y el combustible restante. 
+    // Si no hay combustible suficiente, debe avisar al usuario.
+
+    // Ejemplo:
+
+    // Introduce el combustible inicial: 50
+    // Precio del litro de combustible: 1.45
+    // Consumo cada 100km: 5.6
+
+    // Introduce los kilómetros del viaje 1: 50
+    // Precio del viaje: 4.06€
+    // Combustible restante: 47.2 litros
+
+    // Introduce los kilómetros del viaje 2: 200
+    // Precio del viaje: 16.24€
+    // Combustible restante: 36 litros
+
+    // Introduce los kilómetros del viaje 3: 1000
+    // ¡Combustible insuficiente!
+    //-----------------------------------------------------------------------------------------------------//
+
+    //Declaro las variables
+    let litrosIniciales = prompt("Introduce el combustible inicial:")
+    let precioCombustible = prompt("Precio del litro de combustible:")
+    let consumoCada100Km = prompt("Consumo cada 100 Km:")
+    let precioViaje = 0
+    let combustibleRestante = litrosIniciales
+    let numeroViaje = 1
+    let kmViaje = 0
+
+    while (combustibleRestante > 0) {
+        kmViaje = prompt("Introduce los kilómetros del viaje " + numeroViaje + ":")
+
+        precioViaje = (consumoCada100Km * kmViaje / 100) * precioCombustible
+        combustibleRestante -= consumoCada100Km * kmViaje / 100
+        combustibleRestante = Number(combustibleRestante.toFixed(2))
+        if (combustibleRestante <= 0) {
+            console.log("¡Combustible insuficiente!");
+
+        } else {
+            console.log("Precio del viaje: " + precioViaje);
+            console.log("Combustible restante: " + combustibleRestante);
+            numeroViaje++
+
+        }
+    }
+</script>
