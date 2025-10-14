@@ -22,12 +22,20 @@
     while (saldoActual > 0) {
         saldoARetirar = prompt(" Saldo: " + saldoActual + " | Introduzca saldo a retirar")
         
-        if (saldoARetirar > saldoActual) {
-            console.log("Saldo insufucuente")
-            alert("Saldo insuficiente")
+        if (saldoARetirar <= 0) {
+            console.log(" No puedes retirar menos de 0€");
+
         } else {
-            saldoActual -= saldoARetirar
+            if (saldoARetirar > saldoActual) {
+                console.log("Saldo insuficiente")
+                alert("Saldo insuficiente")
+            } else {
+                saldoActual -= saldoARetirar
+            }
+
         }
+
+
     } console.log(" Te has quedado sin saldo ¡A trabajar!")
     alert(" Te has quedado sin saldo ¡A trabajar!")
 

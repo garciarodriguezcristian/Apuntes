@@ -15,34 +15,41 @@
     // Hay 2 alumnos aprobados y 2 alumnos suspensos.
     // La calificación media es 5.75
 
-    const parar = -1
+    // Declaro vairables
     let numeroAlumno = 1
-    let notaAlumno = 0
+    let notaAlumno = parseFloat(prompt("Introduce la calificación del alumno " + numeroAlumno + " (o -1 para terminar)"))
     let sumaNotas = 0
     let promedio = 0
     let aprobados = 0
     let suspensos = 0
 
-    while (notaAlumno != parar) {
-        notaAlumno = parseInt(prompt("Introduce la calificación del alumno " + numeroAlumno + " (o -1 para terminar)"))
+    //Mi programa pide notas hasta que el usuario introduzca "-1"
+    while (notaAlumno != -1) {
 
-        if (notaAlumno != parar) {
-            console.log(" Nota alumno " + numeroAlumno + ": " + notaAlumno);
-            if (notaAlumno >=5) {
-                aprobados++
-            } else {
-                suspensos++
-            }
-            sumaNotas += notaAlumno
-            numeroAlumno++
-        } else {
-            console.log("Finaliza la anotacion de notas");
-
+        //Manejo de errores: Mi programa no continua hasta que la calificaicon
+        //esté en el intervalo [0-10]
+        while (notaAlumno < 0 || notaAlumno > 10) {
+            notaAlumno = parseFloat(prompt("Calificación Incorrecta. Introduce la calificación del alumno " + numeroAlumno + " (o -1 para terminar)"))
         }
+
+        //Actualizo la suma total y el numero de alumnos
+        sumaNotas += notaAlumno
+        numeroAlumno++
+
+        if (notaAlumno >= 5) {
+            aprobados++
+        } else {
+            suspensos++
+        }
+
+        // Pido la siguiente calificaion
+        notaAlumno = parseFloat(prompt("Introduce la calificación del alumno " + numeroAlumno + " (o -1 para terminar)"))
     }
-    numeroAlumno--
-    promedio = sumaNotas / numeroAlumno
+
+    // Calculo el promedio
+    promedio = sumaNotas / (numeroAlumno - 1)
+
+    // Muestro el resultados al usuario
+    console.log("Hay " + aprobados + " alumnos aprobados y " + suspensos + " alumnos suspensos")
     console.log("La calificación media es " + promedio)
-    console.log("Hay " + aprobados + " alumnos aprobados y " + suspensos + " alumnos suspensos" )
-    
 </script>
