@@ -12,19 +12,25 @@
     // Saldo insuficiente.
     // Saldo: 400 | Introduzca saldo a retirar: 400
     // Te has quedado sin saldo ¡A trabajar!
+    //---------------------------------------------------------//
 
+    //Introduzco variables necesarias
     let saldoInicial = 1000
     let saldoActual = saldoInicial
     let saldoARetirar = 0
 
 
-
+    // Mientras el saldo que queda se positivo, sigo dentro del programa, si no, sale del bucle y hace el console.log final
     while (saldoActual > 0) {
-        saldoARetirar = prompt(" Saldo: " + saldoActual + " | Introduzca saldo a retirar")
-        
+        saldoARetirar = prompt(" Saldo: " + saldoActual + " | Introduzca saldo a retirar") //Pido el saldo a retirar
+
+
+        // Manejo de errores: si el saldo que me da el usuario es negativo, lo aviso.
+        //si no, sigo con el progrmama
         if (saldoARetirar <= 0) {
             console.log(" No puedes retirar menos de 0€");
 
+        //
         } else {
             if (saldoARetirar > saldoActual) {
                 console.log("Saldo insuficiente")

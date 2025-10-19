@@ -34,17 +34,23 @@
 
     while (combustibleRestante > 0) {
         kmViaje = prompt("Introduce los kilómetros del viaje " + numeroViaje + ":")
-
-        precioViaje = (consumoCada100Km * kmViaje / 100) * precioCombustible
-        combustibleRestante -= consumoCada100Km * kmViaje / 100
-        combustibleRestante = Number(combustibleRestante.toFixed(2))
-        if (combustibleRestante <= 0) {
-            console.log("¡Combustible insuficiente!");
+        
+        if (kmViaje <= 0) {
+            console.log("ERROR. Introduce kilometros por encima de 0");
 
         } else {
-            console.log("Precio del viaje: " + precioViaje);
-            console.log("Combustible restante: " + combustibleRestante);
-            numeroViaje++
+            precioViaje = (consumoCada100Km * kmViaje / 100) * precioCombustible
+            combustibleRestante -= consumoCada100Km * kmViaje / 100
+            combustibleRestante = Number(combustibleRestante.toFixed(2)) //Opcional, .toFixed(2) es para que muestre 2 decimales
+            if (combustibleRestante <= 0) {
+                console.log("¡Combustible insuficiente!");
+
+            } else {
+                console.log("Precio del viaje: " + precioViaje);
+                console.log("Combustible restante: " + combustibleRestante);
+                numeroViaje++
+            }
+
 
         }
     }

@@ -1,0 +1,71 @@
+<script>
+
+    // 7. Contador de dígitos en un número
+
+    // Crea un programa que pida al usuario un número y un dígito. El programa debe contar cuántas veces aparece dicho dígito en el número indicado.
+    // Además, valida que el número sea positivo y el dígito sea una sola cifra. El programa termina cuando el usuario teclea "SALIR".
+
+    // Ejemplo:
+
+    // Introduce el número: 124548
+    // Introduce el dígito: 4
+    // El dígito 4 aparece 2 veces en el número 124548
+
+    // Introduce el número: -58
+    // ¡Número incorrecto!
+
+    // Introduce el número: 5855
+    // Introduce el dígito: 58
+    // ¡Dígito incorrecto!
+    // Introduce el dígito: 5
+    // El dígito 5 aparece 3 veces en el número 5855
+
+    // Introduce el número: SALIR
+
+    let numero = prompt("Introduce el número: ".toUpperCase) //Pido el número
+    let digito = ""
+    let posicionDigito = -1 // -1 porque más adelante voy a sumarle +1 para que en cada vuelta busque desde otra posicion
+    let contador = 0
+    let pararBucle = false
+
+    //Mientras numero no diga SALIR continuo en mi programa
+    while (numero != "SALIR" && digito != 0) {
+
+        //Compruebo que es positivo y entra en else
+        if (numero < 0) {
+            console.log("¡Número incorrecto")
+
+            //Si numero cumple todas las condiciones pido el digito
+        } else {
+            digito = prompt("Introduce el dígito: ")
+            //Compruebo los requisitos, si no cumple lo pido de nuevo
+            while (digito < 0 || 9 < digito) {
+                console.log("¡Digito incorrecto")
+                digito = prompt("Introduce el dígito: ")
+            }
+
+            //si numero y digito cumplen con los valores correctos entro en el programa para calcular
+            // las veces que aparece el digito
+
+            //Entro en el bucle dando por hecho que es TRUE y busco con .indexOf(digito-a-buscar, posicion-desde-la-que-empezar-a-buscar)
+            //la posicion del digito introducido en la cadena.
+            // Cuando hay coincidencia del digito buscado en la cadena devuelve su posicion ( 2 por ejemplo), 
+            // si no está el digito en la cadena, indexOf devuelve -1 como valor.
+
+            while (!pararBucle) {
+                //Busco en cada vuelta coincidencias, cada vez que encuentra y no devuelve -1, sumo +1 al contador para saber cuantas coincidencias
+                // o veces aparece. Cuando ya no hay coincidencias devuelve -1, actualizo pararBucle a true y se sale del while 
+                posicionDigito = numero.indexOf(digito, posicionDigito + 1)
+                if (posicionDigito != -1) {
+                    contador++
+                } else {
+                    pararBucle = true
+                }
+            } console.log("El digito " + digito + " aparece " + contador + " veces en el número " + numero)
+            contador = 0
+            pararBucle = false
+        } numero = prompt("Introduce el número: ".toUpperCase)
+    }
+
+
+</script>

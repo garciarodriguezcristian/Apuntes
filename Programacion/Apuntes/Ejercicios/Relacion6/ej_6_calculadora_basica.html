@@ -1,0 +1,57 @@
+<script>
+
+    //     6. Calculadora básica
+
+    // Crea una calculadora básica de dos números. El programa pide dos números y luego una operación (+, -, *, /). 
+    // El programa pide números hasta que el usuario indique "SALIR".
+
+    // Ejemplo:
+
+    // Introduce el primer número: 4
+    // Introduce el segundo número: 5
+    // Introduce la operación: +
+
+    // El resultado de 4 + 5 es 9
+
+    // Introduce el primer número: 3
+    // Introduce el segundo número: 4
+    // Introduce la operación: *
+
+    // El resultado de 3 * 4 es 12
+
+    // Introduce el primer número: SALIR
+
+    let numero1 = prompt("Introduce el primer número").toUpperCase()
+    let numero2 = 0
+    let operacion = ""
+    let resultado = 0
+
+
+    while (numero1 != "SALIR") {
+        numero2 = prompt("Introduce el segundo número").toUpperCase()
+        operacion = prompt("Introduce la operacion (+, -, *, /)")
+        if (operacion == "+") {
+            resultado = Number(numero1) + Number(numero2)
+            console.log(" La suma de " + numero1 + " más " + numero2 + " es " + resultado)
+        } else if (operacion == "-") {
+            resultado = numero1 - numero2
+            console.log(" La resta de " + numero1 + " menos " + numero2 + " es " + resultado)
+        } else if (operacion == "*") {
+            resultado = numero1 * numero2
+            console.log(" La multiplicación de " + numero1 + " por " + numero2 + " es " + resultado)
+        } else if (operacion == "/") {
+            if (numero2 == 0) {
+                alert(" No se puede hacer la división entre 0")
+            } else {
+                resultado = numero1 / numero2
+                console.log(" La division de " + numero1 + " entre " + numero2 + " es " + resultado)
+            }
+        } else {
+            (console.log("No has introducido una operacion correcta: +, -, * o / "))
+        }
+        numero1 = prompt("Introduce el primer número").toUpperCase()
+
+    }
+    console.log(" Has salido del programa"); //Borrar despues
+
+</script>

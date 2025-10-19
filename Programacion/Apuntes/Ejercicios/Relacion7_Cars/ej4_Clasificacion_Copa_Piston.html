@@ -1,0 +1,42 @@
+<script>
+    //      Clasificación de la Copa Pistón
+
+    // El programa pide el número de coches en carrera. Por cada coche, solicita su nombre y puntos conseguidos (máximo 100). Si los puntos son:
+
+    // 80 o más: 🥇 Oro
+    // Entre 50 y 79: 🥈 Plata
+    // Menos de 50: 🥉 Fuera del podio
+
+    // 🧪 Ejemplo:
+
+    // Coche 1: Rayo - 95 puntos → Oro
+    // Coche 2: Sally - 78 puntos → Plata
+    // Coche 3: Guido - 42 puntos → Fuera del podio
+
+    const NUMEROPARTICIPANTES = prompt(" ¿Cuantos coches están inscritos en la carrera? ")
+    let numeroCoche = 1
+    let nombreCoche = ""
+    let puntosConseguidos = 0
+    const MAXIMOPUNTOS = 100
+    let posicion = ""
+
+    for (let i = 1; i <= NUMEROPARTICIPANTES; i++) {
+        nombreCoche = prompt(" Nombre coche participante número " + i + ": ")
+        puntosConseguidos = prompt(" Puntos obtenidos en carrera: ")
+
+        //Manejo de errores. Pido puntuación dentro de valores permitidos
+        while (puntosConseguidos > MAXIMOPUNTOS || puntosConseguidos < 0) {
+            puntosConseguidos = prompt(" Puntuación incorrecta, introduce de nuevo los puntos conseguidos ")
+        }
+        if (puntosConseguidos >= 80) {
+            posicion = "Oro"
+        } else if (puntosConseguidos < 80 && puntosConseguidos >= 50) {
+            posicion = " Plata"
+        } else {
+            posicion = " Fuera del podio "
+        }
+        console.log(" Coche " + i + " " + nombreCoche + " - " + puntosConseguidos + " puntos → " + posicion);
+
+    }
+
+</script>

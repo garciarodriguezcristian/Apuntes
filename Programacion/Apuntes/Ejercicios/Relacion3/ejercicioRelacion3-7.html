@@ -5,7 +5,7 @@
     let numero1 = parseFloat(prompt("Introduce el primer número"))
     let numero2 = parseFloat(prompt("Introduce el segundo número"))
     let operacion = prompt("Elige una de las siguentes operaciones:+, -, * o / ")
-    let resultado
+    let resultado = 0
     //Declaro let resultado sin valor para segun que operacion se haga le asocio despues una aoperacion
 
     //Pongo los condicionales para ver si se cumple cada respuesta del usuario.
@@ -23,7 +23,7 @@
         if (numero2 == 0) {
             alert(" No se puede hacer la división entre 0")
         } else {
-            operacion = numero1 / numero2
+            resultado = numero1 / numero2
             console.log(" La division de " + numero1 + " entre " + numero2 + " es " + resultado)
         }
     } else (console.log( "No has introducido una operacion correcta: +, -, * o / "))
