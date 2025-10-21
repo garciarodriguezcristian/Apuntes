@@ -1,0 +1,40 @@
+<script>
+
+    //Declaro variables
+    const ELECTRODOMESTICOSREGISTRADOS = prompt(" Introduce el número de electrodomésticos a registrar: ")
+    const PRECIOKWH = parseFloat(prompt(" Introduce el precio por kilovatio-hora (kWh):"))
+    const POTENCIACONTRATADA = Number(prompt(" Introduce la potencia total contratada (en vatios):"))
+
+    //Pido fuera del for la potencia para que al entrar en el for se compruebe
+    let potenciaElectrodomestico = 0
+    let horasUso = 0
+    let consumoDiario = 0
+    let consumoMensual = 0
+    let consumoTotalMensual = 0
+    let costeMensual = 0
+    let costeDiario = 0
+    let sumaPotencia = 0
+    let potenciaSuperada = false
+
+    // Para que entre dentro del for tiene que cumpplir que i no supere el numero de electrodomesticos
+    // y doy por hecho que no supero la potencia
+    for (let i = 1; i <= ELECTRODOMESTICOSREGISTRADOS && !potenciaSuperada; i++) {
+        potenciaElectrodomestico = Number(prompt(" Introduce potencia del electrodomestico " + i + " (en vatios): "))
+
+        //Si la suma de la potencia más la potencia del electrodomestico no supera la potencia contratada hago todas las operaciones
+        // si no, pongo alerta de que se ha superado la potencia y cambio a true la potencia superada para que mi for se acabe
+        if (sumaPotencia + potenciaElectrodomestico <= POTENCIACONTRATADA) {
+            horasUso = parseFloat(prompt("Introduce el número de horas de uso diario: "))
+            consumoDiario = (potenciaElectrodomestico / 1000) * horasUso
+            consumoMensual = consumoDiario * 30
+            consumoTotalMensual += consumoMensual
+            costeMensual = consumoTotalMensual * PRECIOKWH
+            sumaPotencia += potenciaElectrodomestico
+        } else {
+            alert(" ¡Alerta! Has superado la potencia de " + POTENCIACONTRATADA + " W")
+            potenciaSuperada = true
+        } 
+    } 
+        console.log(" Consumo total mensual: " + consumoTotalMensual + " kWh");
+        console.log(" Coste total mensual: " + costeMensual + " €");
+</script>
