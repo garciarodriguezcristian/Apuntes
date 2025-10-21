@@ -31,7 +31,7 @@
 | `git add <archivo>` | Añade un archivo al área de staging |
 | `git add .` | Añade todos los archivos |
 | `git commit -m "mensaje"` | Guarda los cambios con mensaje |
-| `git commit --ammend -m "mensaje"` | Se reescribe el commit anterior |
+| `git commit --amend -m "mensaje"` | Se reescribe el commit anterior |
 | `git log` | Muestra el historial completo de commits |
 | `git log --oneline` | Historial resumido |
 
