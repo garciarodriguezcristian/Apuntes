@@ -82,4 +82,3 @@
 
 ---
 
-✍️ **Consejo final:** practica creando, fusionando y subiendo ramas a GitHub. Saber interpretar `git status` y `git log` te salvará en el examen 😉
