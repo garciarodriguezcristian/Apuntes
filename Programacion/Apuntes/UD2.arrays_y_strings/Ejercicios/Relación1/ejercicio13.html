@@ -1,0 +1,19 @@
+<script>
+// 13. Invertir un array manualmente
+
+// Crea un array llamado letras con los valores "a", "b", "c", "d".
+// Invierte el array utilizando alguno (o varios) de las siguientes funciones: push(), pop(), shift() y unshift().
+// Imprime el array invertido.
+
+let letras = ['a','b','c','d']
+let invertido = []
+let extraer = ''
+
+for (let i = letras.length; i > 0 ; i--) {
+extraer = letras.pop()
+invertido.push(extraer)
+}
+letras = invertido
+console.log(letras);
+
+</script>

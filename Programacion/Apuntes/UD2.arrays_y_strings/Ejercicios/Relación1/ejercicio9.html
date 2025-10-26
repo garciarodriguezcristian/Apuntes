@@ -1,0 +1,22 @@
+<script>
+    // 9. Simulación de una cola (FIFO)
+
+    // Crea un array vacío llamado cola.
+    // Añade los elementos "cliente1", "cliente2" y "cliente3" al final del array.
+    // Simula el proceso de atender a los clientes eliminando el primero e imprime
+    //  el cliente atendido y el estado de la cola.
+
+    let cola = []
+    cola.push('cliente1', 'cliente2', 'cliente3')
+    let clienteAtendido = ''
+    for (let i = cola.length; i > 0; i--) {
+        clienteAtendido = cola.shift()
+        console.log(`Cliente atendido: ${clienteAtendido}`);
+        if (i > 1) {
+            console.log(`Clientes en espera: ${cola}`);
+        } else {
+            console.log(`No hay clientes en espera`);
+            
+        }
+    }
+</script>
