@@ -1,17 +1,20 @@
 <script>
-// 16. Rellenar un array con elementos secuenciales
+    // 16. Rellenar un array con elementos secuenciales
 
-// Crea un array vacío llamado secuencia.
-// Usando un bucle, añade los números del 1 al 5 al final del array.
-// Imprime el array resultante.
+    // Crea un array vacío llamado secuencia.
+    // Usando un bucle, añade los números del 1 al 5 al final del array.
+    // Imprime el array resultante.
 
-let secuencia = []
-let contador = 1
-const numerosAIntroducir = 5
-while (secuencia.length < numerosAIntroducir) {
-    secuencia.push(contador)
-    contador++
-}
-console.log(secuencia);
+    let secuencia = []
+    let contador = 1
+    const numerosAIntroducir = 5
+    // while (secuencia.length < numerosAIntroducir) {
+    //     secuencia.push(contador)
+    //     contador++
+    // }
+    for (let i = 0; i < numerosAIntroducir; i++) {
+        secuencia.push(i + 1)
+    }
+    console.log(secuencia);
 
 </script>
