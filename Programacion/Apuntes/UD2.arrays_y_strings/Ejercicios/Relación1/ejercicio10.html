@@ -6,14 +6,24 @@
     // Simula el proceso de extraer elementos de la pila eliminando
     // el último elemento e imprime el número extraído y el estado de la pila.
 
-let pila = []
-pila.push(10,20,30)
-let numeroExtraido = 0
-for (let i = pila.length; i > 0; i--) {
+    let pila = []
+    pila.push(10, 20, 30)
+    let numeroExtraido = 0
+    // for (let i = pila.length; i > 0; i--) {
+    //     numeroExtraido = pila.pop()
+
+    //     console.log(numeroExtraido);
+    //     console.log(pila);
+    // }
     numeroExtraido = pila.pop()
-
-    console.log(numeroExtraido);
+    console.log(`Número extraido: ${numeroExtraido}`);
     console.log(pila);
-}
 
+    numeroExtraido = pila.pop()
+    console.log(`Número extraido: ${numeroExtraido}`);
+    console.log(pila);
+
+    numeroExtraido = pila.pop()
+    console.log(`Número extraido: ${numeroExtraido}`);
+    console.log('Sin elementos en el array "pila"');
 </script>

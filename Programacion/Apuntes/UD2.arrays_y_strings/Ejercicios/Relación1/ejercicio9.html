@@ -9,14 +9,28 @@
     let cola = []
     cola.push('cliente1', 'cliente2', 'cliente3')
     let clienteAtendido = ''
-    for (let i = cola.length; i > 0; i--) {
-        clienteAtendido = cola.shift()
-        console.log(`Cliente atendido: ${clienteAtendido}`);
-        if (i > 1) {
-            console.log(`Clientes en espera: ${cola}`);
-        } else {
-            console.log(`No hay clientes en espera`);
-            
-        }
-    }
+    // for (let i = cola.length; i > 0; i--) {
+    //     clienteAtendido = cola.shift()
+    //     console.log(`Cliente atendido: ${clienteAtendido}`);
+    //     if (i > 1) {
+    //         console.log(`Clientes en espera: ${cola}`);
+    //     } else {
+    //         console.log(`No hay clientes en espera`);
+
+    //     }
+    // }
+
+    clienteAtendido = cola.shift()
+    console.log(`Cliente atendido: ${clienteAtendido}`);
+    console.log(`Estado actual de la cola: ${cola}`);
+    
+    clienteAtendido = cola.shift()
+    console.log(`Cliente atendido: ${clienteAtendido}`);
+    console.log(`Estado actual de la cola: ${cola}`);
+    
+    clienteAtendido = cola.shift()
+    console.log(`Cliente atendido: ${clienteAtendido}`);
+    console.log(`Estado actual de la cola: No hay más clientes`);
+
+
 </script>
