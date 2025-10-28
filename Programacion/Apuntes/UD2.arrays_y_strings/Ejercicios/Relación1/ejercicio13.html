@@ -1,19 +1,22 @@
 <script>
-// 13. Invertir un array manualmente
+    // 13. Invertir un array manualmente
 
-// Crea un array llamado letras con los valores "a", "b", "c", "d".
-// Invierte el array utilizando alguno (o varios) de las siguientes funciones: push(), pop(), shift() y unshift().
-// Imprime el array invertido.
+    // Crea un array llamado letras con los valores "a", "b", "c", "d".
+    // Invierte el array utilizando alguno (o varios) de las siguientes funciones: push(), pop(), shift() y unshift().
+    // Imprime el array invertido.
 
-let letras = ['a','b','c','d']
-let invertido = []
-let extraer = ''
+    let letras = ['a', 'b', 'c', 'd']
+    let invertido = []
+    let tamanioArray = letras.length
 
-for (let i = letras.length; i > 0 ; i--) {
-extraer = letras.pop()
-invertido.push(extraer)
-}
-letras = invertido
-console.log(letras);
+    // for (let i = letras.length; i > 0; i--) {
+    //     extraer = letras.pop()
+    //     invertido.push(extraer)
+    // }
+    for (let i = 0; i < tamanioArray; i++) {
+        invertido.push(letras.pop())
+    }
 
+    console.log(invertido);
+    //Tengo que guardar la longitud del array al principio
 </script>
