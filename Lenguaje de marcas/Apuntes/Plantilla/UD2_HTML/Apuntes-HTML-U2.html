@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apuntes HTML – Unidad Didáctica 2</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #22d3ee;
+      --code-bg: #0b1020;
+      --code-border: #1f2937;
+    }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
+    header { padding: 2.5rem 1.25rem 1rem; text-align: center; background: linear-gradient(180deg, rgba(34,211,238,.08), transparent); border-bottom: 1px solid #1f2937;}
+    h1 { margin: 0 0 .5rem; font-size: clamp(1.6rem, 2.5vw, 2.2rem); letter-spacing: .3px;}
+    p.subtitle { margin: 0; color: var(--muted); }
+    main { max-width: 1000px; margin: 0 auto; padding: 1.25rem; }
+    section { background: var(--panel); border: 1px solid #1f2937; border-radius: 14px; margin: 1rem 0 1.2rem; overflow: hidden; }
+    section header { display: flex; align-items: center; justify-content: space-between; padding: .9rem 1rem; background: rgba(34,211,238,.08); border-bottom: 1px solid #1f2937; }
+    section header h2 { margin: 0; font-size: 1rem; letter-spacing: .3px; }
+    .hint { color: var(--muted); font-size: .9rem; margin: .8rem 1rem; }
+    pre { background: var(--code-bg); margin: 0; padding: 1rem; overflow-x: auto; border-top: 1px solid var(--code-border); border-bottom-left-radius: 14px; border-bottom-right-radius: 14px; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: .92rem; line-height: 1.45; }
+    .tip { border-left: 3px solid var(--accent); padding: .6rem .9rem; margin: .8rem 1rem; background: rgba(34,211,238,.06); color: var(--text); border-radius: 8px; }
+    .kbd { border: 1px solid #374151; padding: .05rem .35rem; border-radius: 6px; background: #0b1020; }
+    a { color: var(--accent); text-decoration: none; }
+    .footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 2rem 0 3rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Apuntes – Lenguajes de Marcas (HTML)</h1>
+    <p class="subtitle">Plantillas listas para copiar y pegar · Unidad Didáctica 2</p>
+  </header>
+  <main>
+
+    <section id="estructura">
+      <header><h2>1) Estructura básica de un documento</h2></header>
+      <div class="hint">Usa <span class="kbd">lang="es"</span>, codificación UTF‑8 y la meta <span class="kbd">viewport</span> para responsive.</div>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;meta name="description" content="Descripción de la página"&gt;
+    &lt;title&gt;Título de la página&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;
+      &lt;h1&gt;Título principal&lt;/h1&gt;
+      &lt;nav&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="index.html"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="about.html"&gt;Sobre nosotros&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="contact.html"&gt;Contacto&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+      &lt;section&gt;
+        &lt;h2&gt;Subtítulo o sección&lt;/h2&gt;
+        &lt;p&gt;Texto o contenido de ejemplo.&lt;/p&gt;
+      &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+      &lt;p&gt;&amp;copy; 2025 Mi página web.&lt;/p&gt;
+    &lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </section>
+
+    <section id="texto">
+      <header><h2>2) Etiquetas básicas de texto</h2></header>
+      <div class="hint">Encabezados jerárquicos, párrafos y formatos de énfasis.</div>
+      <pre><code>&lt;h1&gt;Encabezado principal&lt;/h1&gt;
+&lt;h2&gt;Subtítulo&lt;/h2&gt;
+&lt;h3&gt;Sección&lt;/h3&gt;
+
+&lt;p&gt;Esto es un párrafo.&lt;/p&gt;
+
+&lt;b&gt;Negrita (visual)&lt;/b&gt;
+&lt;strong&gt;Importante (semántico)&lt;/strong&gt;
+&lt;i&gt;Cursiva (visual)&lt;/i&gt;
+&lt;em&gt;Énfasis (semántico)&lt;/em&gt;
+
+&lt;blockquote&gt;
+  «Cita larga o destacada.»
+&lt;/blockquote&gt;
+
+&lt;hr&gt; &lt;!-- Línea horizontal --&gt;
+&lt;br&gt; &lt;!-- Salto de línea --&gt;</code></pre>
+    </section>
+
+    <section id="enlaces">
+      <header><h2>3) Enlaces</h2></header>
+      <div class="hint">Usa textos descriptivos, evita «haz clic aquí».</div>
+      <pre><code>&lt;!-- Enlace externo --&gt;
+&lt;a href="https://www.ejemplo.com"&gt;Visita mi sitio&lt;/a&gt;
+
+&lt;!-- Enlace interno (ancla) --&gt;
+&lt;a href="#seccion1"&gt;Ir a la Sección 1&lt;/a&gt;
+&lt;h2 id="seccion1"&gt;Sección 1&lt;/h2&gt;
+
+&lt;!-- Enlace de correo --&gt;
+&lt;a href="mailto:info@ejemplo.com"&gt;Contactar&lt;/a&gt;
+
+&lt;!-- Enlace de descarga --&gt;
+&lt;a href="documento.pdf" download&gt;Descargar PDF&lt;/a&gt;</code></pre>
+    </section>
+
+    <section id="imagenes">
+      <header><h2>4) Imágenes y figuras</h2></header>
+      <div class="hint">Incluye siempre <span class="kbd">alt</span> para accesibilidad.</div>
+      <pre><code>&lt;!-- Imagen básica --&gt;
+&lt;img src="imagen.jpg" alt="Descripción de la imagen" width="400" height="300"&gt;
+
+&lt;!-- Imagen con figura y leyenda --&gt;
+&lt;figure&gt;
+  &lt;img src="foto.jpg" alt="Foto descriptiva"&gt;
+  &lt;figcaption&gt;Descripción o pie de foto.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;!-- Responsive (alta densidad) --&gt;
+&lt;img src="imagen-pequena.jpg" srcset="imagen-grande.jpg 2x" alt="Descripción"&gt;</code></pre>
+    </section>
+
+    <section id="video">
+      <header><h2>5) Vídeo con controles</h2></header>
+      <div class="hint">La opción <span class="kbd">controls</span> muestra los botones de reproducción, volumen, etc.</div>
+      <div class="tip"><strong>Atributos útiles:</strong> <span class="kbd">controls</span>, <span class="kbd">loop</span>, <span class="kbd">autoplay</span>, <span class="kbd">poster="preview.jpg"</span>, <span class="kbd">width</span>, <span class="kbd">height</span>.</div>
+      <pre><code>&lt;!-- Vídeo básico con controles --&gt;
+&lt;video src="videos/mi_video.mp4" width="640" height="360" controls&gt;
+  Tu navegador no soporta el elemento de video.
+&lt;/video&gt;
+
+&lt;!-- Versión completa --&gt;
+&lt;video src="videos/mi_video.mp4" width="600" height="400" controls loop poster="videos/preview.jpg"&gt;
+  Tu navegador no soporta el video.
+&lt;/video&gt;</code></pre>
+    </section>
+
+    <section id="listas">
+      <header><h2>6) Listas</h2></header>
+      <pre><code>&lt;!-- Lista ordenada --&gt;
+&lt;ol&gt;
+  &lt;li&gt;Paso 1&lt;/li&gt;
+  &lt;li&gt;Paso 2&lt;/li&gt;
+  &lt;li&gt;Paso 3&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- Lista desordenada --&gt;
+&lt;ul&gt;
+  &lt;li&gt;Elemento A&lt;/li&gt;
+  &lt;li&gt;Elemento B&lt;/li&gt;
+  &lt;li&gt;Elemento C&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </section>
+
+    <section id="tablas">
+      <header><h2>7) Tablas</h2></header>
+      <div class="hint">Usa &lt;thead&gt; para cabecera y &lt;tbody&gt; para el cuerpo.</div>
+      <pre><code>&lt;table border="1"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Nombre&lt;/th&gt;
+      &lt;th&gt;Edad&lt;/th&gt;
+      &lt;th&gt;Ciudad&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Juan&lt;/td&gt;
+      &lt;td&gt;25&lt;/td&gt;
+      &lt;td&gt;Madrid&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Lucía&lt;/td&gt;
+      &lt;td&gt;22&lt;/td&gt;
+      &lt;td&gt;Sevilla&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+    </section>
+
+    <section id="formularios">
+      <header><h2>8) Formularios</h2></header>
+      <div class="hint">Métodos comunes: <span class="kbd">GET</span> y <span class="kbd">POST</span>. Usa <span class="kbd">required</span> para validación básica.</div>
+      <pre><code>&lt;form action="procesar.php" method="post"&gt;
+  &lt;label for="nombre"&gt;Nombre:&lt;/label&gt;
+  &lt;input type="text" id="nombre" name="nombre" required&gt;
+
+  &lt;label for="correo"&gt;Correo:&lt;/label&gt;
+  &lt;input type="email" id="correo" name="correo"&gt;
+
+  &lt;label for="mensaje"&gt;Mensaje:&lt;/label&gt;
+  &lt;textarea id="mensaje" name="mensaje"&gt;&lt;/textarea&gt;
+
+  &lt;!-- Select y opciones --&gt;
+  &lt;label for="ciudad"&gt;Ciudad:&lt;/label&gt;
+  &lt;select id="ciudad" name="ciudad"&gt;
+    &lt;option value="mad"&gt;Madrid&lt;/option&gt;
+    &lt;option value="sev"&gt;Sevilla&lt;/option&gt;
+    &lt;option value="bcn"&gt;Barcelona&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;!-- Checkbox --&gt;
+  &lt;label&gt;
+    &lt;input type="checkbox" name="acepto" required&gt; Acepto las condiciones
+  &lt;/label&gt;
+
+  &lt;!-- Botón de envío --&gt;
+  &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;</code></pre>
+    </section>
+
+    <section id="comentarios">
+      <header><h2>9) Comentarios (no visibles)</h2></header>
+      <pre><code>&lt;!-- Esto es un comentario en HTML. Útil para notas en el examen. --&gt;</code></pre>
+    </section>
+
+    <div class="footer">
+      Hecho para repasar rápido · Copia y pega las plantillas donde las necesites.
+    </div>
+  </main>
+</body>
+</html>
