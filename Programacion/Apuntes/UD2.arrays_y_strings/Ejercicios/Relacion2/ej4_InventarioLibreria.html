@@ -1,0 +1,83 @@
+<script>
+
+    // 4. Gestión de Inventario de una Librería
+
+    // Escribe un programa que permita al usuario gestionar el inventario de una librería. El programa debe usar dos arrays: uno para almacenar 
+    // los títulos de los libros y otro para almacenar las cantidades disponibles de cada libro. El usuario debe poder realizar las siguientes acciones a través de un menú:
+
+    // Añadir un nuevo libro al inventario (con su título y cantidad).
+    // Actualizar la cantidad de un libro existente.
+    // Ver el inventario completo (título y cantidad de cada libro).
+    // Salir del programa.
+    // El programa debe actualizar el inventario según las acciones del usuario y seguir ejecutándose hasta que se elija la opción de salir.
+
+
+    let titulosLibros = []
+    let unidadesLibro = []
+
+    let opcionElegida = ""
+
+    let unidadesNuevoLibro = 0
+
+    let libroAActualizar = ""
+    let nuevaCantidadLibro = 0
+
+    let totalLibros = 0
+
+    let libroEncontrado = false
+
+    alert("No hay libros en stock: Añade uno para continuar")
+    titulosLibros.push(prompt(" Escribe el título del libro").toUpperCase())
+    unidadesLibro.push(prompt(" Escribe la cantidad del libro"))
+
+    opcionElegida = prompt("Elige una de las siguientes opciones:" +
+        "\n1. Añadir un nuevo libro al inventario (con su título y cantidad)." +
+        "\n2. Actualizar la cantidad de un libro existente." +
+        "\n3. Ver el inventario completo (título y cantidad de cada libro)." +
+        "\n4. Salir del programa.")
+
+
+    while (opcionElegida != 4) {
+
+        if (opcionElegida == 1) {
+            titulosLibros.push(prompt(" Escribe el título del nuevo libro").toUpperCase())
+            unidadesNuevoLibro = prompt(" Escribe la cantidad a añadir del nuevo libro")
+            while (unidadesLibro <= 0) {
+                unidadesNuevoLibro = prompt(" Escribe la cantidad a añadir del nuevo libro")
+            }
+            unidadesLibro.push(unidadesNuevoLibro)
+
+        }
+        else if (opcionElegida == 2) {
+            libroAActualizar = prompt(" Escribe el título del libro que quieres actualizar").toUpperCase()
+            nuevaCantidadLibro = prompt(" Escribe la nueva cantidad del libro " + libroAActualizar)
+            while (nuevaCantidadLibro <= 0) {
+                nuevaCantidadLibro = prompt("Cantidad erronea, escribe un número mayor a 0.\n Escribe la nueva cantidad del libro " + libroAActualizar)
+            }
+            for (let i = 0; i < titulosLibros.length && !libroEncontrado; i++) {
+                if (libroAActualizar == titulosLibros[i]) {
+                    unidadesLibro[i] = nuevaCantidadLibro
+                    libroEncontrado = true
+                }
+            }
+        }
+        else if (opcionElegida == 3) {
+            console.log(`Inventario completo:`)
+            for (let i = 0; i < titulosLibros.length; i++) {
+                console.log(` ${titulosLibros[i]} -> ${unidadesLibro[i]} uds`)
+                totalLibros += Number(unidadesLibro[i])
+            }
+            console.log(`Total libros en stock: ${totalLibros}`);
+
+        } else {
+            alert("Opción no valida, elige una opción correcta")
+        }
+        opcionElegida = prompt("Elige una de las siguientes opciones:" +
+            "\n1. Añadir un nuevo libro al inventario (con su título y cantidad)." +
+            "\n2. Actualizar la cantidad de un libro existente." +
+            "\n3. Ver el inventario completo (título y cantidad de cada libro)." +
+            "\n4. Salir del programa. ")
+    }
+    console.log("Finaliza el programa")
+
+</script>
