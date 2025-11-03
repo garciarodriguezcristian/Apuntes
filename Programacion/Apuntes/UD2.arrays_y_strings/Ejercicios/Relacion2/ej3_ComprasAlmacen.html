@@ -1,0 +1,66 @@
+<script>
+    // 3. Sistema de Compras en Almacén
+
+    // Desarrolla un programa que gestione las compras en un almacén. Para esto:
+
+    // Crea un array que contenga los nombres de 10 productos disponibles en el almacén.
+    // Crea otro array que contenga los precios correspondientes a esos 10 productos.
+    // El programa debe permitir al usuario realizar una compra solicitando el nombre del producto y la cantidad deseada.
+    // El programa debe buscar el precio del producto seleccionado, multiplicarlo por la cantidad y añadirlo al total de la compra.
+    // Si el usuario escribe "FIN", el programa debe finalizar la compra, mostrando un resumen con todos los productos adquiridos,
+    //  sus cantidades, y el costo total a pagar.
+
+    let productos = ["AGUA", "PAN", "VINO", "NESTEA", "BIZCOCHO", "CARNE", "GOMINOLAS", "CASTAÑAS", "PIPAS", "SERVILLETAS",]
+    let precios = [3, 1, 9, 2, 5, 6, 2, 7, 1, 4]
+
+    let unidadesProductoElegido = 0
+    let precioProducto = 0
+
+    //Supongo que el producto no está disponible, en el caso de que este disponoble cambio la bandera productoEncontrado a true
+    let productoEncontrado = false
+
+    let totalProducto = 0
+    let totalCompra = 0
+
+    //Creo dos arrays para guardar cada producto comprado y las unidades de cada uno.
+    let productosComprados = []
+    let unidadesAdquiridas = []
+
+    let productoElegido = prompt("Introduce el producto que quieres comprar").toUpperCase()
+
+
+    while (productoElegido != "FIN") {
+        //Antes de ver el nuevo porducto del usuario vuelvo a suponer que el producto no está disponible pra que entre en el bucle
+        productoEncontrado = false
+        unidadesProductoElegido = prompt(" ¿Cuantas unidades de producto quieres?")
+        while (unidadesProductoElegido <= 0) {
+            unidadesProductoElegido = prompt(" ERROR. Introduce de nuevo las uniades deseadas")
+        }
+
+        // Solo entro en le bucle si no he recorrido el array productos entero i < array.length y si productoEncontrado sigue siendo FALSE.
+        // Solo si encuentro el producto, es decir, si está dsponible, cambio productoEncontrado a true, añado el producto y las unidades a los arrays
+        // productosComprados y unidadesAdquiridas
+        // y me salgo del for. 
+        for (let i = 0; i < productos.length && !productoEncontrado; i++) {
+            if (productoElegido == productos[i]) {
+                totalCompra += unidadesProductoElegido * precios[i]
+                productoEncontrado = true
+                productosComprados.push(productoElegido)
+                unidadesAdquiridas.push(unidadesProductoElegido)
+            }
+        }
+        //Si me salgo del for sin encontrar el producto, significa que productoEncontrado no cambia a true, y si productoEncontrado es false
+        // muestro la alerta y sigo el programa.
+        if (productoEncontrado == false) {
+            alert("PRODUCTO NO DISPONIBLE, COMPRA NO REGISTRADA")
+        }
+        productoElegido = prompt("Introduce el producto que quieres comprar").toUpperCase()
+    }
+
+    console.log(`RESUMEN COMPRA:`)
+    for (let i = 0; i < productosComprados.length; i++) {
+        console.log(`${productosComprados[i]} - ${unidadesAdquiridas[i]} uds`);
+    } console.log(`Importe total a pagar: ${totalCompra} €`);
+
+
+</script>
