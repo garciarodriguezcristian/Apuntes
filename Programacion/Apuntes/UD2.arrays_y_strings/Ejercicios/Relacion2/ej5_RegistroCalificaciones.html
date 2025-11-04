@@ -1,0 +1,99 @@
+<script>
+
+    // 5. Sistema de Registro de Calificaciones
+
+    // Desarrolla un programa que permita registrar y gestionar las calificaciones de los estudiantes en una clase. Usa dos arrays:
+    // uno para los nombres de los estudiantes y otro para sus calificaciones. El programa debe ofrecer al usuario un menú con las siguientes opciones:
+
+    // Añadir un estudiante y su calificación.
+    // Mostrar la calificación promedio de la clase.
+    // Mostrar la calificación más alta y el nombre del estudiante correspondiente.
+    // Mostrar la calificación más baja y el nombre del estudiante correspondiente.
+    // Salir del programa.
+
+    let nombreEstudiantes = []
+    let calificaciones = []
+
+    let nuevoEstudiante = ""
+    let notaEstudiante = 0
+
+    let calificacionPromedio = 0
+    let sumaNotas = 0
+
+    let notaAlta = 0
+    let mejorEstudiante = ""
+
+    let notaBaja = 0
+    let peorEstudiante = ""
+
+    let estudianteEncontrado = false
+
+    //let opcionElegida = ""
+
+    let opcionElegida = prompt("Elige una de las siguientes opciones:" +
+        "\n1. Añadir un estudiante y su calificación." +
+        "\n2. Mostrar la calificación promedio de la clase." +
+        "\n3. Mostrar la calificación más alta y el nombre del estudiante correspondiente." +
+        "\n4. Mostrar la calificación más baja y el nombre del estudiante correspondiente." +
+        "\n5. Salir del programa.")
+
+    while (opcionElegida != 5) {
+
+        if (opcionElegida == 1) {
+            nuevoEstudiante = (prompt(" Escribe el nombre del nuevo estudiante").toUpperCase())
+            notaEstudiante = parseFloat(prompt(" Escribe la calificacion de " + nuevoEstudiante))
+
+            while (notaEstudiante < 0 || notaEstudiante > 10 || isNaN(notaEstudiante)) {
+                notaEstudiante = parseFloat(prompt("Escribe una la calificacion del 0 al 10 para " + nuevoEstudiante))
+            }
+            nombreEstudiantes.push(nuevoEstudiante)
+            calificaciones.push(notaEstudiante)
+
+
+        } else if (opcionElegida == 2) {
+            for (let calificacion of calificaciones) {
+                sumaNotas += calificacion
+                calificacionPromedio = sumaNotas / calificaciones.length
+            }
+            console.log(`La calificación promedio de la clase es ${calificacionPromedio.toFixed(2)}`);
+            sumaNotas = 0
+
+        } else if (opcionElegida == 3) {
+            notaAlta = Math.max(...calificaciones)
+            // notaAlta = calificaciones[0]
+            // for (let i = 0; i < calificaciones.length; i++) {
+            //     if (calificaciones[i] > notaAlta) {
+            //         notaAlta = calificaciones[i]
+            //     }
+            // }
+            for (let i = 0; i < calificaciones.length; i++) {
+                if (notaAlta == calificaciones[i]) {
+                    mejorEstudiante = nombreEstudiantes[i]
+                }
+            }
+            console.log(`La calificación más alta es ${notaAlta} y pertenece a ${mejorEstudiante}`);
+
+
+        } else if (opcionElegida == 4) {
+            notaBaja = Math.min(...calificaciones)
+
+            for (let i = 0; i < calificaciones.length; i++) {
+                if (notaBaja == calificaciones[i]) {
+                    peorEstudiante = nombreEstudiantes[i]
+                }
+            }
+            console.log(`La calificación más baja es ${notaBaja} y pertenece a ${peorEstudiante}`)
+        } else {
+            alert("Opción no valida, elige una opción correcta")
+        }
+        opcionElegida = prompt("Elige una de las siguientes opciones:" +
+            "\n1. Añadir un estudiante y su calificación." +
+            "\n2. Mostrar la calificación promedio de la clase." +
+            "\n3. Mostrar la calificación más alta y el nombre del estudiante correspondiente." +
+            "\n4. Mostrar la calificación más baja y el nombre del estudiante correspondiente." +
+            "\n5. Salir del programa.")
+    }
+    console.log("Fin del programa");
+
+
+</script>
