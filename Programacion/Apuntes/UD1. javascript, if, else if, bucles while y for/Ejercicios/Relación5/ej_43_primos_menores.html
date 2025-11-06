@@ -1,0 +1,23 @@
+<script>
+    // 43.-
+    //Solicitar un número entero. Calcular todos los primos menores que dicho número.
+
+    let numero = Number(prompt("Introduce un número entero:"))
+let divisor = 0
+let esPrimo = false
+for (let i = 2; i < numero; i++) {
+    divisor = 2
+    esPrimo = true
+
+    while (divisor < i && esPrimo) {
+        if (i % divisor == 0) {
+            esPrimo = false
+        }
+        divisor++
+    }
+
+    if (esPrimo) {
+        console.log(i)
+    }
+}
+</script>
