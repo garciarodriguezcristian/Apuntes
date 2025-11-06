@@ -1,0 +1,107 @@
+<script>
+
+    // 6. Sistema de Seguimiento de Tareas
+
+    // Desarrolla un programa que permita hacer un seguimiento de las tareas diarias de un equipo.
+    // El programa debe usar dos arrays: uno para almacenar los nombres de las tareas y otro para almacenar 
+    // el estado de cada tarea (true = completada y false = pendiente). El menú del programa debe ofrecer las siguientes opciones:
+
+    // Añadir una nueva tarea.
+    // Marcar una tarea como completada.
+    // Ver la lista de tareas pendientes.
+    // Ver la lista de tareas completadas.
+    // Salir del programa.
+
+    let nombresTareas = ["cocinar", "estudiar"]
+    let estadoTareas = [false, false]
+
+    let nuevaTarea = ""
+    let estadoNuevaTarea = ""
+
+    let tareaSeleccionada = ""
+    let tareaCompletada = true
+    let tareaEncontrada = false
+
+    let pendiente = false
+    let completada = true
+
+    let listaTareasPendientes = []
+    let listaTareasCompletadas = []
+
+    let opcionElegida = prompt("Elige una de las siguientes opciones:" +
+        "\n1. Añadir una nueva tarea." +
+        "\n2. Marcar una tarea como completada." +
+        "\n3. Ver la lista de tareas pendientes." +
+        "\n4. Ver la lista de tareas completadas." +
+        "\n5. Salir del programa.")
+
+    while (opcionElegida != 5) {
+        if (opcionElegida == 1) {
+            nuevaTarea = prompt("Introduce una nueva tarea")
+            estadoNuevaTarea = false
+
+            nombresTareas.push(nuevaTarea)
+            estadoTareas.push(estadoNuevaTarea)
+
+            console.log(nombresTareas);
+            console.log(estadoTareas);
+
+
+        } else if (opcionElegida == 2) {
+            tareaSeleccionada = prompt("Introduce la tarea a completar")
+            //Mientras no encuentre una tarea del array sigo en el while buscando tareas
+            while (!tareaEncontrada) {
+                for (let i = 0; i < nombresTareas.length && !tareaEncontrada; i++) {
+                    //Si encuentro la tarea entro en el if:
+                    if (tareaSeleccionada == nombresTareas[i]) {
+                        //si está completada lo aviso 
+                        if (estadoTareas[i] == tareaCompletada) {
+                            alert("Tarea ya completada")
+                            //si no esta completada, la pongo como completada.
+                        } else {
+                            estadoTareas[i] = tareaCompletada
+                        }
+                        //Pongo tareaEncontrada para que mi for no siga buscando más
+                        tareaEncontrada = true
+                    }
+                } //si no encuentro la tarea al finalizar el for, es decir si recorro el array y no está, pido de nuevo una tarea
+                // mostrando el array para saber que tareas hay.
+                if (!tareaEncontrada) {
+                    tareaSeleccionada = prompt(" Tarea no encontrada, selecciona una de las siguientes: " + nombresTareas)
+                }
+            }
+            tareaEncontrada = false
+            
+        } else if (opcionElegida == 3) {
+            for (let i = 0; i < estadoTareas.length; i++) {
+                if (estadoTareas[i] == pendiente) {
+                    listaTareasPendientes.push(nombresTareas[i])
+                }
+            } if (listaTareasPendientes.length == 0) {
+                console.log(" ¡Enhorabuena! No hay tareas pendientes.")
+            } else {
+                console.log(`Las tareas pendientes son: ${listaTareasPendientes}`)
+                listaTareasPendientes = []
+            }
+        } else if (opcionElegida == 4) {
+            for (let i = 0; i < estadoTareas.length; i++) {
+                if (estadoTareas[i] == completada) {
+                    listaTareasCompletadas.push(nombresTareas[i])
+                }
+            } if (listaTareasCompletadas.length == 0) {
+                console.log(" No hay tareas completadas. ¡A trabajar!")
+            } else {
+                console.log(`Las tareas completadas son: ${listaTareasCompletadas}`)
+                listaTareasCompletadas = []
+            }
+        } else {
+            alert("Opción no valida, elige una opción correcta")
+        }
+        opcionElegida = prompt("Elige una de las siguientes opciones:" +
+            "\n1. Añadir una nueva tarea." +
+            "\n2. Marcar una tarea como completada." +
+            "\n3. Ver la lista de tareas pendientes." +
+            "\n4. Ver la lista de tareas completadas." +
+            "\n5. Salir del programa.")
+    }
+</script>
