@@ -1,0 +1,18 @@
+<script>
+    // 13. Invertir un array
+    // Crea una función llamada invertirArray que reciba un array y devuelva un nuevo array con los elementos en orden inverso.
+
+    function invertirArray(array) {
+        let nuevoArray = []
+        let longitud = array.length
+        for (let i = 0; i < longitud ; i++) {
+            nuevoArray.push(array.pop())
+
+        }
+        return nuevoArray
+    }
+    // ================== MAIN ================== //
+    let array = [1, 2, 3, 4]
+    console.log(invertirArray(array));
+
+</script>
