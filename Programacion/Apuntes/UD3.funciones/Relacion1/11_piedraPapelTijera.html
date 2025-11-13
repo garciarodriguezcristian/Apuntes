@@ -1,0 +1,39 @@
+<script>
+    // 11. Simular un Juego de Piedra, Papel o Tijeras
+
+    // Crea una función juegoPiedraPapelTijeras que genere aleatoriamente una elección entre 
+    // "Piedra", "Papel" o "Tijeras" y permite al usuario jugar contra la máquina.
+
+    function juegoPiedraPapelTijeras() {
+        let opciones = [`piedra`, `papel`, `tijeras`]
+        let opcionSeleccionada = opciones[Math.floor(Math.random() * opciones.length)]
+        return opcionSeleccionada
+    }
+
+
+    let usuario = prompt("Elige Piedra, Papel o Tijeras").toLowerCase()
+    let maquina = ""
+
+    let resultado = ""
+    while (usuario != "fin") {
+
+        maquina = juegoPiedraPapelTijeras()
+
+        if (usuario != "piedra" && usuario != "papel" && usuario != "tijeras") {
+            console.log("Entrada no valida, solo se permite Piedra, Papel o Tijeras")
+
+        } else if (
+            (maquina == "piedra" && usuario == "tijeras") ||
+            (maquina == "papel" && usuario == "piedra") ||
+            (maquina == "tijeras" && usuario == "papel")
+        ) {
+            resultado = `Gana la maquina!`
+
+        } else if (maquina == usuario) {
+            resultado = "Empate"
+        } else {
+            resultado = "Has ganado!"
+        } alert(`Usuario: ${usuario}\nMaquina: ${maquina}\n${resultado}`);
+        usuario = prompt("Elige Piedra, Papel o Tijeras").toLowerCase()
+    }
+</script>

@@ -1,0 +1,16 @@
+<script>
+
+
+function arrayAleatorio(cantidad,max) {
+    let numerosAleatorios = []
+    let aleatorio = 0
+    for (let i = 0; i < cantidad; i++) {
+        aleatorio = Math.floor(Math.random() * max) + 1
+        numerosAleatorios.push(aleatorio)
+    } return numerosAleatorios
+}
+alert(arrayAleatorio(5,20))
+
+alert(arrayAleatorio(2,100))
+
+</script>
