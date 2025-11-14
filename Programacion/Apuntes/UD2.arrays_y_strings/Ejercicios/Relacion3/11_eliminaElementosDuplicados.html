@@ -1,0 +1,20 @@
+<script>
+    // 11. Elimina Elementos Duplicados
+
+    // Dado un array de números en el que algunos elementos están repetidos, 
+    // escribe una función que elimine los duplicados y devuelva el array sin repeticiones.
+    // Ejemplo: [1, 2, 2, 3, 4, 4, 5] debería devolver [1, 2, 3, 4, 5].
+
+    let numerosRepetidos = [1, 2, 2, 3, 4, 4, 5]
+    let numeros = [numerosRepetidos[0]]
+    let numGuardado = numerosRepetidos[0]
+
+    for (const numero of numerosRepetidos) {
+        if (numero != numGuardado) {
+            numeros.push(numero)
+            numGuardado = numero
+        }
+    }
+    console.log(numeros);
+    
+</script>

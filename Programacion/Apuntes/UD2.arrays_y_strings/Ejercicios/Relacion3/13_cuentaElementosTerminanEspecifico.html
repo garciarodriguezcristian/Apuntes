@@ -1,0 +1,20 @@
+<script>
+// 13. Cuenta los Elementos que Terminan en un Número Específico
+
+// Tienes un array de números y un número de una cifra (por ejemplo, 3).
+//  Escribe una función que cuente cuántos de los números en el array terminan en esa cifra.
+// Ejemplo: [23, 13, 33, 54, 73, 19] con el número 3 debería devolver 4 (porque 23, 13, 33 y 73 terminan en 3).
+
+let numeros = [23, 13, 33, 54, 73, 19]
+let contador = 0
+const CIFRA = "3"
+
+for (let numero of numeros) {
+    numero = numero.toString()
+    if (numero.endsWith(CIFRA)) {
+        contador++
+    }
+}
+console.log(contador);
+
+</script>

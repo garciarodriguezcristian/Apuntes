@@ -1,0 +1,19 @@
+<script>
+// 10. Cambia el Orden de un Array
+
+// Dado un array de palabras, escribe una función que devuelva el array en orden inverso (la primera palabra al final y la última palabra al inicio).
+// Ejemplo: ["apple", "banana", "cherry"] debería devolver ["cherry", "banana", "apple"].
+
+let frutas = ["apple", "banana", "cherry"]
+let frutasInverso = []
+let longitud = frutas.length
+
+
+for (let i = 0; i < longitud; i++) {
+    frutasInverso.push(frutas.pop())   
+}
+console.log(frutasInverso);
+
+
+
+</script>

@@ -1,0 +1,23 @@
+<script>
+    // 1. Encuentra el Elemento Más Largo
+
+    // Dado un array de palabras, escribe una función que encuentre la palabra más larga.
+    // Ejemplo: ["apple", "banana", "kiwi", "watermelon"] debería devolver "watermelon".
+
+    function elementoMasLargo(arrayPalabras) {
+        let palabraMasLarga = ""
+        for (let palabra of arrayPalabras) {
+            if (palabra.length > palabraMasLarga.length) {
+                palabraMasLarga = palabra
+            }
+        }
+        return palabraMasLarga
+    }
+
+    //--------------- MAIN ------------//
+
+    let palabraMasLarga = elementoMasLargo(["apple", "banana", "kiwi", "watermelon"])
+    console.log(palabraMasLarga);
+
+
+</script>

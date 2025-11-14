@@ -1,0 +1,25 @@
+<script>
+    // 8. Encuentra el Primer Número Mayor que X
+
+    // Tienes un array de números y un número X. Escribe una función que devuelva el primer número en el array que sea mayor que X. 
+    // Si no hay ninguno, que devuelva null.
+    // Ejemplo: [10, 20, 30, 40, 50] y X = 25 debería devolver 30.
+
+    let numeros = [10, 20]//, 30, 40, 50]
+    let X = 25
+    let numeroEncontrado = false
+    let numeroMasGrande = null
+
+    for (const numero of numeros) {
+            if (numero > X && !numeroEncontrado) {
+                numeroEncontrado = true
+                numeroMasGrande = numero
+            }
+        }
+        if (!numeroEncontrado) {
+            numeroMasGrande = null
+            console.log(numeroMasGrande)
+        } else {console.log(numeroMasGrande);}
+    
+
+</script>
