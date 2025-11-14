@@ -1,0 +1,21 @@
+<script>
+
+    function contarVocales(cadenaTexto) {
+        cadenaTexto = cadenaTexto.toUpperCase()
+        let cantidadTotalVocales = 0
+        for (const letra of cadenaTexto) {
+            if (letra == "A"
+                || letra == "E"
+                || letra == "I"
+                || letra == "O"
+                || letra == "U"
+            ) cantidadTotalVocales++
+        }
+        return cantidadTotalVocales
+    }
+
+    const CADENA = "CaDEna De TEXto de PRuebA"
+    let vocalesEnCadenaTexto = contarVocales(CADENA)
+    console.log(vocalesEnCadenaTexto);
+    
+</script>
