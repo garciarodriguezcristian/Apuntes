@@ -1,19 +1,89 @@
 <script>
-// 7. Control de Gastos Mensuales
+    // 7. Control de Gastos Mensuales
 
-// Escribe un programa que permita al usuario llevar un control de sus gastos mensuales. 
-// Usa dos arrays: uno para los nombres de los gastos (por ejemplo, "comida", "transporte", etc.)
-// y otro para las cantidades gastadas en cada categoría.
-// El programa debe mostrar un menú con las siguientes opciones:
+    // Escribe un programa que permita al usuario llevar un control de sus gastos mensuales. 
+    // Usa dos arrays: uno para los nombres de los gastos (por ejemplo, "comida", "transporte", etc.)
+    // y otro para las cantidades gastadas en cada categoría.
+    // El programa debe mostrar un menú con las siguientes opciones:
 
-// Añadir un nuevo gasto (nombre y cantidad).
-// Ver el total de gastos hasta el momento.
-// Ver los gastos más altos y más bajos del mes.
-// Ver el promedio de gasto diario (suponiendo un mes de 30 días).
-// Salir del programa.
+    // Añadir un nuevo gasto (nombre y cantidad).
+    // Ver el total de gastos hasta el momento.
+    // Ver los gastos más altos y más bajos del mes.
+    // Ver el promedio de gasto diario (suponiendo un mes de 30 días).
+    // Salir del programa.
 
-let nombreGastos = []
-let cantidades = []
+    let nombreGastos = ["comida", "transporte", "cena", "ibi"]
+    let cantidades = [80, 60, 25, 150]
+
+    let nuevoGasto = ""
+    let importeNuevoGasto = 0
+    let totalGasto = 315
+    let promedioDiario = 0
+
+    let cantidadMasAlta = cantidades[0]
+    let cantidadMasBaja = cantidades[0]
+    let gastoMayor = ""
+    let gastoMenor = ""
+
+    let opcionElegida = prompt("Elige una de las siguientes opciones:" +
+        "\n1. Añadir un nuevo gasto." +
+        "\n2. Ver total gastos acumulados." +
+        "\n3. Ver los gastos más altos y más bajos del mes." +
+        "\n4. Ver promedio gasto diario." +
+        "\n5. Salir del programa.")
+
+    while (opcionElegida != 5) {
+        if (opcionElegida == 1) {
+            nuevoGasto = prompt(`Introduce un nuevo gasto (nombre)`)
+            importeNuevoGasto = prompt(`Introduce el importe del gasto introducido`)
+            nombreGastos.push(nuevoGasto)
+            cantidades.push(importeNuevoGasto)
+
+
+
+
+        } else if (opcionElegida == 2) {
+            totalGasto = 0
+            for (let cantidad of cantidades) {
+                totalGasto += cantidad
+            }
+            console.log(totalGasto)
+            totalGasto = 0
+
+        } else if (opcionElegida == 3) {
+            for (let i = 0; i < cantidades.length; i++) {
+                if (cantidades[i] > cantidadMasAlta) {
+                    cantidadMasAlta = cantidades[i]
+                    gastoMayor = nombreGastos[i]
+                } else if (cantidades[i] < cantidadMasBaja) {
+                    cantidadMasBaja = cantidades[i]
+                    gastoMenor = nombreGastos[i]
+                }
+
+            }
+            console.log(`Gasto más alto del mes es ${gastoMayor}:${cantidadMasAlta}€\nEl gasto más bajo del mes es ${gastoMenor}: ${cantidadMasBaja}€`);
+        }
+
+        else if (opcionElegida == 4) {
+            for (const cantidad of cantidades) {
+                totalGasto += cantidad
+                promedioDiario = totalGasto / 30
+            }
+            console.log(`Promedio diario: ${promedioDiario}€`);
+
+        } else {
+            alert("Opción no valida, elige una opción correcta")
+        }
+        console.log(nombreGastos);
+        console.log(cantidades);
+
+        opcionElegida = prompt("Elige una de las siguientes opciones:" +
+            "\n1. Añadir un nuevo gasto." +
+            "\n2. Ver total gastos acumulados." +
+            "\n3. Ver los gastos más altos y más bajos del mes." +
+            "\n4. Ver promedio gasto diario." +
+            "\n5. Salir del programa.")
+    }
 
 
 </script>
