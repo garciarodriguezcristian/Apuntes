@@ -1,0 +1,50 @@
+<script>
+    // 6. Emparejador de amigos invisibles
+
+    // Crea una función que reciba una lista de nombres y genere emparejamientos aleatorios para un amigo invisible.
+    // Asegúrate de que nadie se asigne a sí mismo.
+    // La lista debe tener un número par de amigos.Investiga el uso de splice().
+
+    //         Ejemplo:
+
+    //     Entrada:
+
+    //     const amigos = ["Ana", "Luis", "Marta", "Pedro", "Elena", "Carlos"];
+    //     emparejarAmigos(amigos);
+    //     Salida:
+
+    //     [
+    //         ["Ana", "Pedro"],
+    //         ["Luis", "Elena"],
+    //         ["Marta", "Carlos"]
+    //     ]
+
+    function emparejarAmigos(arrayAmigos) {
+        let mensaje = ""
+        if (arrayAmigos.length % 2 == 0) {
+            let matriz = []
+            let pareja = []
+            let amigoAleatorio = 0
+            while (arrayAmigos.length != 0) {
+                while (pareja.length < 2) {
+                    amigoAleatorio = Math.floor(Math.random() * arrayAmigos.length)
+                    pareja.push(arrayAmigos[amigoAleatorio])
+                    arrayAmigos.splice(amigoAleatorio, 1)
+                }
+                matriz.push(pareja)
+                pareja = []
+            }
+            mensaje = matriz
+        } else {
+            mensaje = "Número impar de amigos, no se pueden hacer parejas"
+        }
+        return mensaje
+    }
+
+    //=================== MAIN ===================//
+
+    const amigos = ["Ana", "Luis", "Marta", "Pedro", "Elena", "Carlos"];
+    let amigosEmparejados = emparejarAmigos(amigos);
+    console.log(amigosEmparejados);
+
+</script>

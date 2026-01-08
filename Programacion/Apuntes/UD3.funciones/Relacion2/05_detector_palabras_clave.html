@@ -1,0 +1,41 @@
+<script>
+    // 5. Detector de palabras clave
+
+    // Escribe una función que reciba un texto y una lista de palabras clave. 
+    // Devuelve cuántas palabras clave están presentes en el texto. Investiga el uso de split() y convierte todo a minúsculas con toLowerCase().
+
+    // Ejemplo:
+
+    // Entrada:
+
+    // const texto = "Me gusta programar en Python y Java";
+    // const palabrasClave = ["python", "java", "c++"];
+    // detectarPalabrasClave(texto, palabrasClave);
+    // Salida:
+
+    2 // Hay dos palabras clave que aparecen en el texto (python y java)
+
+
+    function detectarPalabrasClave(frase, arrayPalabras) {
+        let fraseSeparada = (frase.toLowerCase()).split(" ")
+        let palabrasClaveEncontradas = []
+        let contador = 0
+        let mensaje = ""
+        for (const palabraClave of arrayPalabras) {
+            for (const palabra of fraseSeparada) {
+                if (palabraClave == palabra) {
+                    palabrasClaveEncontradas.push(palabra)
+                    contador++
+                }
+            }
+        }
+        mensaje = ` Hay ${contador} palabras clave que aparecen en el texto (${palabrasClaveEncontradas.join(" y ")})`
+        return mensaje
+    }
+    //=================== MAIN ===================//
+
+    const texto = "Me gusta programar en Python y Java";
+    const palabrasClave = ["python", "java", "c++"];
+    console.log(detectarPalabrasClave(texto, palabrasClave));
+    
+</script>

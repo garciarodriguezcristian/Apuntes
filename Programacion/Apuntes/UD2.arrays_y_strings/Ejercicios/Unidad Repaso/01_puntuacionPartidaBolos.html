@@ -1,0 +1,69 @@
+<script>
+    // 1. Puntuaciones en una partida de bolos
+
+    // Escribe un programa que registre las puntuaciones de un jugador en 10 tiradas de bolos.
+    // El programa debe permitir:
+
+    // Guardar las 10 puntuaciones en un array.
+    // Mostrar un menú con opciones:
+    // Mostrar la puntuación más alta.
+    // Mostrar la puntuación más baja.
+    // Calcular la puntuación total.
+    // Calcular la media.
+    // Salir.
+
+    let puntuaciones = [7, 10, 3, 0, 8, 6, 4, 9, 2, 10]
+    let nuevaPuntuacion = 0
+    let puntuacionMasAlta = puntuaciones[0]
+    let puntuacionMasBaja = puntuaciones[0]
+    let puntuacionTotal = 0
+    let media = 0
+    let tamanioArray = puntuaciones.length
+
+    let opcionElegida = 0
+
+    while (opcionElegida != 5) {
+
+        if (opcionElegida == 1) {
+            for (const puntuacion of puntuaciones) {
+                if (puntuacion > puntuacionMasAlta) {
+                    puntuacionMasAlta = puntuacion
+                }
+            }
+            console.log(`La puntuación más alta es: ${puntuacionMasAlta}`);
+        } else if (opcionElegida == 2) {
+            for (const puntuacion of puntuaciones) {
+                if (puntuacion < puntuacionMasBaja) {
+                    puntuacionMasBaja = puntuacion
+                }
+            }
+            console.log(`La puntuación más baja es: ${puntuacionMasBaja}`);
+
+        } else if (opcionElegida == 3) {
+            for (const puntuacion of puntuaciones) {
+                puntuacionTotal += puntuacion
+            }
+            console.log(`La puntuación total es: ${puntuacionTotal}`);
+
+        } else if (opcionElegida == 4) {
+            for (const puntuacion of puntuaciones) {
+                puntuacionTotal += puntuacion
+            }
+            media = puntuacionTotal / tamanioArray
+            console.log(`La media de puntuación es ${media}`);
+
+        } else {
+            if (opcionElegida != 0) {
+                alert("Opción no valida, elige una opción correcta")
+            } 
+        }
+        opcionElegida = prompt("Elige una de las siguientes opciones:" +
+            "\n1. Mostrar puntuación más alta." +
+            "\n2. Mostrar puntuación más baja." +
+            "\n3. Calcular la puntuación total." +
+            "\n4. Calcular la media." +
+            "\n5. Salir.")
+    }
+    console.log(`FIN DEL PROGRAMA`);
+
+</script>

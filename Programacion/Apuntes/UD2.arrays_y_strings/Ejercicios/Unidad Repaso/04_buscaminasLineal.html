@@ -1,0 +1,54 @@
+<script>
+    // 4. Buscaminas lineal
+
+    // Crea un array de 10 posiciones indicando si hay mina o no, y otro array para marcar posiciones descubiertas.
+    // El usuario introduce posiciones a descubrir hasta que:
+
+    // Encuentra una mina, o
+    // Descubre todas las posiciones sin mina.
+    // Al descubrir una casilla segura, debe mostrarse cuántas minas hay en sus casillas vecinas.
+
+
+    let posiciones = ["mina", "vacio", "vacio", "vacio", "mina", "mina", "vacio", "vacio", "mina", "mina"]
+    let posicionesDescubiertas = ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_"]
+
+    let posicionDescubierta = ""
+    let posicionUsuario = 0
+    let minaEncontrada = false
+    let posicionesSinMina = 0
+    let numeroDeVacios = 0
+    let minasVecinas = 0
+    // Calculo el numero de espacios sin mina que hay
+    for (const posicion of posiciones) {
+        if (posicion == "vacio") {
+            numeroDeVacios++
+        }
+    }
+    // Mientras no encuentre una mina y no haya descubierto todos los sitios sin mina , sigo jugando 
+    while (!minaEncontrada && posicionesSinMina != numeroDeVacios) {
+        posicionUsuario = prompt(`BUSCAMINAS\n${posicionesDescubiertas.join(" | ")}\nIntroduce una posición a descubrir del 1 al 10`)
+        posicionDescubierta = posiciones[posicionUsuario - 1]
+
+        //Si encuetro una mina activo la bandera para terminar el juego
+        if (posicionDescubierta == "mina") {
+            minaEncontrada = true
+            console.log("Has perdido");
+
+            //si no es que he encontrado un "vacio"
+        } else {
+            posicionesDescubiertas[posicionUsuario - 1] = "vacio"
+            if (posiciones[(posicionUsuario - 1) - 1] == "mina") {
+                minasVecinas++
+            }
+            if (posiciones[(posicionUsuario + 1) + 1] == "mina") {
+                minasVecinas++
+            }
+            posicionesSinMina++
+            console.log(`BUSCAMINAS\n${posicionesDescubiertas.join(" | ")}\nEn las casillas vecinas hay ${minasVecinas} minas`);
+            minasVecinas = 0
+        }
+    } if (posicionesSinMina == numeroDeVacios) {
+        console.log(`Has ganado, has evitado todas las minas`);
+    }
+
+</script>

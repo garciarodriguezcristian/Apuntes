@@ -1,0 +1,32 @@
+<script>
+    // 7. Analizador de textos avanzado
+
+    // Escribe una función que reciba un texto y devuelva las siguientes estadísticas:
+
+    // Cantidad de palabras.
+    // Cantidad de caracteres.
+    // Longitud promedio de las palabras.
+    // Ejemplo:
+
+    // Entrada:
+
+    // const texto = "Hola mundo mundo programacion es increible increible increible";
+    // analizarTexto(texto);
+    // Salida:
+
+    // [8, 55, 6.875] // 8 palabras, 55 caracteres, 6.875 letras cada palabra en promedio
+
+    function analizarTexto(textoAnalizado) {
+        let palabras = (textoAnalizado.split(" ")).length
+        let caracteres = textoAnalizado.length - (palabras - 1)
+        let promedio = caracteres / palabras
+        return [palabras, caracteres, promedio]
+    }
+
+    // ============================= MAIN ============================= //
+
+    const texto = "Hola mundo mundo programacion es increible increible increible"
+    const datosTexto = analizarTexto(texto)
+
+    console.log(`${datosTexto[0]} palabras, ${datosTexto[1]} caracteres, ${datosTexto[2]} letras cada palabra en promedio`)
+</script>

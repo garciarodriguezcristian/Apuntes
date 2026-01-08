@@ -1,0 +1,65 @@
+<script>
+    // 2. Torneo de dados
+
+    // Crea dos arrays paralelos: uno con los nombres de los últimos 6 jugadores y otro con sus puntuaciones.
+    // El menú debe permitir:
+
+    // Añadir un nuevo jugador (eliminando al más antiguo).
+    // Mostrar jugadores y puntuaciones.
+    // Mostrar el jugador con mayor puntuación.
+    // Mostrar el jugador con menor puntuación.
+    // Salir.
+
+    let jugadores = ["Sergio", "Cristian", "Trini", "Bea", "Vero", "Elisabeth"]
+    let puntuaciones = [4, 6, 2, 5, 3, 10]
+    let nuevaPuntuacion = 0
+    let nuevoJugador = ""
+    let opcionElegida = 0
+    let mayorPuntuacion = puntuaciones[0]
+    let menorPuntuacion = puntuaciones[0]
+    let jugador = ""
+    let posicionJugador = ""
+
+    while (opcionElegida != 5) {
+        if (opcionElegida == 1) {
+            nuevoJugador = prompt(`Introduce el nombre del nuevo jugador`)
+            nuevaPuntuacion = prompt(`Introduce la puntuación del nuevo jugador`)
+            jugadores.shift(), jugadores.push(nuevoJugador)
+            puntuaciones.shift(), puntuaciones.push(nuevaPuntuacion
+            )
+        } else if (opcionElegida == 2) {
+            for (let i = 0; i < jugadores.length; i++) {
+                console.log(`Jugador: ${jugadores[i]}\nPuntuación: ${puntuaciones[i]}`);
+            }
+        } else if (opcionElegida == 3) {
+            for (let i = 0; i < jugadores.length; i++) {
+                if (puntuaciones[i] > mayorPuntuacion) {
+                    mayorPuntuacion = puntuaciones[i]
+                }
+            }
+            posicionJugador = puntuaciones.indexOf(mayorPuntuacion)
+            console.log(`El jugador con mayor puntuación es: ${jugadores[posicionJugador]}`);
+
+        } else if (opcionElegida == 4) {
+            for (let i = 0; i < jugadores.length; i++) {
+                if (puntuaciones[i] < menorPuntuacion) {
+                    menorPuntuacion = puntuaciones[i]
+                }
+            }
+            posicionJugador = puntuaciones.indexOf(menorPuntuacion)
+            console.log(`El jugador con menor puntuación es: ${jugadores[posicionJugador]}`);
+        } else {
+            if (opcionElegida != 0) {
+                alert("Opción no valida, elige una opción correcta")
+            }
+
+        }
+
+        opcionElegida = prompt("Elige una de las siguientes opciones:" +
+            "\n1. Añadir nuevo jugador." +
+            "\n2. Mostrar jugadores y puntuaciones." +
+            "\n3. Mostrar jugador con mayor puntuación." +
+            "\n4. Mostrar jugador con menor puntuación." +
+            "\n5. Salir.")
+    }
+</script>

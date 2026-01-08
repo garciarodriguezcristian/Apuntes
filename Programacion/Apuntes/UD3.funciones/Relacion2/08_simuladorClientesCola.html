@@ -1,0 +1,42 @@
+<script>
+    // 8. Simulador de clientes en cola
+
+    // Crea una función que simule la llegada de clientes a una cola. Genera aleatoriamente el nombre,
+    //  apellido (usa un array de nombres y otro de apellidos predefinidos) y tiempo de espera de cada cliente (entre 1 y 20 minutos). 
+    // El número de clientes es el parámetro de la función.
+
+    // Ejemplo:
+    // Salida:
+
+    // [
+    //   ["Juan Pérez", 5], // 5 minutos
+    //   ["Ana López", 8], // 8 minutos
+    //   ["Luis García", 3] // 3 minutos
+    // ]
+
+
+    function generarCola(numero) {
+        const TIEMPOMINIMO = 1, TIEMPOMAXIMO = 20
+        let nombres = ["Cristian", "Elisabeth", "Sergio", "Veronica", "Victor", "Jose", "Elena", "Germán"]
+        let apellidos = ["Garcia", " Rodriguez", "Zafra", "Palma", "Lechón", "Alvarez", " López", "Pérez"]
+        let tiempoEspera = 0
+        let matrizCola = []
+        let turno = []
+        let nombreSeleccionado = ""
+        let apellidoSeleccionado = ""
+        for (let i = 0; i < numero; i++) {
+            nombreSeleccionado = nombres[Math.floor(Math.random() * nombres.length)]
+            apellidoSeleccionado = apellidos[Math.floor(Math.random() * apellidos.length)]
+            tiempoEspera = Math.floor(Math.random() * TIEMPOMAXIMO) + TIEMPOMINIMO
+            turno.push((nombreSeleccionado + " " + apellidoSeleccionado), tiempoEspera)
+            matrizCola.push(turno)
+            turno = []
+        }
+        return matrizCola
+    }
+    //=================== MAIN ===================//
+
+let cola = generarCola(3)
+console.log(cola);
+
+</script>

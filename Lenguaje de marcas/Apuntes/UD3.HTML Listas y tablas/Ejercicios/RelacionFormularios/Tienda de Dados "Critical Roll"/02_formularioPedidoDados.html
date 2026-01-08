@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados personalizados</title>
+</head>
+
+<body>
+    <h2>Formulario pedido dados</h2>
+    <form action="#" method="post"></form>
+    
+    <p>Selecciona el tipo de dado</p>
+    <select name="dado">
+        <option>Tipo de dado</option>
+        <option value="d4">d4</option>
+        <option value="d6">d6</option>
+        <option value="d8">d8</option>
+        <option value="d12">d12</option>
+        <option value="d20">d20</option>
+    </select>
+    
+    <p>Elige el tipo de material</p>
+    <input type="radio" name="material" value="resina">Resina
+    <input type="radio" name="material" value="metal">Metal
+    <input type="radio" name="material" value="madera">Madera
+    
+    <p>Añade efectos opcionales</p>
+<input type="checkbox" name="brillo">Brillo
+<input type="checkbox" name="purpurina">Purpurina
+<input type="checkbox" name="luminoso">Núcleo luminoso
+
+<p>Elige la cantidad a comprar</p>
+<input type="number" name="cantidad" min="1" max="20" required>
+<br>
+<textarea name="adicional" cols="30" rows="10" minlength="10" maxlength="200" placeholder="Informacion adicional"></textarea>
+<br>
+<button type="submit">Enviar</button>
+<button type="reset">Reiniciar</button>
+</body>
+
+</html>

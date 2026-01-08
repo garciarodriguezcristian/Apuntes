@@ -1,0 +1,75 @@
+<script>
+    // 10. Distribuidor de tareas del hogar
+
+    // Crea una función que reciba una lista de nombres y una lista de tareas.Reparte las tareas equitativamente entre los nombres,
+    //  asignando una lista de tareas a cada persona.
+    // Las tareas se distribuyen aleatoriamente y pueden repetirse o quedar sin asignar si hay más personas que tareas.
+
+    //         Ejemplo: Entrada:
+
+    //     const nombres = ["Ana", "Luis", "Pedro", "María"];
+    //     const tareas = [
+    //         "Lavar platos",
+    //         "Limpiar baño",
+    //         "Hacer compras",
+    //         "Barrer",
+    //         "Cortar césped",
+    //         "Cocinar",
+    //         "Organizar estantes",
+    //         "Limpiar ventanas",
+    //         "Poner la mesa",
+    //         "Recoger ropa"
+    //     ];
+
+    //     repartirTareas(nombres, tareas);
+    //     Salida:
+
+    //     [
+    //         ["Ana", ["Limpiar baño", "Poner la mesa", "Lavar platos"]],
+    //         ["Luis", ["Hacer compras", "Barrer", "Limpiar ventanas"]],
+    //         ["Pedro", ["Cortar césped", "Organizar estantes"]],
+    //         ["María", ["Cocinar", "Recoger ropa"]]
+    //     ]
+
+    function repartirTareas(nombres, tareas) {
+        let matrizTareas = []
+        let tareasAsignadas = []
+        let mediaTareaPorPersona = (tareas.length / nombres.length)
+        let maximoTareas = Math.ceil(mediaTareaPorPersona)
+        let minimoTareas = Math.floor(mediaTareaPorPersona)
+        let cantidadTareaAsignadas = 0
+        let tareaAleatoria = ""
+
+        for (const persona of nombres) {
+            cantidadTareaAsignadas = Math.floor(Math.random() * (maximoTareas - minimoTareas + 1)) + minimoTareas
+            matrizTareas.push(persona)
+            while (tareasAsignadas.length < cantidadTareaAsignadas) {
+                tareaAleatoria = tareas[Math.floor(Math.random() * tareas.length)]
+                if (!tareasAsignadas.includes(tareaAleatoria)) {
+                    tareasAsignadas.push(tareaAleatoria)
+                }
+            }
+            matrizTareas.push(tareasAsignadas)
+            tareasAsignadas = []
+        }
+        return matrizTareas
+    }
+    //================= MAIN ==================//
+    const nombres = ["Ana", "Luis", "Pedro", "María"];
+    const tareas = [
+        "Lavar platos",
+        "Limpiar baño",
+        "Hacer compras",
+        "Barrer",
+        "Cortar césped",
+        "Cocinar",
+        "Organizar estantes",
+        "Limpiar ventanas",
+        "Poner la mesa",
+        "Recoger ropa"
+    ];
+    console.log(repartirTareas(nombres, tareas));
+
+
+
+</script>

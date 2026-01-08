@@ -1,0 +1,47 @@
+<script>
+    // 3. Tienda de cartas coleccionables
+
+    // Crea dos arrays: uno con 8 cartas y otro con sus precios.
+    // El programa debe permitir hacer compras introduciendo nombre y cantidad.
+    // Debe sumar subtotales y terminar cuando el usuario escriba FIN, mostrando el total final y cuántos tipos distintos ha comprado.
+
+    let cartas = ["Carta1", "Carta2", "Carta3", "Carta4", "Carta5", "Carta6", "Carta7", "Carta8"]
+    let precios = [10, 25, 15, 30, 22, 24, 50, 60]
+
+    let cartaSeleccionada = ""
+    let historialCartasCompradas = []
+    let cantidaCartaSeleccionada = 0
+    let subtotal = 0
+    let total = 0
+    let tiposDistintos = 0
+    let tiposDistintosCartas = 0
+    let posicionCartaSeleccionada = ""
+
+    while (cartaSeleccionada != "fin") {
+
+        cartaSeleccionada = prompt(`Selecciona la carta a comprar`)
+        if (cartaSeleccionada != "fin") {
+            while (!cartas.includes(cartaSeleccionada)) {
+                cartaSeleccionada = prompt(`La carta no está en el catálogo, intruduce una de las siguientes: ${cartas}`)
+            }
+            cantidaCartaSeleccionada = prompt(`Introduce la cantidad deseada de ${cartaSeleccionada}`)
+            //Busco la posición de la carta selecionada
+            posicionCartaSeleccionada = cartas.indexOf(cartaSeleccionada)
+            
+            subtotal = cantidaCartaSeleccionada * precios[posicionCartaSeleccionada]
+            console.log(`Has comprado ${cantidaCartaSeleccionada} uds de ${cartaSeleccionada}\nSubtotal: ${subtotal}`)
+            total += subtotal
+            subtotal = 0
+            if (!historialCartasCompradas.includes(cartaSeleccionada)) {
+                historialCartasCompradas.push(cartaSeleccionada)
+            }
+        }
+
+    }
+    tiposDistintosCartas = historialCartasCompradas.length
+    console.log(`El importe total de las compras es ${total} €\nHas comprado ${tiposDistintosCartas} tipos de cartas distintos`);
+
+
+
+
+</script>

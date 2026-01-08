@@ -1,0 +1,83 @@
+<script>
+    // 9. Simulador de clima avanzado
+
+    // Crea una función que reciba como parámetro la estación ("verano" o "invierno") y genere los valores de clima para un día: temperatura máxima, 
+    // temperatura mínima y probabilidad de lluvia. Asegúrate de que:
+
+    // La temperatura máxima no sea menor que la temperatura mínima.
+    // Los valores estén dentro de los rangos correspondientes a la estación:
+    // Rangos según la estación:
+
+    // Invierno:
+
+    // Temperatura máxima: entre -5°C y 15°C.
+    // Temperatura mínima: entre -15°C y 5°C.
+    // Probabilidad de lluvia: entre 50% y 100%.
+    // Verano:
+
+    // Temperatura máxima: entre 25°C y 40°C.
+    // Temperatura mínima: entre 15°C y 25°C.
+    // Probabilidad de lluvia: entre 0% y 50%.
+    // El resultado debe ser un array con los valores generados: [Máxima, Mínima, Lluvia].
+
+    // Además, crea una segunda función que simule los valores para una semana completa (7 días) de invierno o verano. 
+    // Esta función debe llamar a la función del día y devolver un array con los valores generados para los 7 días.
+
+    Salidas:
+
+    // DÍA DE INVIERNO
+    // [12, -3, 70]  Máxima: 12°C, Mínima: -3°C, Lluvia: 70%
+    // SEMANA DE VERANO
+    // [
+    //   [32, 25, 20], // Día 1
+    //   [30, 22, 15], // Día 2
+    //   [35, 28, 10], // Día 3
+    //   [27, 20, 40], // Día 4
+    //   [38, 30, 5],  // Día 5
+    //   [29, 21, 50], // Día 6
+    //   [40, 25, 0]   // Día 7
+    // ]
+
+    function simularClimaDia(estacion) {
+        let tempMaxima = 0, tempMinima = 0, probLluvia = 0
+        if (estacion == "verano") {
+            tempMaxima = Math.floor(Math.random() * (40 - 25 + 1) + 25)
+            tempMinima = Math.floor(Math.random() * (25 - 15 + 1) + 15)
+            probLluvia = Math.floor(Math.random() * 50)
+        } else {
+            tempMaxima = Math.floor(Math.random() * (15 - (-5) + 1) + (-5))
+            if (tempMaxima < 5) {
+                tempMinima = Math.floor(Math.random() * (tempMaxima - (-15) + 1) + (-15))
+            } else {
+                tempMinima = Math.floor(Math.random() * (5 - (-15) + 1) + (-15))
+            }
+            probLluvia = Math.floor(Math.random() * (100 - 50 + 1)) + 50
+
+        }
+        return [tempMaxima, tempMinima, probLluvia]
+    }
+
+    function simularClimaSemana(estacion) {
+        const DIASSEMANA = 7
+        let semana = []
+        for (let i = 0; i < DIASSEMANA; i++) {
+            semana.push(simularClimaDia(estacion))
+        }
+        return semana
+    }
+    // ============================= MAIN ============================= //
+    let diaInvierno = simularClimaDia("verano")
+    console.log(diaInvierno);
+
+    let diaVerano = simularClimaDia("invierno")
+    console.log(diaVerano);
+
+
+    let simulacionSemana = simularClimaSemana("verano")
+    console.log(simulacionSemana)
+
+    simulacionSemana = simularClimaSemana("invierno")
+    console.log(simulacionSemana)
+
+
+</script>

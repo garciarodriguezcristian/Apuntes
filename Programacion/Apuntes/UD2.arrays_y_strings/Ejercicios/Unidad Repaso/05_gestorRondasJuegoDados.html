@@ -1,0 +1,127 @@
+<script>
+    // 5. Gestor de rondas en un juego de dados
+
+    // Crea un sistema que gestione puntuaciones de varios jugadores mediante arrays.
+    // El menú debe permitir:
+
+    // 1. Añadir jugador.
+    // 2. Registrar ronda (sumar puntos a cada jugador).
+    // 3. Mostrar clasificación.
+    // 4. Mostrar jugadores por encima de la media.
+    // 5. Reiniciar puntuaciones.
+    // 6. Salir.
+
+
+
+    let opcionElegida = prompt("Elige una de las siguientes opciones:" +
+        "\n1. Añadir jugador." +
+        "\n2. Registrar ronda (sumar puntos a cada jugador)." +
+        "\n3. Mostrar clasificación." +
+        "\n4. Mostrar jugadores por encima de la media." +
+        "\n5. Reiniciar puntuaciones." +
+        "\n6. Salir.")
+
+    let jugadores = ["Jugador1", "Jugador2", "Jugador3", "Jugador4"]
+    let puntuaciones = [0, 0, 0, 0]
+    let jugadoresPorEncimaMedia = []
+    let clasificacion = []
+
+    let nuevoJugador = ""
+    let nuevaPuntuacion = 0
+    let puntuacionJugador = 0
+    let numeroRonda = 1
+    let mediaPuntuacion = 0
+    let sumaPuntuciones = 0
+    let puntuacionMayor = 0
+    let mejorJugador = ""
+    let posicionClasificacion = 1
+    let puntuacionesAux = [];
+    let jugadoresAux = [];
+    let maxPuntos = -1;
+    let indiceMax = -1;
+
+    while (opcionElegida != 6) {
+        if (opcionElegida == 1) {
+            nuevoJugador = prompt(`Jugador nuevo:\n `)
+            jugadores.push(nuevoJugador)
+            puntuaciones.push(0)
+
+        } else if (opcionElegida == 2) {
+            for (let i = 0; i < jugadores.length; i++) {
+                nuevaPuntuacion = Number(prompt(`Introduce la puntuación de ${jugadores[i]}`))
+                puntuacionJugador = nuevaPuntuacion + puntuaciones[i]
+                puntuaciones[i] = puntuacionJugador
+                puntuacionJugador = 0
+            }
+            console.log(`= RONDA ${numeroRonda} =\nPuntos acumulados`);
+            for (let i = 0; i < puntuaciones.length; i++) {
+                console.log(`${jugadores[i]}: ${puntuaciones[i]} puntos`);
+            }
+            numeroRonda++
+
+        } else if (opcionElegida == 3) {
+            puntuacionesAux = [];
+            jugadoresAux = [];
+
+            // Copio los arrays originales
+            for (let i = 0; i < jugadores.length; i++) {
+                jugadoresAux[i] = jugadores[i];
+                puntuacionesAux[i] = puntuaciones[i];
+            }
+
+            // Mientras clasificación no tenga a todos los jugadores
+            while (clasificacion.length < jugadores.length * 2) {
+
+                // Buscamos el jugador con más puntos que quede en los array
+                for (let i = 0; i < puntuacionesAux.length; i++) {
+                    if (puntuacionesAux[i] > maxPuntos) {
+                        maxPuntos = puntuacionesAux[i];
+                        indiceMax = i;
+                    }
+                }
+                // Añadimos a la clasificación
+                clasificacion.push(jugadoresAux[indiceMax], maxPuntos);
+
+                // Marcamos ese jugador como ya usado poniéndole -1 puntos
+                puntuacionesAux[indiceMax] = -1;
+            }
+            console.log("CLASIFICACIÓN");
+            for (let i = 0; i < clasificacion.length; i += 2) {
+                console.log(`${posicionClasificacion}º ${clasificacion[i]} - ${clasificacion[i + 1]} puntos`);
+                posicionClasificacion++;
+            }
+            // Dejamos todo limpio
+            posicionClasificacion = 1;
+            clasificacion = [];
+        } else if (opcionElegida == 4) {
+            for (const puntuacion of puntuaciones) {
+                sumaPuntuciones += puntuacion
+            }
+            mediaPuntuacion = sumaPuntuciones / puntuaciones.length
+            for (let i = 0; i < jugadores.length; i++) {
+                if (puntuaciones[i] > mediaPuntuacion) {
+                    jugadoresPorEncimaMedia.push(jugadores[i])
+                }
+            }
+            console.log(`Jugadores por encima de la media:\n${jugadoresPorEncimaMedia.join(" y ")}`);
+            sumaPuntuciones = 0
+            mediaPuntuacion = 0
+
+        } else if (opcionElegida == 5) {
+            puntuaciones = [];
+            for (let i = 0; i < jugadores.length; i++) {
+                puntuaciones[i] = 0;
+            }
+
+        } else {
+            console.log(`Opción no valida, elige una opción correcta)`);
+        }
+        opcionElegida = prompt("Elige una de las siguientes opciones:" +
+            "\n1. Añadir jugador." +
+            "\n2. Registrar ronda (sumar puntos a cada jugador)." +
+            "\n3. Mostrar clasificación." +
+            "\n4. Mostrar jugadores por encima de la media." +
+            "\n5. Reiniciar puntuaciones." +
+            "\n6. Salir.")
+    }
+</script>
