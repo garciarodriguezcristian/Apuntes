@@ -1,0 +1,22 @@
+/* Ejercicio 2: Selectores básicos y avanzados
+
+Crea un archivo HTML con los siguientes elementos:
+
+Un encabezado principal <h1>, subtítulo <h2>, y varios párrafos <p>.
+Algunos párrafos con una clase llamada destacado.
+Un botón con un ID accion.
+Aplica los estilos con CSS:
+
+Cambia el color del texto de todos los párrafos (usa p como selector).
+Define un fondo específico solo para los párrafos con la clase destacado (usa .destacado).
+Cambia el tamaño de la fuente del botón identificado con el ID accion (usa #accion). */
+
+p {
+    color: #7b3556;
+}
+.destacado {
+    background-color: #ffa38a;
+}
+#accion {
+    font-size: 18px;
+}

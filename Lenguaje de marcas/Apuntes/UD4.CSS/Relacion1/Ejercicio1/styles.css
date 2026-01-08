@@ -1,0 +1,17 @@
+/* Ejercicio 1: Hoja de estilo externa
+
+Crea una página HTML que incluya una hoja de estilo externa. Define estilos globales para:
+
+Cambiar el color del texto de toda la página a un color diferente al predeterminado.
+Establecer un fondo degradado para el cuerpo de la página (usa background: linear-gradient).
+Aplicar márgenes y espaciado uniformes a todos los elementos (usa margin y padding). */
+* {
+    color: #17a198;
+    margin: 15px;
+    padding: 10px;
+}
+
+body {
+    background: linear-gradient(#123842, #125151);
+    background-repeat: no-repeat;
+}

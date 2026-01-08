@@ -1,0 +1,26 @@
+/* Ejercicio 5: Tipografía
+
+Diseña un artículo con:
+
+Un título <h1>, subtítulos <h2>, y texto en párrafos <p>.
+Una cita en <blockquote>.
+Estilos a aplicar:
+
+Usa una fuente diferente para los encabezados y el texto de los párrafos (usa font-family).
+Cambia el tamaño de la fuente de los subtítulos (usa font-size).
+Aplica un estilo de cursiva y color diferente al texto de la cita (usa font-style y color). */
+
+h1,
+h2,
+p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+blockquote {
+    font-style: oblique;
+    color: #b56714;
+}

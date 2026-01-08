@@ -1,0 +1,12 @@
+/* Ejercicio 6: Dimensiones y espaciado
+
+Crea un contenedor <div> con varios elementos dentro, como imágenes y textos. Estilos a aplicar:
+
+Define un ancho fijo para el contenedor (usa width).
+Aplica relleno interno y márgenes exteriores (usa padding y margin).
+Agrega un borde de color alrededor del contenedor con un grosor específico (usa border). */
+
+div {
+    width: 400px;
+    padding: 20px; margin: 40px; border: 4px solid #5e446b;
+}

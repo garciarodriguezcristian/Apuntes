@@ -1,0 +1,22 @@
+/* Ejercicio 4: Colores y fondos
+
+Crea una página que incluya una sección <section> con un título <h2> y un texto descriptivo. 
+Aplica los estilos:
+
+Establece un color de texto diferente para el título (usa color).
+Añade una imagen como fondo de la sección y ajusta su tamaño para 
+que ocupe todo el espacio visible (usa background-image y background-size: cover).
+Cambia el color del texto del párrafo al pasar el ratón por encima (usa :hover). */
+
+h2,p {
+    color: #64619a;
+}
+
+section {
+    background-image: url(https://wallpapers.com/images/hd/metallic-real-madrid-4k-gytr6011ojkc06ws.jpg);
+    background-size: cover;
+}
+
+p:hover {
+    color: #eed4ed
+}
