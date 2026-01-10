@@ -8,5 +8,7 @@ Agrega un borde de color alrededor del contenedor con un grosor específico (usa
 
 div {
     width: 400px;
-    padding: 20px; margin: 40px; border: 4px solid #5e446b;
+    padding: 20px;
+    margin: 40px;
+    border: 4px solid #5e446b;
 }

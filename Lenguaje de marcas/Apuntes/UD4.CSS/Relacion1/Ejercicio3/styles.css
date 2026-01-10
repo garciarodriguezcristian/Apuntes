@@ -9,7 +9,7 @@ Aplica los siguientes estilos:
 Usa el selector universal (*) para eliminar márgenes y relleno de todos los elementos.
 Usa el selector de hijo directo (>) para cambiar el color del texto 
 de los elementos <li> que sean hijos directos del contenedor <div>.
-Aplica un color de fondo a los párrafos que estén inmediatamente después 
+Aplica un color de fondo al párrafo que está inmediatamente después 
 de la lista usando el selector de hermano adyacente (+). */
 
 * {
@@ -21,6 +21,6 @@ div>ul>li {
     color: #124d74;
 }
 
-div + p, p + p {
+div + p {
     background-color: #12704a;
 }
