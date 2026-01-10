@@ -8,13 +8,19 @@
 import java.util.Scanner;
 
 public class Ejercicio5 {
+    @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args) {
+        final double GRAVEDADLUNA = 0.165;
         Scanner scanner = new Scanner(System.in);
+        double pesoEnLaTierra = 0;
+        double pesoEnLaLuna = 0;
 
         System.out.println("Introduce tu peso:");
-        int pesoEnLaTierra = scanner.nextInt();
-        double pesoEnLaLuna = pesoEnLaTierra * (16.5 / 100);
-        System.out.println(" Tu peso en la luna sería: " + pesoEnLaLuna + "kg");
+
+        pesoEnLaTierra = scanner.nextDouble();
+        pesoEnLaLuna = pesoEnLaTierra * GRAVEDADLUNA;
+
+        System.out.println(" Tu peso en La Luna sería: " + pesoEnLaLuna + "kg");
         scanner.close();
     }
 }
