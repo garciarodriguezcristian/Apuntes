@@ -35,6 +35,6 @@ public class ejercicio7 {
                 resultado = numero1 / numero2;
             }
         }
-        System.out.printf("El resultado es: %.4f\n",resultado);
+        System.out.printf("El resultado es: %.4f\n", resultado);
     }
 }
