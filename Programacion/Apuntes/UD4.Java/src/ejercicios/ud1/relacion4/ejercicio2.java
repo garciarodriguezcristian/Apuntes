@@ -1,3 +1,4 @@
+package ejercicios.ud1.relacion4;
 
 // Ejercicio 2 – Bucle while
 // Escribe un programa que pida al usuario un número secreto (entre 1 y 10).

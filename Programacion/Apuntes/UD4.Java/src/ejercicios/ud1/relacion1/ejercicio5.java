@@ -1,13 +1,13 @@
+package ejercicios.ud1.relacion1;
+
 // let pesoEnLaTierra = prompt("Introduzca su peso: ")
 // pesoEnLaTierra = Number(pesoEnLaTierra)
-
 // let pesoEnLaLuna = pesoEnLaTierra * 0.165 // 16.5 / 100 = 0.165
-
 // console.log("En la Luna pesarías: " + pesoEnLaLuna + "kg")
-
 import java.util.Scanner;
 
-public class Ejercicio5 {
+public class ejercicio5 {
+
     @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args) {
         final double GRAVEDADLUNA = 0.165;

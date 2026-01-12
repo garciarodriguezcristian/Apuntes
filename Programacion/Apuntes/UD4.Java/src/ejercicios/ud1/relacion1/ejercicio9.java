@@ -1,3 +1,5 @@
+package ejercicios.ud1.relacion1;
+
 import java.util.Scanner;
 
 public class ejercicio9 {

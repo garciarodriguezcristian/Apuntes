@@ -1,3 +1,4 @@
+package ejercicios.ud1.relacion4;
 // Escribe un programa que pida al usuario un número entero positivo y muestre la tabla de multiplicar de ese número (del 1 al 10) usando un bucle for.
 // 👉 Ejemplo de salida si el usuario introduce 3:
 // 3 x 1 = 3  
@@ -17,13 +18,14 @@ public class ejercicio1 {
         //Variables
         int numeroUsuario;
         int resultado;
+        final int MAX_DIG = 10;
 
         //Pido el numero
         System.out.println("Introduce un número entero positivo");
         numeroUsuario = scanner.nextInt();
         scanner.close();
 
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= MAX_DIG; i++) {
             resultado = numeroUsuario * i;
             System.out.println(numeroUsuario + " X " + i + " = " + resultado);
         }

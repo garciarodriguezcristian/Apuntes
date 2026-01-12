@@ -1,3 +1,4 @@
+package ejercicios.ud1.relacion6;
 
 //     4. Calculadora de combustible
 // Crea un programa que pida una cantidad de litros inicial, un precio por litro y un consumo cada 100 km, 
@@ -25,10 +26,10 @@ public class ejercicio4 {
 
         double precioCombustible;
         double consumoCada100Km;
+        double combustibleRestante;
         int kmViaje;
         double precioViaje;
         int numeroViaje = 1;
-        double combustibleRestante;
         double litrosGastadosViaje;
 
         System.out.println("Introduce el combustible inicial:");

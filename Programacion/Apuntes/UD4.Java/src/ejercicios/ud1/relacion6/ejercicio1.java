@@ -1,3 +1,4 @@
+package ejercicios.ud1.relacion6;
 // 1. Calificaciones de estudiantes
 
 // Crea un programa que reciba las calificaciones de N estudiantes (se piden calificaciones hasta que el usuario introduzca un "-1")

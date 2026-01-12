@@ -1,3 +1,4 @@
+package ejercicios.ud1.relacion6;
 
 import java.util.Scanner;
 
@@ -29,6 +30,7 @@ public class ejercicio6 {
         while (!entrada.equalsIgnoreCase("SALIR")) {
             System.out.println("Introduce el primer número");
             entrada = scanner.nextLine();
+            
             if (!entrada.equalsIgnoreCase("SALIR")) {
                 numero1 = Double.parseDouble(entrada);
                 System.out.println("Introduce el segundo número");
