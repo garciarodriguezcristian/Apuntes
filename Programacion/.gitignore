@@ -1,3 +1,6 @@
 .DS_Store
 .vscode/launch.json
 .vscode/
+# Java compilado
+Apuntes/UD4.Java/bin/
+*.class
