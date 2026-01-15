@@ -6,14 +6,14 @@ package ejercicios.ud1.relacion1;
 // console.log("En la Luna pesarías: " + pesoEnLaLuna + "kg")
 import java.util.Scanner;
 
-public class ejercicio5 {
+public class Ejercicio5 {
 
     @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args) {
         final double GRAVEDADLUNA = 0.165;
         Scanner scanner = new Scanner(System.in);
-        double pesoEnLaTierra = 0;
-        double pesoEnLaLuna = 0;
+        double pesoEnLaTierra;
+        double pesoEnLaLuna;
 
         System.out.println("Introduce tu peso:");
 
