@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'FuenteDisney';
+    src: url(waltograph42.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: aliceblue;
+}
+
+h1,
+h2 {
+    font-family: 'FuenteDisney', sans-serif;
+}
+
+header > nav > ul {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
