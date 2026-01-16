@@ -6,6 +6,7 @@ public class sushiO {
 
     public static void main(String[] args) {
         // Declaracion de variables
+        @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
         final int ARROZMAKI = 120;
         final double AGUAMAKI = 0.10;
