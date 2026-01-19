@@ -72,5 +72,5 @@ select nombre as jugador, puntos_por_juego as puntos from jugadores order by pun
 select nombre as equipo, character_length(nombre) as longitud from equipos order by longitud desc;
 
 -- 4. Muestra los nombres de las ciudades y la suma total de campeonatos ganados por equipos en cada ciudad, ordenados por la suma de mayor a menor.
-select ciudad, campeonatos from equipos order by campeonatos desc;
+select ciudad, sum(campeonatos) from equipos group by ciudad order by sum(campeonatos) desc, ciudad;
 
