@@ -79,7 +79,7 @@ select count(nombre), departamento from empleado group by departamento;
 select avg(salario) as salario_promedio, ciudad from empleado group by ciudad having salario_promedio > 4000;
 
 -- 3. Encuentra el total de ventas por cada cliente.
-select cliente, sum(importe) from venta group by cliente;
+select cliente, count(*) from venta group by cliente;
 
 -- 4. Muestra los departamentos con más de 3 empleados.
 select departamento, count(nombre) as numero_empleados from empleado group by departamento having numero_empleados > 3;
