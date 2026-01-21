@@ -99,4 +99,3 @@ select extract(month from  fecha_nacimiento) as mes,extract(year from fecha_naci
 select nombre from Ciudadano where extract(year from fecha_nacimiento)> 1990;
 
 -- 15. Calcular el tiempo total en días que dura cada actividad gubernamental.
-select descripcion, datediff(fecha_fin, fecha_inicio) as duracion from Actividad;
