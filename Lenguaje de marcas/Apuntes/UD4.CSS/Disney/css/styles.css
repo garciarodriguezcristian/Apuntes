@@ -1,3 +1,4 @@
+/* Estilos globales */
 @font-face {
     font-family: 'FuenteDisney';
     src: url(waltograph42.otf) format('opentype');
@@ -9,7 +10,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
     background-color: aliceblue;
+
 }
 
 h1,
@@ -17,8 +23,186 @@ h2 {
     font-family: 'FuenteDisney', sans-serif;
 }
 
-header > nav > ul {
+h2 {
+    font-size: 2rem;
+}
+
+/* Encabezado */
+header {
+    background-color: rgb(121, 139, 215);
+    color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 5px dotted rgb(223, 162, 242);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-left: 0.5em;
+    margin-top: 5px;
+}
+
+
+header li:hover {
+    transform: scale(1.2);
+    /* Agranda el elemento al pasar el raton */
+    background-color: rgb(223, 162, 242);
+}
+
+.navmenu {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+.navmenu li {
+    margin: 0 10px;
+}
+
+.navmenu li a {
+    color: aliceblue;
+}
+
+.navmenu .active {
+    font-weight: bold;
+}
+
+/* Sección mundoDisney */
+.mundoDisney>h2 {
+    font-size: 2.6em;
+}
+
+.mundoDisney {
+    background-image: url(../img/diseney.jpg);
+    background-size: cover;
+    text-align: center;
+    padding: 150px 20px;
+    color: aliceblue;
+    height: 400px;
+}
+
+.boton-class:hover {
+    transform: scale(1.5);
+    background-color: blueviolet;
+}
+
+/* Seccion Películas */
+.peliculas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+.peliculas img {
+    border-radius: 10px;
+}
+
+.peliculas>h3 {
+    font-size: 1.2em;
+}
+
+.pelicula {
+    background-color: rgb(161, 179, 251);
+    padding: 10px;
+    border: solid 1px grey;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Seccion Personajes */
+.personajes {
     display: flex;
     justify-content: space-around;
-    flex-direction: row;
+    margin: 50px 0px;
+}
+
+#personaje1 {
+    background-color: rgb(248, 196, 204);
+    margin: 10px;
+    text-align: center;
+
+}
+
+#personaje2 {
+    background-color: rgb(179, 227, 246);
+    border-top-right-radius: 80px;
+    border-bottom-left-radius: 80px;
+    text-align: center;
+}
+
+#personaje3 {
+    background-color: rgb(243, 186, 243);
+    text-align: center;
+
+}
+
+#personaje4 {
+    background-color: rgb(210, 245, 210);
+    text-align: center;
+
+}
+
+.personajes h3:hover {
+    color: brown;
+    text-decoration: underline yellow;
+    transform: scale(1.2);
+}
+
+/* Sección Eventos Parques */
+.eventos ul {
+    list-style-type: none;
+    padding: 10px;
+}
+
+.eventos h3 {
+    text-decoration: underline;
+}
+
+.evento {
+    display: flex;
+    background-color: rgb(223, 249, 230);
+    margin: 10px;
+    padding: 10px;
+    height: 90px;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 5px;
+    border: 2px solid rgb(98, 119, 104);
+
+}
+
+.evento-diferente {
+    background-color: rgb(244, 222, 227);
+    border-color: red;
+}
+
+/* Seccion footer */
+footer {
+    justify-content: baseline;
+    background-color: rgb(53, 105, 136);
+    color: aliceblue;
+    text-align: center;
+    padding: 25px;
+    line-height: 1.6;
+}
+
+footer>ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px;
+}
+
+footer>ul>li {
+    padding: 0px 10px;
+}
+
+footer>ul>li>a{
+    color: aliceblue;
+    text-decoration: none;
+}
+footer>ul>li>a:hover{
+    text-decoration: underline;
 }
