@@ -1,0 +1,58 @@
+<script>
+    const DIENTE = "🦷", NUMDIENTES = 10, MAXDIENTESPICADOS = 5
+    const DIENTESANO = "✅", DIENTEDANIADO = "💥"
+    const DIENTESPICADOS = Math.floor(Math.random() * MAXDIENTESPICADOS) + 1
+
+    const DIENTESNOPICADOS = NUMDIENTES - DIENTESPICADOS
+    const JUGADOR1 = "Jugador 1", JUGADOR2 = "Jugador 2"
+
+    let juegoPerdido = false
+    let tableroInterno = [], tableroVisible = []
+    let jugadorActual = JUGADOR1
+    let mensajeFinPrograma = "Enhorabuena, ambos ganan"
+    let posicionSeleccionada = 0
+    let dientesPicdadosIntroducidos = 0
+    let posicionDienteIntroducir = 0
+
+    for (let i = 0; i < NUMDIENTES; i++) {
+        tableroInterno.push(0)
+    }
+
+    while (dientesPicdadosIntroducidos < DIENTESPICADOS) {
+        posicionDienteIntroducir = Math.floor(Math.random() * NUMDIENTES)
+        if (tableroInterno[posicionDienteIntroducir] == 0) {
+            tableroInterno[posicionDienteIntroducir] = 1
+            dientesPicdadosIntroducidos++
+        }
+    }
+
+
+    for (let i = 0; i < NUMDIENTES; i++) {
+        tableroVisible.push(DIENTE)
+    }
+
+    for (let i = 0; i < DIENTESNOPICADOS && !juegoPerdido; i++) {
+
+        do {
+            posicionSeleccionada = prompt(jugadorActual + " elige: ")
+        } while (tableroVisible[posicionSeleccionada] != DIENTE || (posicionSeleccionada < 0 || posicionSeleccionada > NUMDIENTES) || isNaN(posicionSeleccionada))
+
+
+        if (tableroInterno[posicionSeleccionada] == 0) {
+            tableroVisible[posicionSeleccionada] = DIENTESANO
+        } else {
+            tableroVisible[posicionSeleccionada] = DIENTEDANIADO
+            mensajeFinPrograma = "¡El cocodrilo mordió! " + jugadorActual + " pierde."
+            juegoPerdido = true
+        }
+        alert(tableroVisible);
+
+        if (jugadorActual == JUGADOR1) {
+            jugadorActual = JUGADOR2
+        } else {
+            jugadorActual = JUGADOR1
+        }
+    }
+
+    alert(mensajeFinPrograma);
+</script>
