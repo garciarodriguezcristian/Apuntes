@@ -82,7 +82,6 @@ public class ej5_registroCalificaciones {
     public static void main(String[] args) {
         ArrayList<String> listaAlumnos = new ArrayList<>();
         ArrayList<Double> notasAlumnos = new ArrayList<>();
-        @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
         int opcionElegida;
         Double calificacionEstudiante;
