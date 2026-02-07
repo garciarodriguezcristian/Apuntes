@@ -1,6 +1,7 @@
 package apuntes;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class funciones {
@@ -63,11 +64,36 @@ public class funciones {
      * @param arrayTexto ArrayList de Strings (nombres)
      * @param arrayValor ArrayList de numeros (cantidad, precio, etc)
      */
-    public static void mostrarArrayDoble(String mensaje, ArrayList<String> arrayTexto, ArrayList<Integer> arrayValor) {
+    public static void mostrarArrayDoble(String mensaje,
+            ArrayList<String> arrayTexto,
+            ArrayList<Integer> arrayValor) {
         imprimirMensaje(mensaje);
 
         for (int i = 0; i < arrayTexto.size(); i++) {
             System.out.println("Elemento " + (i + 1) + ": " + arrayTexto.get(i) + " -> " + arrayValor.get(i));
+        }
+    }
+
+    /**
+     * Imprime un mesaje personalizado para mostrar datos de 4 arrays
+     * relacionados por su indice.
+     *
+     * @param mensaje Mensaje a mostrar en la cabecera
+     * @param arrayTexto1 Array de String 1
+     * @param arrayValor1 Array Integer 1
+     * @param arrayValor2 Array de Integer 2
+     * @param arrayTexto2 Array de String 2
+     */
+    public static void mostrar4Arrays(String mensaje,
+            ArrayList<String> arrayTexto1,
+            ArrayList<Integer> arrayValor1,
+            ArrayList<Integer> arrayValor2,
+            ArrayList<String> arrayTexto2) {
+        imprimirMensaje(mensaje);
+
+        for (int i = 0; i < arrayTexto1.size(); i++) {
+            System.out.printf("%d -> %s | inicial: %d | mejor puja: %d | postor: %s\n",
+                    i, arrayTexto1.get(i), arrayValor1.get(i), arrayValor2.get(i), arrayTexto2.get(i));
         }
     }
 
@@ -84,9 +110,40 @@ public class funciones {
             5.
             """);
     }
-    
 
+    public static String mostrarMensajeRandom2opciones(boolean viable) {
+        String mensaje;
+        ArrayList<String> mensajesViable = new ArrayList<>(Arrays.asList(
+                "Mensaje viable 1",
+                "Mensaje viable 2",
+                "Mensaje viable 3"
+        ));
+
+        ArrayList<String> mensajesNoViable = new ArrayList<>(Arrays.asList(
+                "Mensaje no viable 1",
+                "Mensaje no viable 2",
+                "Mensaje no viable 3"
+        ));
+        if (viable) {
+            mensaje = mostrarElementoAleatorio(mensajesViable);
+        } else {
+            mensaje = mostrarElementoAleatorio(mensajesNoViable);
+        }
+
+        return mensaje;
+    }
+
+    public static String mostrarMensajeRandom() {
+        String mensaje;
+        ArrayList<String> arrayMensajes = new ArrayList<>(Arrays.asList(
+                "Mensaje viable 1",
+                "Mensaje viable 2",
+                "Mensaje viable 3"));
+        mensaje = mostrarElementoAleatorio(arrayMensajes);
+        return mensaje;
+    }
 //================================================================ CONTROL DE ERRORES ==============================================================
+
     /**
      * Lee un numero entero del usuario con control de errores
      *
@@ -94,17 +151,55 @@ public class funciones {
      * @param sc Scanner ya creado en el main
      * @return numero entero valido introducido por el usuario
      */
-    public static int leerInt(String mensaje, Scanner sc) {
+    public static int leerEntero(String mensaje, Scanner sc) {
         int numero = 0;
         boolean correcto = false;
 
         while (!correcto) {
             try {
                 imprimirMensaje(mensaje);
-                numero = Integer.parseInt(sc.nextLine());
+                numero = Integer.parseInt(sc.nextLine().trim());
                 correcto = true;
             } catch (NumberFormatException e) {
-                imprimirMensaje("Error: introduce un numero entero valido");
+                imprimirMensaje("Error: introduce un número entero valido");
+            }
+        }
+        return numero;
+    }
+
+    static double leerEnteroMayorCero(String mensaje, Scanner sc) {
+        double numero = 0.0;
+        boolean valido = false;
+
+        while (!valido) {
+            imprimirMensaje(mensaje);
+            try {
+                numero = Integer.parseInt(sc.nextLine().trim());
+                valido = numero > 0;
+                if (!valido) {
+                    imprimirMensaje("Debe ser mayor que 0.");
+                }
+            } catch (NumberFormatException e) {
+                imprimirMensaje("Número no válido.");
+            }
+        }
+        return numero;
+    }
+
+    static double leerDoubleMayorCero(String mensaje, Scanner sc) {
+        double numero = 0.0;
+        boolean valido = false;
+
+        while (!valido) {
+            imprimirMensaje(mensaje);
+            try {
+                numero = Double.parseDouble(sc.nextLine().trim());
+                valido = numero > 0;
+                if (!valido) {
+                    imprimirMensaje("Debe ser mayor que 0.");
+                }
+            } catch (NumberFormatException e) {
+                imprimirMensaje("Número no válido.");
             }
         }
         return numero;
@@ -148,7 +243,7 @@ public class funciones {
 
         do {
             imprimirMensaje(mensaje);
-            opcion = leerInt("Elige una opcion:", sc);
+            opcion = leerEntero("Elige una opcion:", sc);
 
             if (opcion >= min && opcion <= max) {
                 correcta = true;
@@ -196,11 +291,31 @@ public class funciones {
 
 // ====================================================== BUSCAR EN ARRAYLIST =====================================================================
     /**
+     * Lee un indice pasado por el usuario, lo valida y lo devuelve si ese
+     * indice está en el array pasado como parámetro.
+     *
+     * @param mensaje Mensaje mostrado para la entrada del usuario
+     * @param array Donde se busca el indice
+     * @param sc
+     * @return Devuelve el indice validado
+     */
+    public static int buscarIndiceArrayString(String mensaje, ArrayList<String> array, Scanner sc) {
+        int indiceUsuario;
+        do {
+            indiceUsuario = leerEntero(mensaje, sc);
+            if (indiceUsuario < 0 || indiceUsuario > array.size() - 1) {
+                imprimirMensaje("Introduce un indice de 0 a " + (array.size() - 1));
+            }
+        } while (indiceUsuario < 0 || indiceUsuario > array.size() - 1);
+        return indiceUsuario;
+    }
+
+    /**
      * Elegir elemento aleatorio de un ArrayList, devuelve ese elemento
      *
      * @param array Array donde se elige el elemento aleatorio
      */
-    public static String elementoAleatorio(ArrayList<String> array) {
+    public static String mostrarElementoAleatorio(ArrayList<String> array) {
         int posicion;
         String elemento;
 
@@ -291,8 +406,8 @@ public class funciones {
      *
      * @param arrayIntroducida array del tablero
      * @param tamanio tamaño del tablero
-     * @param simbolo con que se va a rellenar el tablero, puede ser numero pero
-     * cambiar valor String por Int o Double
+     * @param simbolo con el que se va a rellenar el tablero, puede ser numero
+     * pero cambiar valor String por Int o Double
      */
     public static void construyeTablero(ArrayList<String> arrayIntroducida, int tamanio, String simbolo) {
         for (int i = 0; i < tamanio; i++) {
@@ -301,7 +416,8 @@ public class funciones {
     }
 
     /**
-     * Rellena los numeros aleatoriamente en un tablero de posiciones
+     * Rellena los numeros aleatoriamente en un tablero de posiciones. Mete un
+     * numero aleatorio de "1"/bombas entre el máximo y el mínimo
      *
      * @param arrayOculta Tablero
      * @param minimo Mínimo introducido posible de algo
