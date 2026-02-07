@@ -10,10 +10,10 @@ public class ej3_subastaTractores {
         int indiceUsuario;
         do {
             indiceUsuario = leerInt(mensaje, sc);
-            if (indiceUsuario < 0 || indiceUsuario > array.size()) {
+            if (indiceUsuario < 0 || indiceUsuario > array.size() - 1) {
                 imprimirMensaje("Introduce un indice de 0 a " + (array.size() - 1));
             }
-        } while (indiceUsuario < 0 || indiceUsuario > array.size());
+        } while (indiceUsuario < 0 || indiceUsuario > array.size() - 1);
         return indiceUsuario;
     }
 
@@ -156,17 +156,19 @@ public class ej3_subastaTractores {
                 }
             } else {
                 if (opcionElegida != 0) {
-                    indiceBuscar = buscarIndiceArrayString("Introduce el indice del lote a eliminar", modelosLote, scanner);
-                    modelosLote.remove(indiceBuscar);
-                    preciosIniciales.remove(indiceBuscar);
-                    mejoresPujas.remove(indiceBuscar);
-                    mejoresPostores.remove(indiceBuscar);
-                    System.out.printf("Lote eliminado:\n %d -> %s | inicial: %d | mejor puja: %d | postor: %s%n",
-                            indiceBuscar, modelosLote.get(indiceBuscar), preciosIniciales.get(indiceBuscar), mejoresPujas.get(indiceBuscar), mejoresPostores.get(indiceBuscar));
+                    if (modelosLote.isEmpty()) {
+                        imprimirMensaje("No hay lotes para eliminar.");
+                    } else {
+                        indiceBuscar = buscarIndiceArrayString("Introduce el indice del lote a eliminar", modelosLote, scanner);
+                        System.out.printf("Lote eliminado:\n %d -> %s | inicial: %d | mejor puja: %d | postor: %s%n",
+                                indiceBuscar, modelosLote.get(indiceBuscar), preciosIniciales.get(indiceBuscar), mejoresPujas.get(indiceBuscar), mejoresPostores.get(indiceBuscar));
+                        modelosLote.remove(indiceBuscar);
+                        preciosIniciales.remove(indiceBuscar);
+                        mejoresPujas.remove(indiceBuscar);
+                        mejoresPostores.remove(indiceBuscar);
+                    }
                 }
-
             }
-
         } while (opcionElegida != 0);
         System.out.println("Has salido del programa");
     }

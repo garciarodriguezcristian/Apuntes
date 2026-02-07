@@ -104,6 +104,7 @@ public class ej1_tractoMatch {
     }
 // ================================== MAIN ================================== //
 
+    @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         // Arrays

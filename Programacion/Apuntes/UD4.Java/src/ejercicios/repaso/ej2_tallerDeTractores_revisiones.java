@@ -180,12 +180,6 @@ public class ej2_tallerDeTractores_revisiones {
 
             } else if (opcionElegida == 3) {
                 indiceBuscar = buscarIndiceArrayDouble(costeFinal, scanner);
-                // do {
-                //     indiceBuscar = leerInt("Introduce el indice de la revisión para mostrar su coste", scanner);
-                //     if (indiceBuscar < 0 || indiceBuscar > costeFinal.size()) {
-                //         imprimirMensaje("Introduce un indice de 0 a " + (costeFinal.size() - 1));
-                //     }
-                // } while (indiceBuscar < 0 || indiceBuscar > costeFinal.size());
                 System.out.println("Coste de la revisión buscada");
                 System.out.println(costeFinal.get(indiceBuscar) + " €");
                 if (matriculaTieneDescuento(matriculas.get(indiceBuscar))) {
