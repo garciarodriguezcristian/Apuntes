@@ -3,10 +3,12 @@ package ejercicios.relacion1;
 public class ej6_claseReloj {
 
     public static void main(String[] args) {
-        Reloj reloj1 = new Reloj(23, 59, 59);
+        Reloj reloj1 = new Reloj(00, 00, 00);
 
-        reloj1.sumarMinutos(23);
-        reloj1.sumarSegundos(56);
+        // reloj1.sumarMinutos(4980);
+        // reloj1.sumarSegundos(2);
+        // reloj1.restarMinutos(1500);
+        reloj1.restarSegundos(2);
         System.out.println(reloj1);
 
     }
@@ -18,7 +20,11 @@ class Reloj {
 
     @Override
     public String toString() {
-        return hora + ":" + minuto + ":" + segundo;
+        String h = (hora < 10) ? "0" + hora : String.valueOf(hora);
+        String m = (minuto < 10) ? "0" + minuto : String.valueOf(minuto);
+        String s = (segundo < 10) ? "0" + segundo : String.valueOf(segundo);
+
+        return h + ":" + m + ":" + s;
     }
 
     //Constructor
@@ -31,40 +37,79 @@ class Reloj {
     // Métodos
     void sumarMinutos(int minutos) {
         minutos = minuto + minutos;
-        minuto = 0;
         hora += minutos / 60;
         minuto = minutos % 60;
-        if (hora >= 24) {
-            hora = hora % 24;
-        }
-    }
-
-    void restarMinutos(int minutos) {
+        hora = hora % 24;
     }
 
     void sumarSegundos(int segundos) {
-        int minutos;
-        segundos = segundo + segundos;
-        segundo = 0;
-        minuto += segundos / 60;
+        segundos = (segundo + segundos) + (minuto * 60) + (hora * 60 * 60);
+        hora = segundos / 3600;
+        minuto = (segundos % 3600) / 60;
         segundo = segundos % 60;
-        if (minuto >= 60) {
-            minutos = minuto;
-            minuto = 0;
-            sumarMinutos(minutos);
+
+    }
+
+    void restarMinutos(int minutos) {
+        // int segundosUnDia = 24 * 3600;
+        // int segundos = (hora * 3600) + (minuto * 60) + segundo;
+        // segundos -= (minutos * 60);
+
+        // segundos = (segundos % segundosUnDia + segundosUnDia) % segundosUnDia;
+        // hora = segundos / 3600;
+        // minuto = (segundos % 3600) / 60;
+        // segundo = segundos % 60;
+        
+        if (hora - (minutos / 60) >= 0) {
+            hora -= minutos / 60;
+        } else {
+            if ((24 - ((minutos / 60) - hora)) >= 0) {
+                hora = 24 - ((minutos / 60) - hora);
+            } else {
+                hora = 24 - (minutos / 60) % 24;
+            }
+        }
+        if (minuto - minutos % 60 >= 0) {
+            minuto -= minutos % 60;
+        } else {
+            if (hora == 0) {
+                hora = 24 - 1;
+            } else {
+                hora--;
+            }
+            minuto = 60 - ((minutos % 60) - minuto);
         }
     }
 
     void restarSegundos(int segundos) {
-        int minutos;
-        segundos = segundo + segundos;
-        segundo = 0;
-        minuto += segundos / 60;
-        segundo = segundos % 60;
-        if (minuto >= 60) {
-            minutos = minuto;
-            minuto = 0;
-            sumarMinutos(minutos);
+        // int segundosUnDia = 24 * 3600;
+        // int totalSegundos;
+        // totalSegundos = (hora * 3600) + (minuto * 60) + segundo;
+        // totalSegundos -= segundos;
+
+        // totalSegundos = (totalSegundos % segundosUnDia + segundosUnDia) % segundosUnDia;
+        // hora = totalSegundos / 3600;
+        // minuto = (totalSegundos % 3600) / 60;
+        // segundo = totalSegundos % 60;
+
+        if (minuto - (segundos / 60) >= 0) {
+            minuto -= segundos / 60;
+        } else {
+            if ((60 - ((segundos / 60) - minuto)) >= 0) {
+                minuto = 60 - ((segundos / 60) - minuto);
+            } else {
+                minuto = 60 - (segundos / 60) % 60;
+            }
+        }
+        if (segundo - segundos % 60 >= 0) {
+            segundo -= segundos % 60;
+        } else {
+            if (minuto == 0) {
+                restarMinutos(1);
+            } else {
+                minuto--;
+            }
+            segundo = 60 - ((segundos % 60) - segundo);
         }
     }
 }
