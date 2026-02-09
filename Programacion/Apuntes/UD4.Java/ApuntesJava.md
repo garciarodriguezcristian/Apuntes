@@ -303,6 +303,15 @@ System.out.println("La suma es: " + resultado);
 | Número entre un mínimo (min) y un máximo (max) | `(int)(Math.random() * (max - min + 1)) + min` | `(int)(Math.random() * (15 - 5 + 1)) + 5` |
 | Decimal entre 0 y 1                            | `Math.random()`                                | `Math.random()`                           |
 
+### Printf
+
+%d o %i: `Números enteros`
+%f - %.2f: `Números de punto flotante.`
+%c: `Un solo carácter.`
+%s: `Cadenas de caracteres.`
+%b: `Valores booleanos.`
+
+
 ### Plantilla menú
 
 ```java
