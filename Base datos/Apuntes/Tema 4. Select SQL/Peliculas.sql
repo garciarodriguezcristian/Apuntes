@@ -156,3 +156,7 @@ where anio_nacimiento > 1970
 group by anio_nacimiento)
 as anio_moda);
 -- 23 dime la media de edad de los actores agrupados por pais de nacimiento.
+select round(avg(extract(year from now()) - anio_nacimiento)) as edad_media, pais_origen from actor group by pais_origen;
+
+
+
