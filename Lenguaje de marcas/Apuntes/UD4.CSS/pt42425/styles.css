@@ -1,0 +1,178 @@
+.chewy-regular {
+    font-family: "Chewy", system-ui;
+    font-weight: 500;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Chewy";
+    font-size: 25px;
+    padding: 0;
+    margin: 0;
+
+}
+
+/* Encabezado y navegacion */
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    background-color: rgb(181, 141, 141);
+}
+
+.navmenu {
+    display: flex;
+    align-items: center;
+}
+
+.navmenu li {
+    margin: 0px 10px;
+    list-style: none;
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+}
+
+.navmenu li:hover,
+a:hover {
+    transform: scale(1.2);
+    transition-duration: 0.3s;
+    color: rgb(124, 71, 71);
+    text-decoration: overline;
+    background-color: rgb(250, 232, 232);
+}
+
+/* Seccion perfil de ususario */
+.perfilUsuario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.perfilUsuario>img {
+    border-radius: 50%;
+}
+
+.perfilUsuario p {
+    background-color: rgb(249, 235, 235);
+    padding: 10px;
+}
+
+/* Seccion publicaciones */
+.publicaciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 20px;
+    padding: 10px 0px;
+}
+.publicaciones h2 {
+    width: 100vw;
+    background-color: rgb(226, 190, 190);
+    text-align: center;
+}
+
+.publicacionUsuario article {
+    min-width: 500px;
+    margin: 5px 0;
+}
+
+.publicacionUsuario {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+}
+
+.perfilUsuario #publicacion {
+    display: inline-flex;
+    min-width: 300px;
+    justify-content: center;
+}
+
+#publicacion1 {
+    border-top: solid brown;
+    border-radius: 20%;
+    border-bottom: solid brown;
+    font-style: italic;
+    background-color: rgb(196, 203, 196);
+    padding: 5px;
+}
+
+#publicacion2 {
+    text-decoration: underline;
+    border-bottom: double brown 10px;
+    padding: 5px;
+    background-color: rgba(145, 151, 180, 0.591);
+    border-end-end-radius: 30px;
+
+}
+
+#publicacion3 {
+    font-style: italic;
+    background-color: rgb(190, 148, 153);
+    border-radius: 10%;
+
+}
+
+#publicacion2:hover+article h3 {
+    color: rgb(182, 210, 172);
+}
+
+#publicacion1:hover {
+    background-color: rgb(151, 159, 151);
+}
+
+#publicacion2:hover {
+    background-color: rgba(114, 119, 143, 0.591);
+}
+
+#publicacion3:hover {
+    background-color: rgb(182, 143, 147);
+}
+
+/* Boton Me gusta */
+button {
+    background-color: rgb(58, 58, 91);
+    color: white;
+    border-radius: 10px
+}
+
+button:hover {
+    background-color: grey;
+    transition: 0.5s;
+    transform: scale(1.1);
+}
+
+/* Otros usuarios */
+.otrosUsuarios h2 {
+    text-align: center;
+    width: 100vw;
+    background-color: rgb(185, 141, 149);
+    margin-bottom: 10px;
+}
+.otroUsuario {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+#usuario4 {
+    background-color: rgb(208, 199, 214);
+    flex-grow: 1;
+    margin: 0 10px;
+}
+
+#usuario5 {
+    background-color: bisque;
+    flex-grow: 1;
+    margin: 0 10px;
+}
+
+.otrosUsuarios img:hover {
+    transform: scale(1.5);
+}

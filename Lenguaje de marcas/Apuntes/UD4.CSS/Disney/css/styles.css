@@ -94,6 +94,9 @@ header li:hover {
     justify-content: space-around;
     margin: 10px;
 }
+.peliculas div {
+    padding: 10px;
+}
 
 .peliculas img {
     border-radius: 10px;
@@ -109,6 +112,7 @@ header li:hover {
     border: solid 1px grey;
     border-radius: 10px;
     text-align: center;
+    margin: 0px 10px;
 }
 
 /* Seccion Personajes */
