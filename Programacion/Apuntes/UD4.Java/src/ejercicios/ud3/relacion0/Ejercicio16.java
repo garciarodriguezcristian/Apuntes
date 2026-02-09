@@ -21,6 +21,7 @@ public class Ejercicio16 {
     public static void main(String[] args) {
         ArrayList<Integer> numeros = new ArrayList<>(Arrays.asList(12, 36, 8, 2, 56, 89));
         System.out.println("Selecciona número a buscar");
+        @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
         int numeroBuscar = scanner.nextInt();
 
