@@ -5,23 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campaña Antipirateo</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles2.css">
 </head>
 
-<body class="contenedor-principal">
+<body class="page">
 
-    <header id="encabezado">
-        <h1 id="titulo">Campaña Antipirateo</h1>
-        <nav class="menunavegacion">
-            <ul>
-                <li class="enlace-destacado"><a href="#">Inicio</a></li>
-                <li><a href="#">Riesgos</a></li>
-                <li><a href="#">Casos Reales</a></li>
-                <li><a href="#">Campañas</a></li>
-                <li><a href="#">Contacto</a></li>
+    <header class="site-header">
+        <h1>Campaña Antipirateo</h1>
+
+        <nav class="site-nav">
+            <ul class="nav-list">
+                <li class="nav-item nav-item--active"><a href="#">Inicio</a></li>
+                <li class="nav-item"><a href="#">Riesgos</a></li>
+                <li class="nav-item"><a href="#">Casos Reales</a></li>
+                <li class="nav-item"><a href="#">Campañas</a></li>
+                <li class="nav-item"><a href="#">Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -29,76 +27,79 @@
     <section class="hero">
         <h2>La piratería digital tiene consecuencias</h2>
         <p>Proteger la cultura, el trabajo y la legalidad está en tus manos.</p>
-        <button class="boton informate">Infórmate</button>
+        <button>Infórmate</button>
     </section>
 
-    <section class="casos-pirateria">
+    <section class="cases">
         <h2>Casos reales de piratería</h2>
 
-        <div class="tarjeta">
+        <div class="case-card">
             <img src="https://placehold.co/150" alt="Caso 1">
             <h3>Descargas ilegales</h3>
             <p>El uso de plataformas ilegales puede acarrear sanciones económicas.</p>
-            <button >Ver caso</button>
+            <button>Ver caso</button>
         </div>
 
-        <div class="tarjeta">
+        <div class="case-card">
             <img src="https://placehold.co/150" alt="Caso 2">
             <h3>Fraude digital</h3>
             <p>Muchas webs pirata esconden malware y robo de datos.</p>
-            <button >Ver caso</button>
+            <button>Ver caso</button>
         </div>
 
-        <div class="tarjeta">
+        <div class="case-card">
             <img src="https://placehold.co/150" alt="Caso 3">
             <h3>Impacto en creadores</h3>
             <p>La piratería afecta directamente a artistas y desarrolladores.</p>
-            <button >Ver caso</button>
+            <button>Ver caso</button>
         </div>
     </section>
 
-    <section class="amenazas">
+    <section class="threats">
         <h2>Amenazas frecuentes</h2>
 
-        <div class="tarjeta-amenaza malware">
+        <div class="threat-card threat-card--malware">
             <img src="https://placehold.co/100" alt="Amenaza 1">
             <h3>Malware</h3>
             <p>Programas dañinos ocultos en descargas ilegales.</p>
         </div>
 
-        <div class="tarjeta-amenaza datos">
+        <div class="threat-card threat-card--datos">
             <img src="https://placehold.co/100" alt="Amenaza 2">
             <h3>Robo de datos</h3>
             <p>Exposición de información personal y bancaria.</p>
         </div>
 
-        <div class="tarjeta-amenaza sanciones">
+        <div class="threat-card threat-card--legal">
             <img src="https://placehold.co/100" alt="Amenaza 3">
             <h3>Sanciones legales</h3>
             <p>Multas y consecuencias legales por uso de contenido ilegal.</p>
         </div>
 
-        <div class="tarjeta-amenaza suplantacion">
+        <div class="threat-card threat-card--suplantacion">
             <img src="https://placehold.co/100" alt="Amenaza 4">
             <h3>Suplantación</h3>
             <p>Uso fraudulento de identidades digitales.</p>
         </div>
     </section>
 
-    <section class="campanias">
+    <section class="events">
         <h2>Próximas campañas de concienciación</h2>
-        <ul>
-            <li>
+
+        <ul class="event-list">
+            <li class="event-item">
                 <h3>Charlas educativas</h3>
                 <p>Sesiones informativas en centros educativos.</p>
                 <time>15 de marzo</time>
             </li>
-            <li>
+
+            <li class="event-item">
                 <h3>Campaña en redes</h3>
                 <p>Difusión de mensajes de prevención digital.</p>
                 <time>2 de abril</time>
             </li>
-            <li>
+
+            <li class="event-item event-item--special">
                 <h3>Jornada legal</h3>
                 <p>Información sobre derechos de autor y consecuencias legales.</p>
                 <time>20 de abril</time>
@@ -106,13 +107,14 @@
         </ul>
     </section>
 
-    <footer>
+    <footer class="site-footer">
         <p>© 2025 Campaña Antipirateo. Todos los derechos reservados.</p>
         <p>Contacto: info@antipirateo.es | Teléfono: +34 900 123 456</p>
-        <ul>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Twitter</a></li>
+
+        <ul class="social-list">
+            <li class="social-item"><a href="#">Facebook</a></li>
+            <li class="social-item"><a href="#">Instagram</a></li>
+            <li class="social-item"><a href="#">Twitter</a></li>
         </ul>
     </footer>
 

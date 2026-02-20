@@ -4,6 +4,7 @@
     font-style: normal;
 }
 
+/* Estilos globales */
 .contenedor-principal {
     background-color: rgb(43, 42, 42);
     color: rgb(159, 164, 5);
@@ -12,6 +13,7 @@
     box-sizing: border-box;
 }
 
+/* Diferencio tipologia de titulos y texto */
 h1,
 h2,
 h3,
@@ -20,4 +22,280 @@ h5,
 h6 {
     font-family: "Press Start 2P";
     font-size: medium;
+}
+
+/* Encabezado */
+
+/* Todo en una linea */
+#encabezado {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom-style: dashed;
+}
+
+#titulo {
+    margin-left: 20px;
+    text-shadow: 2px 2px 20px rgb(232, 5, 5);
+    font-size: x-large;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.menunavegacion a {
+    color: rgb(159, 164, 5);
+    padding: 0 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.menunavegacion li:hover,
+a:hover {
+    color: rgb(43, 42, 42);
+    transform: scale(1.2);
+    background-color: rgb(159, 164, 5);
+    border-radius: 20%;
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+.menunavegacion>ul {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    list-style-type: none;
+}
+
+.enlace-destacado {
+    font-weight: bold;
+    border: solid rgb(159, 164, 5);
+}
+
+/* Seccion hero */
+
+
+.hero {
+    min-height: 25rem;
+    font-size: 1.7em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(image.png);
+    text-shadow: 10px 10px 10px black;
+    box-shadow: 0 3px 15px rgb(159, 164, 5);
+    border-radius: 1%;
+    margin: 15px 10px 20px 10px;
+
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    text-shadow: 4px 4px 10px black;
+    text-transform: uppercase;
+}
+
+.informate {
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 16px;
+    border-color: red;
+    box-shadow: 0 0 20px rgb(159, 164, 5);
+    padding: 15px;
+}
+
+/* Transformo boton informate */
+.informate:hover {
+    transform: scale(1);
+    border-color: rgb(159, 164, 5);
+    background-color: gray;
+    box-shadow: 0 0 30px red;
+    color: red;
+    text-transform: uppercase;
+    font-size: x-large;
+    transition-duration: 0.5s;
+}
+
+/* ===== SECCION CASOS REALES =====*/
+
+.casos-pirateria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: stretch;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.casos-pirateria h2 {
+    flex-basis: 100%;
+}
+
+.tarjeta {
+    background-color: rgb(58, 58, 58);
+    border: 1px solid rgba(159, 164, 5, 0.526);
+    border-radius: 16px;
+    box-shadow: 0 0 10px black;
+    flex: 1 1 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 18px;
+}
+
+.tarjeta img {
+    width: 100%;
+    border-radius: 3%;
+}
+
+.casos-pirateria>h2 {
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.casos-pirateria p {
+    font-size: 18px;
+}
+
+.tarjeta button {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 12px;
+    font-size: 16px;
+    background-color: rgba(226, 233, 10, 0.142);
+    border: 1px solid rgba(226, 233, 10, 0.647);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.tarjeta button:hover {
+    background: rgba(124, 129, 6, 0.647);
+    text-transform: uppercase;
+    transform: translateY(-30px)
+}
+
+/* ===== SECCION AMENAZAS =====*/
+
+.amenazas {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 200px;
+    gap: 18px;
+    margin: 5px 10px;
+}
+
+.amenazas h2 {
+    width: 100%;
+}
+
+.amenazas div {
+    border: 2px solid grey;
+    border-radius: 12px;
+    flex-grow: 1;
+}
+
+.malware {
+    background: rgba(0, 128, 0, 0.093);
+    padding: 10px;
+}
+
+.datos {
+    padding: 30px;
+    background: rgba(10, 28, 161, 0.093);
+}
+
+.sanciones {
+    background: rgba(128, 0, 53, 0.093);
+    padding: 0 10px;
+    padding-top: 5px;
+}
+
+.suplantacion {
+    text-align: center;
+    background: rgba(0, 79, 128, 0.093);
+    align-content: center;
+}
+
+.malware h3 {
+    font-style: italic;
+}
+
+.datos h3 {
+    text-transform: uppercase;
+}
+
+.sanciones h3 {
+    text-decoration: underline;
+}
+
+.suplantacion h3 {
+    text-shadow: 0 0 12px rgba(255, 0, 0, 0.978);
+}
+
+.tarjeta-amenaza>img:hover+h3 {
+    color: red;
+    text-shadow: 0 0 5px beige;
+}
+
+/* ===== SECCION PROXIMAS CAMPAÑAS =====*/
+.campanias {
+    background: rgba(128, 128, 128, 0.149);
+    border-radius: 10px;
+    border: 2px black;
+    margin: 20px;
+    padding: 5px;
+    box-shadow: 0 0 12px black;
+    flex-wrap: wrap;
+    flex: 1 1 240px;
+
+    text-align: center;
+}
+
+.campanias>h2 {
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.campanias>ul {
+    padding: 2px;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 200px;
+    gap: 10px;
+    min-height: 130px;
+
+
+}
+
+.campanias>ul li {
+    flex: 1 1 100px;
+    color: aliceblue;
+    border: 1px dotted blue;
+    background-color: rgba(0, 0, 255, 0.11);
+}
+
+.campanias time {
+    background: dodgerblue;
+    padding: 5px;
+    border: 2px solid goldenrod;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+footer > ul {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    list-style-type: none;
+    gap: 5px;
 }

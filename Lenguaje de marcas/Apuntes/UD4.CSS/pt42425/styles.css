@@ -69,6 +69,7 @@ a:hover {
     margin: 10px 20px;
     padding: 10px 0px;
 }
+
 .publicaciones h2 {
     width: 100vw;
     background-color: rgb(226, 190, 190);
@@ -155,6 +156,7 @@ button:hover {
     background-color: rgb(185, 141, 149);
     margin-bottom: 10px;
 }
+
 .otroUsuario {
     display: flex;
     justify-content: space-around;
@@ -175,4 +177,9 @@ button:hover {
 
 .otrosUsuarios img:hover {
     transform: scale(1.5);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
 }
