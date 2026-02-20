@@ -16,10 +16,11 @@ public class Cine {
 
     public void mostrarPeliculas() {
         for (Pelicula pelicula : peliculas) {
-            System.out.println(pelicula.toString());
+            System.out.println(pelicula.toString()); // No poner system.out en los métodos
         }
     }
 
+    
     public Pelicula buscarPeliculaTitulo(String titulo) {
         Pelicula buscada = null;
         boolean encontrada = false;
