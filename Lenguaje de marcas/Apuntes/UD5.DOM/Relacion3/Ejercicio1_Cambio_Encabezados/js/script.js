@@ -5,3 +5,4 @@ titulo.style.color = "yellow"
 const subtitulo = document.getElementById("subtitulo")
 subtitulo.textContent = "Desde los 80 hasta hoy"
 subtitulo.style.backgroundColor = "black"
+subtitulo.style.color = "white"
