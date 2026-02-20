@@ -51,8 +51,14 @@ public class Ejercicio3 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Producto lacteo = new Producto("PTO-101", "Leche", "Descripcion1", 1.20, 100);
+        Producto lacteo = new Producto("PTO-101",
+                "Leche",
+                "Descripcion1",
+                1.20,
+                100);
+
         Producto galleta = new Producto("PTO-102", "Galleta", "Descripcion2", 1.30, 20);
+        Producto galleta1 = new Producto("PTO-102", "Galleta1", "Descripcion2", 1.30, 10);
         Supermercado Super8 = new Supermercado();
         System.out.println(lacteo);
 
@@ -102,10 +108,10 @@ public class Ejercicio3 {
                 } else {
                     System.err.println("Producto no encontrado");
                 }
-            } else {
+            } else if (opcionElegida == 2) {
                 System.out.println("Introduce el id del producto a reponer");
                 productoBuscado = scanner.nextLine();
-                System.out.println("Introduce la canridada a reponer");
+                System.out.println("Introduce la cantidad a reponer");
                 cantidadReponer = scanner.nextInt();
                 Super8.reponerProducto(productoBuscado, cantidadReponer);
                 scanner.nextLine();

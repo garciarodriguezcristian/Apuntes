@@ -47,6 +47,7 @@ public class Producto {
     public double getPrecio() {
         return precio;
     }
+//Hacer control de errores para que no pueda modificarse en negativo
 
     public void setPrecio(double precio) {
         this.precio = precio;
@@ -63,7 +64,7 @@ public class Producto {
     @Override
     public String toString() {
         return "id = " + id + ", Nombre = " + nombre + ", Descripcion = " + descripcion + ", Precio = " + precio
-                + " €, cantidadEnStock = " + cantidadEnStock + " uds.\n";
+                + " €, Unidades en stock = " + cantidadEnStock + " uds.\n";
     }
 
 }
