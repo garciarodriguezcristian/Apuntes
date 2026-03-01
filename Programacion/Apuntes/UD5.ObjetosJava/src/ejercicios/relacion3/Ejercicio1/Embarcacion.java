@@ -1,5 +1,8 @@
 package ejercicios.relacion3.Ejercicio1;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Embarcacion {
 
     private String nombre;
@@ -23,14 +26,16 @@ public class Embarcacion {
             double valorEstimado) {
         this.nombre = nombre;
         setMatricula(matricula);
-        this.eslora = eslora;
-        this.tipo = tipo;
+        setEslora(eslora);
+        setTipo(tipo);
         this.propietario = propietario;
-        this.anioFabricacion = anioFabricacion;
+        setAnioFabricacion(anioFabricacion);
         this.valorEstimado = valorEstimado;
     }
-    // Setters y getters
 
+    ArrayList<String> tiposValidos = new ArrayList<>(Arrays.asList("Velero", "Lancha", "Yate", "Catamarán", "Moto de agua"));
+
+    // Setters y getters
     public String getNombre() {
         return nombre;
     }
@@ -55,7 +60,7 @@ public class Embarcacion {
             this.matricula = matricula;
             matriculaCambiada = true;
         } else {
-            matricula = "SIN MATRICULA";
+            this.matricula = "SIN MATRICULA";
         }
         return matriculaCambiada;
     }
@@ -70,14 +75,46 @@ public class Embarcacion {
         }
     }
 
+    public String getPropietario() {
+        return this.propietario;
+    }
+
+    public void setPropietario(String propietario) {
+        if (propietario != null && !propietario.isBlank()) {
+            this.propietario = propietario;
+        }
+    }
+
     public int getAnioFabricacion() {
         return anioFabricacion;
     }
 
     public void setAnioFabricacion(int anioFabricacion) {
-        if (anioFabricacion > 1950 && anioFabricacion < 2026) {
+        if (anioFabricacion >= 1950 && anioFabricacion <= 2026) {
             this.anioFabricacion = anioFabricacion;
         }
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        if (tiposValidos.contains(tipo)) {
+            this.tipo = tipo;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "\n DATOS EMBARCACIÓN\n"
+                + "--- " + nombre.toUpperCase() + " ---\n"
+                + "Matricula = " + matricula
+                + ", Eslora = " + eslora
+                + ", Tipo = " + tipo
+                + ", Propietario = " + propietario
+                + ", Año de fabricación = " + anioFabricacion
+                + ", Valor estimado = " + valorEstimado;
     }
 
 }
