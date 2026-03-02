@@ -143,7 +143,7 @@ public class Zoologico {
      * positiva y no supera al numero de ejemplares actual, se retiran los
      * ejemplares seleccionados
      *
-     * @return Devuelve un array de boolean para saber si se han reitrado
+     * @return Devuelve un array de boolean para saber si se han retirado
      * ejemplares y en el caso de que no, saber el motivo
      *
      * [0] -> Se han podido retirar ejemplares. [1] -> No se han podido retirar
