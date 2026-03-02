@@ -67,11 +67,11 @@ public class Zoologico {
     }
 
     /**
-     * Permite agregar animales al zoologico Si el animal ya está en el
-     * zoologico (ArrayList animales), no agrega el animal Devuelve
+     * Permite agregar animales al zoologico. Si el animal ya está en el
+     * zoologico (ArrayList animales), no agrega el animal
      *
      * @param animal
-     * @return Devuelve true si el animal ha sido agragado o false si no.
+     * @return Devuelve true si el animal ha sido agregado o false si no.
      */
     public boolean agregarAnimal(Animal animal) {
         boolean agregado = false;
