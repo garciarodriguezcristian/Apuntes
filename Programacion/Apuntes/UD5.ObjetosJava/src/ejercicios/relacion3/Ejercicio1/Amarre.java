@@ -10,11 +10,13 @@ public class Amarre {
 
     private int numero;
     private double longitudMaxima;
-    public double precioDia;
+    private double precioDia;
     private boolean ocupado;
-    public String tipoAmarre;
+    private String tipoAmarre;
 
     private static int contador = 1;
+    private final static ArrayList<String> TIPOSVALIDOS = new ArrayList<>(
+            Arrays.asList("NORMAL", "PREMIUM", "MEGAYATE"));
 
     public Amarre(
             double longitudMaxima,
@@ -22,20 +24,24 @@ public class Amarre {
             String tipoAmarre) {
         this.numero = contador;
         contador++;
-        this.longitudMaxima = longitudMaxima;
+        setLongitudMaxima(longitudMaxima);
         this.tipoAmarre = tipoAmarre;
-        if (tipoAmarre.equals("Normal")) {
-            this.precioDia = 25 + (1.5 * longitudMaxima);
-        }
-        if (tipoAmarre.equals("Premium")) {
-            this.precioDia = 60 + (2.2 * longitudMaxima);
-        }
-        if (tipoAmarre.equals("Megayate")) {
-            this.precioDia = 120 + (3.5 * longitudMaxima);
-        }
+        //preciodia se crea por defecto a 0.0
         this.ocupado = ocupado;
     }
-    ArrayList<String> amarresValidos = new ArrayList<>(Arrays.asList("Normal", "Premium", "Megayate"));
+
+    private void calcularPrecioDia() {
+        if (tipoAmarre != null && longitudMaxima != 0.0) {
+
+            if (tipoAmarre.equals(TIPOSVALIDOS.get(0))) {
+                precioDia = 25 + (1.5 * longitudMaxima);
+            } else if (tipoAmarre.equals(TIPOSVALIDOS.get(1))) {
+                precioDia = 60 + (2.2 * longitudMaxima);
+            } else {
+                precioDia = 120 + (3.5 * longitudMaxima);
+            }
+        }
+    }
 
     // Setters y getters
     public int getNumero() {
@@ -52,6 +58,7 @@ public class Amarre {
         } else {
             this.longitudMaxima = 4.0;
         }
+        calcularPrecioDia();
     }
 
     public String getTipoAmarre() {
@@ -59,11 +66,16 @@ public class Amarre {
     }
 
     public void setTipoAmarre(String tipoAmarre) {
-        if (amarresValidos.contains(tipoAmarre)) {
+        if (TIPOSVALIDOS.contains(tipoAmarre.toUpperCase())) {
             this.tipoAmarre = tipoAmarre;
         } else {
-            this.tipoAmarre = "Normal";
+            this.tipoAmarre = "NORMAL";
         }
+        calcularPrecioDia();
+    }
+
+    public double getPrecioDia() {
+        return precioDia;
     }
 
     public boolean getOcupado() {

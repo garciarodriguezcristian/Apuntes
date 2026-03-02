@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class Puerto {
 
     private String nombre;
-    public String ubicacion;
+    private String ubicacion;
     private int capacidadMaxima;
-    public String telefonoContacto;
+    private String telefonoContacto;
     private ArrayList<Amarre> amarres = new ArrayList<>();
     private ArrayList<Embarcacion> embarcaciones = new ArrayList<>();
-    private ArrayList<Integer> amarreDeEmbarcacion = new ArrayList<>();
+    private ArrayList<String> matriculasAmarradas = new ArrayList<>();
 
     // CONSTRUTOR
     public Puerto(String nombre, String ubicacion, int capacidadMaxima, String telefonoContacto) {
@@ -20,7 +20,7 @@ public class Puerto {
         this.telefonoContacto = telefonoContacto;
         this.amarres = new ArrayList<>();
         this.embarcaciones = new ArrayList<>();
-        this.amarreDeEmbarcacion = new ArrayList<>();
+        this.matriculasAmarradas = new ArrayList<>();
     }
 
     public String getNombre() {
@@ -75,8 +75,8 @@ public class Puerto {
         return embarcaciones;
     }
 
-    public ArrayList<Integer> getAmarreDeEmbarcacion() {
-        return amarreDeEmbarcacion;
+    public ArrayList<String> getAmarreDeEmbarcacion() {
+        return matriculasAmarradas;
     }
 
     @Override
@@ -87,7 +87,7 @@ public class Puerto {
                 + " | Telefono de contacto = " + telefonoContacto
                 + "\nAMARRES\n" + amarres.toString()
                 + "\nEMBARCACIONES\n" + embarcaciones.toString()
-                + "A\nmarreDeEmbarcacion = " + amarreDeEmbarcacion;
+                + "\nAmarreDeEmbarcacion = " + matriculasAmarradas;
     }
 
     // Métodos 
@@ -95,13 +95,11 @@ public class Puerto {
         String mensaje;
         boolean barcoRepetido = false;
 
-        for (Embarcacion barco : embarcaciones) {
-            if (barco.getMatricula().equalsIgnoreCase(embarcacion.getMatricula())) {
-                barcoRepetido = true;
-            }
+        if (embarcaciones.contains(embarcacion)) {
+            barcoRepetido = true;
         }
         if (barcoRepetido) {
-            mensaje = "ERROR. Embarcación ya está registrada";
+            mensaje = "ERROR. Embarcación ya registrada";
         } else {
             embarcaciones.add(embarcacion);
             mensaje = "Embarcacion " + embarcacion.getNombre() + " registrada";
@@ -112,16 +110,20 @@ public class Puerto {
     public String altaAmarre(Amarre nuevoAmarre) {
         String mensaje;
         boolean amarreRepetido = false;
-        for (Amarre amarre : amarres) {
-            if (amarre.getNumero() == nuevoAmarre.getNumero()) {
-                amarreRepetido = true;
+        if (amarres.size() < capacidadMaxima) {
+            for (Amarre amarre : amarres) {
+                if (amarre.getNumero() == nuevoAmarre.getNumero()) {
+                    amarreRepetido = true;
+                }
             }
-        }
-        if (amarreRepetido) {
-            mensaje = "ERROR. El amarre ya está dado de alta";
+            if (amarreRepetido) {
+                mensaje = "ERROR. El amarre ya está dado de alta";
+            } else {
+                amarres.add(nuevoAmarre);
+                mensaje = "Amarre Nº " + nuevoAmarre.getNumero() + "(" + nuevoAmarre.getTipoAmarre() + ") AÑADIDO";
+            }
         } else {
-            amarres.add(nuevoAmarre);
-            mensaje = "Amarre Nº " + nuevoAmarre.getNumero() + "(" + nuevoAmarre.tipoAmarre + ") AÑADIDO";
+            mensaje = "Capacidad máxima del puerto alcanzada. No se pueden registrar más amarres";
         }
         return mensaje;
     }
@@ -190,5 +192,23 @@ public class Puerto {
             }
         }
         return buscada;
+    }
+
+    public double calcularIngresosDiariosActuales() {
+        double ingresosDiarios = 0;
+        for (Amarre amarre : amarres) {
+            if (amarre.getOcupado()) {
+                ingresosDiarios += amarre.getPrecioDia();
+            }
+        }
+        return ingresosDiarios;
+    }
+
+    public double calcularIngresosDiariosMaximos() {
+        double ingresosDiariosMaximos = 0;
+        for (Amarre amarre : amarres) {
+            ingresosDiariosMaximos += amarre.getPrecioDia();
+        }
+        return ingresosDiariosMaximos;
     }
 }

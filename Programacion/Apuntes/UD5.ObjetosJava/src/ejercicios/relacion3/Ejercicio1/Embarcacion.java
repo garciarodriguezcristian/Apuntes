@@ -5,8 +5,10 @@ import java.util.Arrays;
 
 public class Embarcacion {
 
-    private String nombre;
+    private static int numeroMatricula = 1;
+
     private String matricula;
+    private String nombre;
     private double eslora;
     private String tipo;
     private String propietario;
@@ -25,7 +27,7 @@ public class Embarcacion {
             String tipo, String propietario, int anioFabricacion,
             double valorEstimado) {
         this.nombre = nombre;
-        setMatricula(matricula);
+        asignarMatricula();
         setEslora(eslora);
         setTipo(tipo);
         this.propietario = propietario;
@@ -33,17 +35,9 @@ public class Embarcacion {
         this.valorEstimado = valorEstimado;
     }
 
-    ArrayList<String> tiposValidos = new ArrayList<>(Arrays.asList("Velero", "Lancha", "Yate", "Catamarán", "Moto de agua"));
+    private final static ArrayList<String> TIPOSVALIDOS = new ArrayList<>(Arrays.asList("velero", "lancha", "yate", "catamarán", "moto de agua"));
 
     // Setters y getters
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public String getMatricula() {
         return matricula;
     }
@@ -54,15 +48,20 @@ public class Embarcacion {
      * @return booleano {@code true} si se ha podido cambiar la matricula o
      * {@code false} si no
      */
-    public boolean setMatricula(String matricula) {
-        boolean matriculaCambiada = false;
-        if (matricula != null && !matricula.isBlank()) {
-            this.matricula = matricula;
-            matriculaCambiada = true;
-        } else {
-            this.matricula = "SIN MATRICULA";
+    private void asignarMatricula() {
+        this.matricula = "EMB-" + numeroMatricula;
+        numeroMatricula++;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        if (nombre != null && !nombre.isBlank()) {
+            this.nombre = nombre;
         }
-        return matriculaCambiada;
+        this.nombre = nombre;
     }
 
     public double getEslora() {
@@ -100,7 +99,7 @@ public class Embarcacion {
     }
 
     public void setTipo(String tipo) {
-        if (tiposValidos.contains(tipo)) {
+        if (TIPOSVALIDOS.contains(tipo.toLowerCase())) {
             this.tipo = tipo;
         }
     }
@@ -109,7 +108,7 @@ public class Embarcacion {
     public String toString() {
         return "\n DATOS EMBARCACIÓN\n"
                 + "--- " + nombre.toUpperCase() + " ---\n"
-                + "Matricula = " + matricula
+                + " Matricula = " + matricula
                 + ", Eslora = " + eslora
                 + ", Tipo = " + tipo
                 + ", Propietario = " + propietario
