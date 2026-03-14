@@ -158,7 +158,9 @@ from personas join coches on personas.id = coches.id_dueño;
 
 -- 4. Coches de personas ricas (niv socioeconomico alto)
 select coches.*, personas.nivel_socioeconomico 
-from coches join personas on personas.id = coches.id_dueño where personas.nivel_socioeconomico = "Alto";
+from coches 
+join personas on personas.id = coches.id_dueño 
+where personas.nivel_socioeconomico = "Alto";
 
 -- 5. Ocupaciones (distintas) de dueños de coches mayores de 30 años
 select ocupacion
@@ -250,7 +252,7 @@ select id as hijos, madre, padre
 from personas
 where madre is not null and padre is not null; -- Hijos y padres
 
-select count(*) as num_coches, personas.id as hijos, madre, padre
+select count(*) as num_coches, madre, padre
 from personas 
 join coches on coches.id_dueño in (personas.id,madre,padre)
 where madre is not null and padre is not null
