@@ -9,16 +9,20 @@ package ejercicios.Relación1.Ejercicio4;
 // - `Domestico`:
 //     - Atributos: `dueño`
 //     - Método `convivirConHumanos()`: devuelve "El animal doméstico [nombre] convive con su dueño [dueño] y se alimenta de [tipoAlimentacion]."
-
 // - `Salvaje`:
 //     - Atributos: `habitat`
 //     - Método `cazar()`: devuelve "El animal salvaje [nombre] caza en su hábitat [habitat] y se alimenta de [tipoAlimentacion]."
-
 // Implementa una clase `Main` para probar la creación de objetos y la llamada a los métodos `convivirConHumanos()` y `cazar()`.
-
 public class Main {
+
     public static void main(String[] args) {
-       
-        
+        Animal animal1 = new Animal("Pepa", "pienso");
+        Domestico domestico1 = new Domestico("Dimi", "pienso", "Jessica");
+        Salvaje salvaje1 = new Salvaje("León", "carne", "sabana");
+
+        System.out.println(domestico1.convivirConHumanos());
+        System.out.println(salvaje1.cazar());
+        System.out.println(animal1);
+
     }
 }

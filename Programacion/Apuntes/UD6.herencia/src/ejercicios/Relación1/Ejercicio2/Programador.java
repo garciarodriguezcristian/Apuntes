@@ -11,6 +11,10 @@ public class Programador extends Empleado {
         this.sueldo = calcularSueldo();
     }
 
+    public double getSueldo() {
+        return sueldo;
+    }
+
     private double calcularSueldo() {
         return this.sueldoBase * BONIFICADOR;
     }
